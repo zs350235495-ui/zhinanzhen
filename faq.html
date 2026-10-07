@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见问题排查与技术FAQ | 梯子指南针</title>
+  <meta name="description" content="代理配置常见故障排查：包含端口占用、TUN网卡失败、DNS污染、Telegram无法连接、SSL证书报错等常见5-8个核心问答。">
+  <meta name="keywords" content="代理常见问题, Clash报错, TUN网卡失败, DNS污染排查, 科学上网FAQ">
+  <link rel="canonical" href="https://tiziznz.com/faq.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+<!-- 顶部全局导航栏 开始 -->
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- 1. 左侧 Logo 与品牌名 -->
+    <div class="flex items-center space-x-3">
+      <img src="favicon.svg" alt="梯子指南针" class="w-8 h-8 rounded-lg shadow-sm">
+      <a href="index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/20">BLOG</span>
+    </div>
+
+    <!-- 2. 中间 5 个核心菜单项 -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">梯子推荐</a>
+      <a href="downloads.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">客户端下载</a>
+      <a href="blog.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">博客</a>
+      <a href="monitoring.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">避坑与跑路监控</a>
+      <a href="tutorials.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">新手教程</a>
+    </nav>
+
+    <!-- 3. 右侧状态指示与 TG 直达 -->
+    <div class="flex items-center space-x-3">
+      <!-- TG 官方直达跳转按钮 -->
+      <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-sky-500 hover:bg-sky-600 text-white transition-all shadow-xs gap-1" title="点击打开 Telegram 客服">
+        <span>✈️ TG 官方客服 (点击跳转)</span>
+      </a>
+
+      <!-- 监控胶囊 -->
+      <a href="monitoring.html" class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50">
+        <span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        15/15 正常
+      </a>
+
+      <!-- 模式切换按钮 -->
+      <button id="theme-toggle-btn" type="button" class="p-2 text-gray-500 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white rounded-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition" title="切换模式">
+        ☀️
+      </button>
+    </div>
+  </div>
+</header>
+<!-- 顶部全局导航栏 结束 -->
+
+  <main class="container" style="padding: 3rem 1.5rem 5rem;">
+    <div style="text-align: center; max-width: 750px; margin: 0 auto 3rem;">
+      <span class="badge badge-amber" style="margin-bottom: 0.75rem;">Troubleshooting FAQ</span>
+      <h1 style="font-size: 2.4rem; margin-bottom: 1rem;">常见配置排查与网络问答</h1>
+      <p style="color: var(--text-secondary); font-size: 1.1rem;">
+        总结了用户在安装配置 Clash、Sing-box、V2rayN 等代理软件时遇到的最常见 8 大高频报错与解决建议。
+      </p>
+    </div>
+
+    <div class="accordion" style="max-width: 860px; margin: 0 auto;">
+      <!-- Q1 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q1. 打开软件提示 `Port 7890 is in use` 端口被占用怎么办？</span>
+          <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <p>这说明您电脑后台已有其他代理客户端（如老版本 Clash 或 V2rayN）占用了 7890 混合端口。解决方案：1. 彻底退出后台其他软件；2. 或在软件设置中将混合端口（Mixed Port）改为 7897 或 10809。</p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q2. 开启代理后，为什么 Telegram / Discord 依然提示“连接中”？</span>
+          <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <p>Telegram 使用自定义 TCP/UDP 协议，若仅开启系统代理，Telegram 可能无法感知系统 HTTP 代理设置。请在软件中开启 <strong>TUN 模式</strong>，或者在 Telegram 设置 -> 高级 -> 代理类型中手动填写 `127.0.0.1:7890` SOCKS5 代理。</p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q3. TUN 模式安装虚拟网卡失败，提示 Service Install Failed 怎么解决？</span>
+          <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <p>Windows 环境下通常因为安全软件拦截了驱动注入。排查办法：1. 暂时关闭 360 / 电脑管家；2. 右键选择“以管理员身份运行”软件；3. 在软件设置中手动点击“Manage Service -> Install”。</p>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q4. 访问国内网站（如百度、淘宝）速度变慢或提示异地登录？</span>
+          <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <p>这说明您的代理软件误将国内流量路由到了国外节点。请将软件模式设置为 <strong>Rule (规则分流)</strong> 模式，切勿设置为 Global (全局模式)。在 Rule 模式下，国内流量会保持 Direct 原生直连。</p>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Q5. 机场节点提示 `TLS Certificate Failed` 或 SSL 握手超时？</span>
+          <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="accordion-body">
+          <p>请首先核对您操作系统的本地系统时间与北京时间是否精确同步。由于 TLS/QUIC 协议强校验时间戳，如果系统时钟偏差超过 60 秒，就会引发 SSL 证书报错。</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+        <div>
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-base mb-2">
+            <img src="favicon.svg" alt="梯子指南针" class="w-6 h-6 rounded-md shadow-xs">
+            <span>梯子指南针</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed mb-3">全平台代理技术评估、极客客户端配置指南与网络安全最佳实践知识库。</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">热门梯子推荐</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" class="hover:text-blue-600">🥇 第一名：环球梯 (优惠码 HQ66)</a></li>
+            <li><a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" class="hover:text-blue-600">🥈 第二名：大佬云 (优惠码 DLY66)</a></li>
+            <li><a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" class="hover:text-blue-600">🥉 第三名：云界线 (优惠码 yjx888)</a></li>
+            <li><a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" class="hover:text-blue-600">⚡ 第四名：闪电鼠 (优惠码 sds88)</a></li>
+            <li><a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" class="hover:text-blue-600">🚀 第五名：神行加速 (优惠码 sx0077)</a></li>
+            <li><a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" class="hover:text-blue-600">🥭 第六名：榴莲云 (优惠码 ll88)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">快捷导航</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600">梯子推荐</a></li>
+            <li><a href="downloads.html" class="hover:text-blue-600">客户端下载</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600">博客</a></li>
+            <li><a href="monitoring.html" class="hover:text-blue-600">避坑与跑路监控</a></li>
+            <li><a href="tutorials.html" class="hover:text-blue-600">新手教程</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">官方联系与反馈</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">Telegram:</span>
+              <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-xs rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✈️ 点击自动跳转联系
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">商务/反馈邮箱:</span>
+              <a href="mailto:huanqiuti1@gmail.com" class="px-2.5 py-1 text-xs rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✉️ 点击自动发送邮件
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 text-xs leading-relaxed mb-8">
+        <strong class="text-slate-700 dark:text-slate-300">免责与合规声明：</strong>
+        本站所有文章、测评工具与技术文档仅供计算机网络学术研究、软件架构交流与合规网络测试用途。请严格遵守相关法律法规。
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs pt-4 border-t border-slate-100 dark:border-slate-800">
+        <p>&copy; 2026 梯子指南针 (tiziznz.com). All rights reserved.</p>
+        <p><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">✈️ 点击跳转 TG 客服</a> | <a href="mailto:huanqiuti1@gmail.com" class="hover:text-blue-600">✉️ 点击联系商务邮箱</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

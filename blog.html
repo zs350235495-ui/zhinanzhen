@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网络代理技术博客与知识库 | 梯子指南针</title>
+  <meta name="description" content="梯子指南针官方博客：提供 2026 年最新机场测评、Clash 与 Sing-box 规则分流、鸿蒙系统适配及网络安全指南。">
+  <link rel="canonical" href="https://tiziznz.com/blog.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+<!-- 顶部全局导航栏 开始 -->
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- 1. 左侧 Logo 与品牌名 -->
+    <div class="flex items-center space-x-3">
+      <img src="favicon.svg" alt="梯子指南针" class="w-8 h-8 rounded-lg shadow-sm">
+      <a href="index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/20">BLOG</span>
+    </div>
+
+    <!-- 2. 中间 5 个核心菜单项 -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">梯子推荐</a>
+      <a href="downloads.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">客户端下载</a>
+      <a href="blog.html" class="relative py-5 text-sm font-medium text-blue-600 dark:text-blue-400">
+        博客
+        <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-500"></span>
+      </a>
+      <a href="monitoring.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">避坑与跑路监控</a>
+      <a href="tutorials.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">新手教程</a>
+    </nav>
+
+    <!-- 3. 右侧状态指示与 TG 直达 -->
+    <div class="flex items-center space-x-3">
+      <!-- TG 官方直达跳转按钮 -->
+      <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-sky-500 hover:bg-sky-600 text-white transition-all shadow-xs gap-1" title="点击打开 Telegram 客服">
+        <span>✈️ TG 官方客服 (点击跳转)</span>
+      </a>
+
+      <!-- 监控胶囊 -->
+      <a href="monitoring.html" class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50">
+        <span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        15/15 正常
+      </a>
+
+      <!-- 模式切换按钮 -->
+      <button id="theme-toggle-btn" type="button" class="p-2 text-gray-500 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white rounded-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition" title="切换模式">
+        ☀️
+      </button>
+    </div>
+  </div>
+</header>
+<!-- 顶部全局导航栏 结束 -->
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <!-- Header Banner -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs px-3 py-1 rounded-full font-semibold bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20 inline-block mb-3">    <!-- Blog Grid Container (30 Articles) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="blog-posts-grid">
+
+      <!-- Article 1: 核心文章（主推 SEO 指南） -->
+      <article class="bg-white dark:bg-slate-900 border-2 border-blue-500/40 dark:border-blue-500/50 rounded-2xl p-6 flex flex-col justify-between hover:shadow-xl transition-all relative group">
+        <span class="absolute -top-3 right-4 px-3 py-0.5 rounded-full text-[11px] font-bold bg-blue-600 text-white shadow-xs">
+          ⭐ 核心推荐指南
+        </span>
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">
+              节点与机场评测
+            </span>
+            <span class="text-slate-400">2026-10-06</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="airport-guide.html">稳定机场推荐与节点选择指南：速度、线路与套餐怎么选</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            2026最新稳定机场推荐与选购指南。涵盖机场节点速度测试、IPLC/IEPL专线对比、多设备支持机场选择、性价比套餐对比及新手避坑 FAQ。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">12 分钟阅读</span>
+          <a href="airport-guide.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 2: 环球梯与大佬云测评 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+              节点与机场评测
+            </span>
+            <span class="text-slate-400">2026-10-06</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank">2026年优质机场选择指南：TOP 1「环球梯」与 TOP 2「大佬云」深度测评</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            全网双雄拆解！榜首「环球梯」(优惠码 HQ66) 与老牌尊享「大佬云」(优惠码 DLY66) 专线对比。节点最高 2.5Gbps 峰值带宽与 4K/8K 流媒体解封实测。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">10 分钟阅读</span>
+          <a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 3: 性价比机场推荐 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800/50">
+              性价比机场
+            </span>
+            <span class="text-slate-400">2026-10-05</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="index.html#top-featured-container">性价比机场推荐：月付 15 元起的高速 IPLC/IEPL 专线机场对比</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            预算有限如何挑选不掉线的稳定机场？对比榴莲云、快狸、瞬云等性价比方案，解析 1x 扣费倍率与低至 15 元/月的套餐明细。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">8 分钟阅读</span>
+          <a href="index.html#top-featured-container" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 4: 机场节点速度测试 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              测速与评估
+            </span>
+            <span class="text-slate-400">2026-10-04</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">机场节点速度测试：如何精准量化真实下载速率与单线程延迟</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            别被虚高 Speedtest 骗了！详解如何利用 YouTube 详细统计信息、iperf3 多线程以及长视频拖拽缓冲测试节点真实品质。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">9 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 5: 多设备支持机场 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800/50">
+              多设备选型
+            </span>
+            <span class="text-slate-400">2026-10-03</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="index.html#top-featured-container">多设备支持机场推荐：不限在线连接数的机场全盘点</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            拥有手机、电脑、平板、电视盒子等多设备？盘点支持不限在线客户端数与多 IP 并发的优质机场（如大佬云、闪电鼠）。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">7 分钟阅读</span>
+          <a href="index.html#top-featured-container" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 6: 新手机场推荐与入门 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+              新手入门
+            </span>
+            <span class="text-slate-400">2026-10-02</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">新手机场推荐与入门指南：从一键订阅到规则分流避坑全过程</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            小白用户如何选择第一家机场？拆解试用策略、月付原则、二维码扫码订阅与售后客服沟通技巧。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">8 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 7: GeoIP 路由规则 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              GeoIP 路由规则
+            </span>
+            <span class="text-slate-400">2026-09-28</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">GeoIP精准分流防污染：Clash/Sing-box 覆写脚本配置推荐</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            如何防止国内站点误走代理导致连接缓慢？详细拆解 Loyal-Soldier 规则集与 Sub-Store 自动订阅转换进阶技巧。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">12 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 8: 鸿蒙 NEXT 适配 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800/50">
+              新手基础入门
+            </span>
+            <span class="text-slate-400">2026-09-20</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">鸿蒙 HarmonyOS NEXT 原生网络代理工具适配与配置实战</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            针对纯血鸿蒙系统的全新权限机制，手把手教你完成 Sing-box Harmony 版本的节点导入与开机后台常驻设置。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">6 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 9: IEPL 专线科普 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800/50">
+              技术原理拆解
+            </span>
+            <span class="text-slate-400">2026-09-15</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="review-detail.html">为什么 IPLC/IEPL 专线机场在晚高峰依然稳定不掉线？</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            对比公网中转与内网专线的传输逻辑。详解物理点对点内网传输、低抖动无封锁机制以及为何榜首「环球梯」能保持 23ms 超低延迟。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">8 分钟阅读</span>
+          <a href="review-detail.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 10: Clash Verge Rev 实践 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+              客户端教程
+            </span>
+            <span class="text-slate-400">2026-09-12</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="downloads.html">Clash Verge Rev 最佳配置实践：从基础订阅到覆写脚本</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            开源 GUI 客户端上手指南！基于 Mihomo (Clash Meta) 核心，教你开启 TUN 模式与 Merge 覆写规则设置。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">11 分钟阅读</span>
+          <a href="downloads.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 11: Sing-box 实测 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              协议测评
+            </span>
+            <span class="text-slate-400">2026-09-11</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="downloads.html">Sing-box 核心协议全解：VLESS Reality 与 Hysteria 2 实测</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            新一代通用代理内核 Sing-box 测评！详细拆解 VLESS Reality 伪装域名配置与 Hysteria 2 UDP 拥堵控制原理。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">10 分钟阅读</span>
+          <a href="downloads.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 12: DNS 超时排查 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800/50">
+              故障排查
+            </span>
+            <span class="text-slate-400">2026-09-10</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="faq.html">代理成功连接但网页显示 DNS 超时或无法上网的完整解决方案</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            解决 Clash/V2rayN 开启后浏览器无法加载网页的问题。系统 TUN 网卡重置、管理员权限启动与 DNS 抢答修复全流程。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">7 分钟阅读</span>
+          <a href="faq.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 13: 机场跑路与拔线预警 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800/50">
+              避坑预警
+            </span>
+            <span class="text-slate-400">2026-09-08</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="monitoring.html">机场跑路与拔线潮预警：如何通过实时监控看板避坑</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            如何识别即将跑路的风险机场？拆解不正常频繁打折、无客服响应与服务器域名到期的预警信号。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">6 分钟阅读</span>
+          <a href="monitoring.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 14: 代理软件下载导航 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+              软件导航
+            </span>
+            <span class="text-slate-400">2026-09-05</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="downloads.html">2026全平台代理软件下载：Clash Verge, Sing-box, Shadowrocket 正版通道</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            防伪防投毒下载专区！汇集 Windows, macOS, Android, iOS, HarmonyOS 原生客户端正版 GitHub 下载镜像与安装包。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">5 分钟阅读</span>
+          <a href="downloads.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 15: V2rayN 7.0 指南 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800/50">
+              客户端教程
+            </span>
+            <span class="text-slate-400">2026-09-03</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="downloads.html">V2rayN 7.0 批量测速与真连接延迟排查指南</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            Windows 老牌代理神器！教你开启真连接延迟测试、导出剪贴板订阅以及自定义协议节点别名。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">8 分钟阅读</span>
+          <a href="downloads.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 16: Shadowrocket 小火箭重写 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+              iOS 教程
+            </span>
+            <span class="text-slate-400">2026-09-01</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="downloads.html">Shadowrocket iOS 规则重写与二维码一键配置</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            小火箭规则精讲！支持扫码导入订阅、自定义策略组以及去广告规则脚本覆写。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">7 分钟阅读</span>
+          <a href="downloads.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 17: Sub-Store 订阅合并 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              进阶分流
+            </span>
+            <span class="text-slate-400">2026-08-28</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">Sub-Store 自动订阅转换进阶：多机场节点合并与去重</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            手把手教你搭建 Sub-Store 节点管理中枢。实现自动清洗失效节点、按延迟排序与跨平台订阅输出。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">11 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 18: Fake-IP 与 Redir-Host -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800/50">
+              DNS 优化
+            </span>
+            <span class="text-slate-400">2026-08-25</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">Fake-IP 与 Redir-Host 模式对比：如何彻底解决 DNS 污染</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            深入分析 Clash 内置 DNS 机制。Fake-IP 为什么响应更快？如何配置 DNS Fallback 策略防泄漏。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">9 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 19: ChatGPT & Claude 解锁 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800/50">
+              AI 专线
+            </span>
+            <span class="text-slate-400">2026-08-22</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="airport-guide.html">ChatGPT 与 Claude 解锁专线：原生 IP 节点推荐与分流设置</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            解决 AI 工具提示“Access Denied”的终极方案。配置原生 IP 分流规则，稳定使用 ChatGPT / Claude 3.5。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">8 分钟阅读</span>
+          <a href="airport-guide.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 20: 优惠码汇总 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800/50">
+              优惠资讯
+            </span>
+            <span class="text-slate-400">2026-08-20</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="index.html#top-featured-container">2026各大机场专属优惠码汇总：环球梯 HQ66 / 大佬云 DLY66 折上折</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            立省 30% 预算！全网收录 TOP 15 机场最新折扣优惠码与续费促销信息。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">4 分钟阅读</span>
+          <a href="index.html#top-featured-container" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 21: 流媒体 4K 解锁 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800/50">
+              影音流媒体
+            </span>
+            <span class="text-slate-400">2026-08-18</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="airport-guide.html">流媒体全解锁指南：Netflix 4K / YouTube Premium / Disney+ 节点选型</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            如何流畅观看海外 4K / 8K 超高清流媒体？挑选支持全原生 IP 解锁的高速专线节点技巧。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">7 分钟阅读</span>
+          <a href="airport-guide.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 22: TikTok 运营 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+              出海运营
+            </span>
+            <span class="text-slate-400">2026-08-15</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">TikTok 跨国运营专线配置：防封号与环境伪装实践</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            跨境电商 TikTok 运营必备。如何利用独立原生 IP 节点配置伪装时区、语言与运营商参数。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">9 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 23: macOS 选型 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800/50">
+              macOS 选型
+            </span>
+            <span class="text-slate-400">2026-08-12</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="downloads.html">macOS 平台 GUI 代理软件选型：Clash Verge vs Surge 5</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            Mac 用户怎么选代理软件？对比 Clash Verge Rev 开源免签与 Surge 5 顶级网络抓包分析工具。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">8 分钟阅读</span>
+          <a href="downloads.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 24: GitHub 远程办公 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              开发者指南
+            </span>
+            <span class="text-slate-400">2026-08-10</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">远程办公与 GitHub 加速：低延迟 SSH / Git 代理配置</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            开发者必备！配置 Terminal 终端 HTTP/SOCKS5 环境变量与 SSH Config 代理跳板实战。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">7 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 25: 网络安全防护 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800/50">
+              网络安全
+            </span>
+            <span class="text-slate-400">2026-08-08</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">科学上网安全防护：防止 DNS 泄露与 TLS 握手特征暴露</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            安全隐私指南。如何通过 Encrypted Client Hello (ECH) 与 uTLS 伪装保护代理通信不被嗅探。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">10 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 26: 跨境电商 IP -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+              外贸出海
+            </span>
+            <span class="text-slate-400">2026-08-05</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="airport-guide.html">跨境电商与外贸出海：固定原生 IP 机场节点选型</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            外贸独立站与 Amazon / eBay 卖家如何防止店铺关联？探讨住宅 IP 与固定机房 IP 专线选购策略。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">8 分钟阅读</span>
+          <a href="airport-guide.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 27: 公网中转 vs 物理专线 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              技术原理拆解
+            </span>
+            <span class="text-slate-400">2026-08-03</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="review-detail.html">公网中转 vs 物理内网专线：传输机制与延迟差异分析</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            硬核网络科普。解构公网中转出口限制与 IPLC 点对点物理光缆在抖动控制上的核心区别。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">9 分钟阅读</span>
+          <a href="review-detail.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 28: TUN 网卡配置 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800/50">
+              系统配置
+            </span>
+            <span class="text-slate-400">2026-08-01</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="tutorials.html">TUN 虚拟网卡模式配置：解决代理连通但无法打开网页</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            全系统接管模式详解！如何开启 TUN 网卡接管 UWP 应用、游戏客户端及命令行网络流量。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">6 分钟阅读</span>
+          <a href="tutorials.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 29: 监控看板指南 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+              监控使用
+            </span>
+            <span class="text-slate-400">2026-07-28</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="monitoring.html">代理连通率看板使用指南：15 家收录机场实时状态监控</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            学会看实时连通度与延迟警报。避免在故障维修期盲目重装客户端或重复购买订阅。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">5 分钟阅读</span>
+          <a href="monitoring.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 30: 机场倍率陷阱 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 rounded-full font-bold bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800/50">
+              避坑指南
+            </span>
+            <span class="text-slate-400">2026-07-25</span>
+          </div>
+
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 transition-colors">
+            <a href="airport-guide.html">机场倍率陷阱拆解：1x 倍率与 5x 扣费的隐形坑</a>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+            流量怎么跑得这么快？警惕不正规机场设置 5x~10x 扣费倍率。教你识别真正 1x 透明扣费机场。
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+          <span class="text-slate-400">7 分钟阅读</span>
+          <a href="airport-guide.html" class="font-extrabold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            阅读全文 &rarr;
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+        <div>
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-base mb-2">
+            <img src="favicon.svg" alt="梯子指南针" class="w-6 h-6 rounded-md shadow-xs">
+            <span>梯子指南针</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed mb-3">全平台代理技术评估、极客客户端配置指南与网络安全最佳实践知识库。</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">热门梯子推荐</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" class="hover:text-blue-600">🥇 第一名：环球梯 (优惠码 HQ66)</a></li>
+            <li><a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" class="hover:text-blue-600">🥈 第二名：大佬云 (优惠码 DLY66)</a></li>
+            <li><a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" class="hover:text-blue-600">🥉 第三名：云界线 (优惠码 yjx888)</a></li>
+            <li><a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" class="hover:text-blue-600">⚡ 第四名：闪电鼠 (优惠码 sds88)</a></li>
+            <li><a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" class="hover:text-blue-600">🚀 第五名：神行加速 (优惠码 sx0077)</a></li>
+            <li><a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" class="hover:text-blue-600">🥭 第六名：榴莲云 (优惠码 ll88)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">快捷导航</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600">梯子推荐</a></li>
+            <li><a href="downloads.html" class="hover:text-blue-600">客户端下载</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600">博客</a></li>
+            <li><a href="monitoring.html" class="hover:text-blue-600">避坑与跑路监控</a></li>
+            <li><a href="tutorials.html" class="hover:text-blue-600">新手教程</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">官方联系与反馈</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">Telegram:</span>
+              <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-xs rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✈️ 点击自动跳转联系
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">商务/反馈邮箱:</span>
+              <a href="mailto:huanqiuti1@gmail.com" class="px-2.5 py-1 text-xs rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✉️ 点击自动发送邮件
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-200 dark:border-slate-800 pt-6 text-center text-xs text-slate-400">
+        <p>© 2026 梯子指南针 (tiziznz.com). 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" type="module"></script>
+</body>
+</html>

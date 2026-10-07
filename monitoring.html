@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>避坑与跑路监控看板 | 梯子指南针</title>
+  <meta name="description" content="实时监测全网 15+ 知名中转/专线机场节点的在线通畅度、官网域名解析变更与客服响应时长，预防突发跑路或高延迟掉线风波。">
+  <link rel="canonical" href="https://tiziznz.com/monitoring.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+<!-- 顶部全局导航栏 开始 -->
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- 1. 左侧 Logo 与品牌名 -->
+    <div class="flex items-center space-x-3">
+      <img src="favicon.svg" alt="梯子指南针" class="w-8 h-8 rounded-lg shadow-sm">
+      <a href="index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/20">BLOG</span>
+    </div>
+
+    <!-- 2. 中间 5 个核心菜单项 -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">梯子推荐</a>
+      <a href="downloads.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">客户端下载</a>
+      <a href="blog.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">博客</a>
+      <a href="monitoring.html" class="relative py-5 text-sm font-medium text-blue-600 dark:text-blue-400">
+        避坑与跑路监控
+        <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-500"></span>
+      </a>
+      <a href="tutorials.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">新手教程</a>
+    </nav>
+
+    <!-- 3. 右侧状态指示与 TG 直达 -->
+    <div class="flex items-center space-x-3">
+      <!-- TG 官方直达跳转按钮 -->
+      <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-sky-500 hover:bg-sky-600 text-white transition-all shadow-xs gap-1" title="点击打开 Telegram 客服">
+        <span>✈️ TG 官方客服 (点击跳转)</span>
+      </a>
+
+      <!-- 监控胶囊 -->
+      <a href="monitoring.html" class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50">
+        <span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        15/15 正常
+      </a>
+
+      <!-- 模式切换按钮 -->
+      <button id="theme-toggle-btn" type="button" class="p-2 text-gray-500 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white rounded-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition" title="切换模式">
+        ☀️
+      </button>
+    </div>
+  </div>
+</header>
+<!-- 顶部全局导航栏 结束 -->
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <!-- Hero Banner -->
+    <div class="text-center max-w-4xl mx-auto mb-10">
+      <span class="text-xs px-3.5 py-1.5 rounded-full font-bold bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20 inline-flex items-center gap-1.5 mb-4">
+        <span>🛡️ Real-Time Monitoring & Blacklist Center</span>
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+        避坑与跑路监控看板
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+        24 小时自动化探针监控 15+ 知名中转/专线机场节点的在线通畅度、官网域名解析变更与跑路风险预警。
+      </p>
+    </div>
+
+    <!-- Metric Summary Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs text-center">
+        <div class="text-3xl font-extrabold text-rose-600 dark:text-rose-400 mb-1">10 家</div>
+        <div class="text-xs text-slate-500 font-medium">已曝光跑路/失效黑名单档案</div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs text-center">
+        <div class="text-3xl font-extrabold text-amber-600 dark:text-amber-400 mb-1">5 项</div>
+        <div class="text-xs text-slate-500 font-medium">跑路前红牌特征预警指标</div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs text-center">
+        <div class="text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-1">100%</div>
+        <div class="text-xs text-slate-500 font-medium">黑名单核验真实率</div>
+      </div>
+    </div>
+
+    <!-- Section 1: 10 Exit Scam & Blacklisted Airport Warning Records (10家跑路机场档案曝光) -->
+    <section class="mb-16">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-2.5 h-6 bg-rose-600 rounded-full"></span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">已证实跑路 / 黑名单机场档案曝光库 (10家)</h2>
+      </div>
+
+      <div class="bg-rose-50/40 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-4 sm:p-6 mb-8">
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          <strong class="text-rose-600 dark:text-rose-400">🚨 风险警示说明：</strong>
+          以下 10 家机场均为历史上真实发生突然失联、删库跑路或关闭节点的失效服务商。警惕此类不良厂商采用的“超低价包年”、“无后置中转”、“高倍率虚标”套路，切勿盲目充值一次性年付套餐。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- 跑路机场 1 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2025-11)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">速云 / 速连网络</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">9.9元包年陷阱</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 以 9.9 元/年超低价在各大社交平台狂推包年套餐吸收资金。积攒大量预付费后，主服务器直接关机，TG 官方交流群瞬间开启全员禁言并被管理员清空注销。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：低价预付费包年用户</span>
+            <span class="text-rose-500 font-semibold">域名已注销失效</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 2 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2025-09)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">黑洞网络 (BlackHole)</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">直连封锁归零</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 没有任何 BGP 中转入口，全靠廉价公网直连节点支撑。在敏感期遭大规模 IP 封锁后，无资金备份入口，运维直接放弃维护，原官网域名挂出赌博跳转广告。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：直连无中转节点用户</span>
+            <span class="text-rose-500 font-semibold">域名挂恶意广告</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 3 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2025-06)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">幻影代理 (Phantom)</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">假专线宣传</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 宣传“独享 IPLC 专线”，收费高昂。后被揭发实为普通的隧道中转，连通率暴跌后官方声称“机房迁移”，随即便永久删除电报频道失联跑路。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：高价假专线购买者</span>
+            <span class="text-rose-500 font-semibold">电报频道解散</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 4 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2025-04)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">银河加速器</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">10x 高倍率扣费</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 暗中将大部分香港、日本节点设为 10x 扣费倍率，导致用户几 GB 流量数秒扣光。用户在工单质问后直接封禁用户账号，并于次月彻底拔线关服。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：高倍率流量扣光用户</span>
+            <span class="text-rose-500 font-semibold">恶意封禁账号跑路</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 5 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-amber-600 text-white font-bold text-[10px] rounded-bl-xl">
+            ⚠️ 老牌断供 (2024-12)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">喵帕斯 (NekoPass)</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/60 text-amber-600 border border-amber-200 dark:border-amber-800">团队断层停运</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 曾属于知名老牌机场，因后期管理团队成员脱节、上游机房账单拖欠导致服务器全线停机。虽非恶意骗财，但最终用户无法获得任何退款补偿。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：长期老用户存量订阅</span>
+            <span class="text-amber-600 font-semibold">机房断供停服务</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 6 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2024-10)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">飞鸟云 (Feiniao)</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">一周年大促套现</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 跑路前一个月发起“一周年店庆：买一年送一年”超大折扣活动。在疯狂吸收一波资金后，官网主页提示“系统升级维护”后永久关闭节点。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：周年促销年付购买者</span>
+            <span class="text-rose-500 font-semibold">升级维护假象失联</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 7 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2024-08)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">快快网络</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">免费诱导充值</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 依靠“免费 10G 流量试用”在各大论坛引流，用户一旦充值 VIP 订阅，节点迅速断连，后台工单无人处理，官方交流群全员禁言。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：免费试用诱导充值者</span>
+            <span class="text-rose-500 font-semibold">充值即断连</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 8 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2024-05)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">神州网络 (Shenzhou)</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">DDOS 攻击删库</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 缺乏前置抗 DDoS 节点与多入口冗余，遭遇同行竞争攻击后入口全瘫。创始人因缺乏运维资金与技术储备，选择直接删库关服。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：中转抗 D 能力差受害者</span>
+            <span class="text-rose-500 font-semibold">被攻击后直接删库</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 9 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2024-02)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">彩虹加速 (Rainbow)</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">山寨仿冒骗局</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 冒用知名大型老牌机场名称建立克隆假网站，使用极为相似的 UI 界面骗取用户信任。在吸收资金不到两周后清空服务器数据库。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：误入克隆假网站用户</span>
+            <span class="text-rose-500 font-semibold">两周迅速套现跑路</span>
+          </div>
+        </div>
+
+        <!-- 跑路机场 10 -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 rounded-2xl p-5 relative overflow-hidden shadow-2xs">
+          <div class="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white font-bold text-[10px] rounded-bl-xl">
+            🛑 确定跑路 (2023-11)
+          </div>
+          <div class="flex items-center gap-2 mb-2">
+            <h3 class="font-bold text-slate-900 dark:text-white text-base">飓风代理 (Hurricane)</h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-rose-600 border border-rose-200 dark:border-rose-800">无资金买中转</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+            <strong>跑路模式：</strong> 早期靠廉价公网直连大带宽起家，后期在算法升级后因无足够资金采购 IPLC 专线中转入口，大面积掉线后创始人弃站跑路。
+          </p>
+          <div class="text-[11px] text-slate-400 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-2">
+            <span>受害类型：低价直连大带宽买家</span>
+            <span class="text-rose-500 font-semibold">无钱买中转放弃维护</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 5 Red Flags Guide (机场跑路前 5 大核心征兆) -->
+    <section class="mb-16 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-2.5 h-6 bg-amber-500 rounded-full"></span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">机场即将跑路前的 5 大核心红牌征兆</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-xs">
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800">
+          <div class="font-bold text-rose-600 dark:text-rose-400 text-sm mb-2">🚩 征兆 1</div>
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1">疯狂推 9.9 元/包年</h3>
+          <p class="text-slate-500 leading-relaxed">突然推出远低于机房带宽成本的“超低价包年/终身买断”套餐，通常是最后资金套现。</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800">
+          <div class="font-bold text-rose-600 dark:text-rose-400 text-sm mb-2">🚩 征兆 2</div>
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1">电报群开启全员禁言</h3>
+          <p class="text-slate-500 leading-relaxed">官方 Telegram 交流群突然开启禁言、频繁删除故障反馈或直接解散管理员账号。</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800">
+          <div class="font-bold text-rose-600 dark:text-rose-400 text-sm mb-2">🚩 征兆 3</div>
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1">节点大面积断连超时</h3>
+          <p class="text-slate-500 leading-relaxed">连续数天 80% 以上节点红连超时，客服工单无人回复或系统自动批量关闭工单。</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800">
+          <div class="font-bold text-rose-600 dark:text-rose-400 text-sm mb-2">🚩 征兆 4</div>
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1">频繁更换无法解析域名</h3>
+          <p class="text-slate-500 leading-relaxed">官网主入口域名被封后不再补充最新的镜像是备用解析，甚至提示“网站域名出售”。</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800">
+          <div class="font-bold text-rose-600 dark:text-rose-400 text-sm mb-2">🚩 征兆 5</div>
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1">节点倍率暗改至 10x</h3>
+          <p class="text-slate-500 leading-relaxed">在用户不知情的情况下将常用节点倍率悄悄改为 5x~10x 扣费，快速洗刷用户已购流量。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Rational Advice CTA -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 text-white text-center shadow-lg">
+      <h3 class="text-2xl font-extrabold mb-3">理性避坑建议：如何挑选不跑路的稳定机场？</h3>
+      <p class="text-sm text-blue-100 max-w-2xl mx-auto mb-6 leading-relaxed">
+        原则一：<strong>严禁购买包年/终身套餐</strong>，坚持“按月/按季付费”；原则二：优先选择拥有独立 BGP 多入口与 IPLC/IEPL 专线备份的大型头部服务商。
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold">
+        <a href="index.html" class="px-6 py-3 rounded-xl bg-white text-blue-600 hover:bg-blue-50 transition shadow-md">
+          查看编辑精选 TOP 15 稳定机场榜单 &rarr;
+        </a>
+        <a href="airport-guide.html" class="px-6 py-3 rounded-xl bg-blue-700/80 hover:bg-blue-800 text-white border border-blue-400/30 transition">
+          阅读《2026机场选购与避坑完整指南》 &rarr;
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+        <div>
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-base mb-2">
+            <img src="favicon.svg" alt="梯子指南针" class="w-6 h-6 rounded-md shadow-xs">
+            <span>梯子指南针</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed mb-3">全平台代理技术评估、极客客户端配置指南与网络安全最佳实践知识库。</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">热门梯子推荐</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" class="hover:text-blue-600">🥇 第一名：环球梯 (优惠码 HQ66)</a></li>
+            <li><a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" class="hover:text-blue-600">🥈 第二名：大佬云 (优惠码 DLY66)</a></li>
+            <li><a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" class="hover:text-blue-600">🥉 第三名：云界线 (优惠码 yjx888)</a></li>
+            <li><a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" class="hover:text-blue-600">⚡ 第四名：闪电鼠 (优惠码 sds88)</a></li>
+            <li><a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" class="hover:text-blue-600">🚀 第五名：神行加速 (优惠码 sx0077)</a></li>
+            <li><a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" class="hover:text-blue-600">🥭 第六名：榴莲云 (优惠码 ll88)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">快捷导航</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600">梯子推荐</a></li>
+            <li><a href="downloads.html" class="hover:text-blue-600">客户端下载</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600">博客</a></li>
+            <li><a href="monitoring.html" class="hover:text-blue-600">避坑与跑路监控</a></li>
+            <li><a href="tutorials.html" class="hover:text-blue-600">新手教程</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">官方联系与反馈</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">Telegram:</span>
+              <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-xs rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✈️ 点击自动跳转联系
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">商务/反馈邮箱:</span>
+              <a href="mailto:huanqiuti1@gmail.com" class="px-2.5 py-1 text-xs rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✉️ 点击自动发送邮件
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 text-xs leading-relaxed mb-8">
+        <strong class="text-slate-700 dark:text-slate-300">免责与合规声明：</strong>
+        本站所有文章、测评工具与技术文档仅供计算机网络学术研究、软件架构交流与合规网络测试用途。请严格遵守相关法律法规。
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs pt-4 border-t border-slate-100 dark:border-slate-800">
+        <p>&copy; 2026 梯子指南针 (tiziznz.com). All rights reserved.</p>
+        <p><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">✈️ 点击跳转 TG 客服</a> | <a href="mailto:huanqiuti1@gmail.com" class="hover:text-blue-600">✉️ 点击联系商务邮箱</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

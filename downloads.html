@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客户端下载中心 | 梯子指南针</title>
+  <meta name="description" content="全平台网络代理客户端下载：包含 Clash Verge Rev, Sing-box, V2rayN, Shadowrocket 的全版本编译包与配置下载。">
+  <link rel="canonical" href="https://tiziznz.com/downloads.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+<!-- 顶部全局导航栏 开始 -->
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- 1. 左侧 Logo 与品牌名 -->
+    <div class="flex items-center space-x-3">
+      <img src="favicon.svg" alt="梯子指南针" class="w-8 h-8 rounded-lg shadow-sm">
+      <a href="index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/20">BLOG</span>
+    </div>
+
+    <!-- 2. 中间 5 个核心菜单项 -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">梯子推荐</a>
+      <a href="downloads.html" class="relative py-5 text-sm font-medium text-blue-600 dark:text-blue-400">
+        客户端下载
+        <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-500"></span>
+      </a>
+      <a href="blog.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">博客</a>
+      <a href="monitoring.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">避坑与跑路监控</a>
+      <a href="tutorials.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">新手教程</a>
+    </nav>
+
+    <!-- 3. 右侧状态指示与 TG 直达 -->
+    <div class="flex items-center space-x-3">
+      <!-- TG 官方直达跳转按钮 -->
+      <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-sky-500 hover:bg-sky-600 text-white transition-all shadow-xs gap-1" title="点击打开 Telegram 客服">
+        <span>✈️ TG 官方客服 (点击跳转)</span>
+      </a>
+
+      <!-- 监控胶囊 -->
+      <a href="monitoring.html" class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50">
+        <span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        15/15 正常
+      </a>
+
+      <!-- 模式切换按钮 -->
+      <button id="theme-toggle-btn" type="button" class="p-2 text-gray-500 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white rounded-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition" title="切换模式">
+        ☀️
+      </button>
+    </div>
+  </div>
+</header>
+<!-- 顶部全局导航栏 结束 -->
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <!-- Header Hero Banner -->
+    <div class="text-center max-w-4xl mx-auto mb-10">
+      <span class="text-xs px-3.5 py-1.5 rounded-full font-bold bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20 inline-flex items-center gap-1.5 mb-4">
+        <span>📦 Official Client Hub v2.0</span>
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+        全平台代理客户端官方下载中心
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+        汇集 Windows、macOS、Android、iOS、HarmonyOS 及 Linux 平台 GitHub 正版 Release 编译镜像与一键安装配置方案。
+      </p>
+
+      <!-- Security Guarantees -->
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs">
+        <span class="px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50 font-medium flex items-center gap-1">
+          ✅ 100% 官方开源源码
+        </span>
+        <span class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800/50 font-medium flex items-center gap-1">
+          🛡️ 杜绝第三方改包投毒
+        </span>
+        <span class="px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/50 font-medium flex items-center gap-1">
+          ⚡ 支持 Hysteria2 & VLESS
+        </span>
+      </div>
+    </div>
+
+    <!-- Platform Selector Filter Bar -->
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 mb-8 shadow-xs">
+      <div class="flex items-center justify-between mb-3 text-xs text-slate-500 font-bold px-1">
+        <span>按操作系统筛选客户端：</span>
+        <span class="text-blue-600 dark:text-blue-400">点击标签切换</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-2" id="filter-group-os">
+        <button data-filter-type="os" data-filter-val="all" class="filter-pill-btn active px-4 py-2 text-xs rounded-xl font-bold transition-all bg-blue-600 text-white shadow-2xs">
+          🌐 全部平台 (10 款)
+        </button>
+        <button data-filter-type="os" data-filter-val="windows" class="filter-pill-btn px-4 py-2 text-xs rounded-xl font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700">
+          🪟 Windows 专区
+        </button>
+        <button data-filter-type="os" data-filter-val="mac" class="filter-pill-btn px-4 py-2 text-xs rounded-xl font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700">
+          🍎 macOS 专区
+        </button>
+        <button data-filter-type="os" data-filter-val="android" class="filter-pill-btn px-4 py-2 text-xs rounded-xl font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700">
+          🤖 Android 安卓
+        </button>
+        <button data-filter-type="os" data-filter-val="ios" class="filter-pill-btn px-4 py-2 text-xs rounded-xl font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700">
+          📱 iOS / iPadOS
+        </button>
+        <button data-filter-type="os" data-filter-val="harmony" class="filter-pill-btn px-4 py-2 text-xs rounded-xl font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700">
+          🇭🇰 鸿蒙 HarmonyOS
+        </button>
+        <button data-filter-type="os" data-filter-val="linux" class="filter-pill-btn px-4 py-2 text-xs rounded-xl font-bold transition-all bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700">
+          🐧 Linux & 软路由
+        </button>
+      </div>
+    </div>
+
+    <!-- Featured Tools Grid (populated by main.js) -->
+    <div id="tools-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"></div>
+
+    <!-- Section 2: Platform Installation Quick Setup Matrix -->
+    <section class="mb-16">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-2.5 h-6 bg-blue-600 rounded-full"></span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">五大操作系统客户端快速配置与安装手册</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Windows Guide Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl font-bold">
+              🪟
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Windows 平台安装指南</h3>
+              <p class="text-xs text-slate-500">推荐客户端：Clash Verge Rev / V2rayN 7.0</p>
+            </div>
+          </div>
+          <ol class="space-y-3 text-xs text-slate-600 dark:text-slate-300 leading-relaxed list-decimal list-inside">
+            <li>在下方列表点击下载 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-blue-600">.exe</code> 或 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-blue-600">.msi</code> 安装包。</li>
+            <li>若触发 Windows SmartScreen 保护，点击“更多信息” &rarr; “仍要运行”。</li>
+            <li>打开客户端，找到“订阅配置”页面，粘贴在 <a href="index.html" class="text-blue-600 font-bold hover:underline">环球梯</a> 或 <a href="index.html" class="text-blue-600 font-bold hover:underline">大佬云</a> 购买获得的订阅链接。</li>
+            <li>点击“一键导入/更新节点”，勾选开启“系统代理 (System Proxy)”或开启“TUN 虚拟网卡模式”。</li>
+          </ol>
+        </div>
+
+        <!-- macOS Guide Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white flex items-center justify-center text-xl font-bold">
+              🍎
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">macOS 平台安装指南</h3>
+              <p class="text-xs text-slate-500">推荐客户端：Clash Verge Rev / Stash / Surge 5</p>
+            </div>
+          </div>
+          <ol class="space-y-3 text-xs text-slate-600 dark:text-slate-300 leading-relaxed list-decimal list-inside">
+            <li>苹果 Apple Silicon (M1/M2/M3/M4) 芯片选择 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-blue-600">aarch64/arm64</code> 安装包，Intel 芯片选择 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-blue-600">x64</code> 包。</li>
+            <li>双击打开 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800">.dmg</code> 映像文件，将软件图标拖入 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Applications</code> 文件夹。</li>
+            <li>首次打开若提示“无法验证开发者”，请进入“系统设置” &rarr; “隐私与安全性”，下滑点击“仍要打开”。</li>
+            <li>导入订阅后，在顶部状态栏开启系统代理即可流畅访问全网。</li>
+          </ol>
+        </div>
+
+        <!-- Android & HarmonyOS Guide Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold">
+              🤖
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Android & 鸿蒙 HarmonyOS</h3>
+              <p class="text-xs text-slate-500">推荐客户端：NekoBox for Android / Sing-box / Flclash</p>
+            </div>
+          </div>
+          <ol class="space-y-3 text-xs text-slate-600 dark:text-slate-300 leading-relaxed list-decimal list-inside">
+            <li>直接下载正版原生 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-blue-600">.apk</code> 安装文件，授权安装未知应用权限。</li>
+            <li>进入 NekoBox 或 Sing-box，点击右下角加号，选择“从剪贴板导入订阅链接”。</li>
+            <li>点击“分组节点测速”，选择延迟最低的香港或日本 IPLC 专线节点。</li>
+            <li>点击启动开关，同意系统提示的“建立 VPN 连接”弹窗，即可后台静默运行。</li>
+          </ol>
+        </div>
+
+        <!-- iOS Guide Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl font-bold">
+              📱
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">iOS / iPadOS 苹果手机指南</h3>
+              <p class="text-xs text-slate-500">推荐客户端：Shadowrocket (小火箭) / Stash / Quantumult X</p>
+            </div>
+          </div>
+          <ol class="space-y-3 text-xs text-slate-600 dark:text-slate-300 leading-relaxed list-decimal list-inside">
+            <li>国区 App Store 暂不支持搜索，需在 App Store 登录非中国大陆地区 (如美区/港区) Apple ID。</li>
+            <li>在 App Store 搜索 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-purple-600">Shadowrocket</code> 或 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-purple-600">Stash</code> 完成安装。</li>
+            <li>使用手机 Safari 打开机场控制台，点击“一键导入小火箭”，或在小火箭内扫描二维码。</li>
+            <li>滑动顶部连接开关，首次使用输入 iPhone 锁屏密码允许添加 VPN 配置。</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Security & Anti-Malware Checklist -->
+    <section class="mb-16 bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-800/40 rounded-3xl p-6 sm:p-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">🛡️</span>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">代理客户端防投毒与安全自查守则</h2>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+        近年来网络上频繁出现带有木马病毒、后门偷取浏览器 Cookie 的伪造代理软件（特别是搜索广告推广的假冒 Clash 官网）。请务必遵循以下防坑自查指南：
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-amber-200/50 dark:border-amber-800/30">
+          <div class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-1.5">
+            <span class="text-rose-500 font-extrabold">❌ 拒绝来源不清文件</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed">切勿下载 Telegram 电报群分享的压缩包、未知论坛第三方修改版以及搜索引擎广告位置推荐的所谓的“破解版”。</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-amber-200/50 dark:border-amber-800/30">
+          <div class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-1.5">
+            <span class="text-emerald-500 font-extrabold">✅ 认准 GitHub Release</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed">本站所有下载按钮均直接定向指向开源社区权威 GitHub Repository 的 Release 版本发布列表，源码透明可查。</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-amber-200/50 dark:border-amber-800/30">
+          <div class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-1.5">
+            <span class="text-blue-500 font-extrabold">🔍 核对 SHA256 校验码</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed">下载安装包后，可使用 PowerShell <code class="px-1 bg-slate-100 dark:bg-slate-800">Get-FileHash</code> 命令与 GitHub 仓库给出的 Hash 值对比，确保无篡改。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Download & Setup FAQs -->
+    <section class="mb-10">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-2.5 h-6 bg-blue-600 rounded-full"></span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">客户端下载与安装常见问题 FAQ</h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+            <span class="text-blue-600 dark:text-blue-400 font-extrabold text-sm">Q1</span>
+            Windows 提示“Windows 已保护你的电脑 / SmartScreen 阻拦”怎么解决？
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            这是由于许多开源工具（如 Clash Verge Rev、Sing-box）没有购买昂贵的微软 EV 代码签名证书导致的正常安全提示。只要是从 GitHub 官方 Release 页面下载的 <code class="px-1 bg-slate-100 dark:bg-slate-800">.exe</code>，点击弹窗中的“更多信息”，再点击右下角的“仍要运行”即可正常安装。
+          </p>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+            <span class="text-blue-600 dark:text-blue-400 font-extrabold text-sm">Q2</span>
+            macOS 提示“无法打开，因为无法验证开发者”或者“应用已损坏”怎么办？
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-2">
+            这是 Mac 系统的 Gatekeeper 安全拦截机制。解决方法：
+          </p>
+          <ol class="list-decimal list-inside text-xs text-slate-600 dark:text-slate-400 space-y-1">
+            <li>方法一：进入“系统设置” &rarr; “隐私与安全性”，找到底部被阻拦的应用，点击“仍要打开”。</li>
+            <li>方法二：打开终端 (Terminal)，输入命令：<code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-blue-600 font-mono">sudo xattr -rd com.apple.quarantine /Applications/Clash\ Verge.app</code> 并输入开机密码回车即可。</li>
+          </ol>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+            <span class="text-blue-600 dark:text-blue-400 font-extrabold text-sm">Q3</span>
+            没有外区 Apple ID，如何在 iPhone / iPad 上下载 Shadowrocket 小火箭？
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            因政策原因，Shadowrocket（小火箭）仅在非中国大陆区 App Store 上架（售价 $2.99）。您可以在苹果官网免费注册一个美区或港区 Apple ID，在 App Store 登录后通过充值卡兑换或绑定国际卡完成购买。切勿在系统设置中登录他人 iCloud 账户。
+          </p>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+            <span class="text-blue-600 dark:text-blue-400 font-extrabold text-sm">Q4</span>
+            华为鸿蒙 HarmonyOS 4.0 及 HarmonyOS NEXT 对科学上网客户端支持如何？
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            HarmonyOS 4.0 及更早版本完全兼容标准 Android APK 文件，可直接安装 <code class="px-1 bg-slate-100 dark:bg-slate-800">NekoBox</code> 或 <code class="px-1 bg-slate-100 dark:bg-slate-800">Sing-box</code>。对于 HarmonyOS NEXT (纯血鸿蒙)，建议配合软路由全局加速，或使用跨平台纯 Web/Core 工具。
+          </p>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:border-slate-300 dark:hover:border-slate-700 transition">
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+            <span class="text-blue-600 dark:text-blue-400 font-extrabold text-sm">Q5</span>
+            开启代理后发现提示“连通率正常但无法打开网页”或“端口被占用 9090”怎么处理？
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            这通常是由于系统代理设置残留或旧客户端未彻底关闭导致端口冲突。可在客户端设置中找到“重启内核”或“修改混合端口 (Mixed Port)”，将端口设为 <code class="px-1 bg-slate-100 dark:bg-slate-800">7897</code> 或开启 TUN 虚拟网卡接管模式。详见 <a href="tutorials.html" class="text-blue-600 font-bold hover:underline">新手配置教程</a>。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+        <div>
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-base mb-2">
+            <img src="favicon.svg" alt="梯子指南针" class="w-6 h-6 rounded-md shadow-xs">
+            <span>梯子指南针</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed mb-3">全平台代理技术评估、极客客户端配置指南与网络安全最佳实践知识库。</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">热门梯子推荐</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" class="hover:text-blue-600">🥇 第一名：环球梯 (优惠码 HQ66)</a></li>
+            <li><a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" class="hover:text-blue-600">🥈 第二名：大佬云 (优惠码 DLY66)</a></li>
+            <li><a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" class="hover:text-blue-600">🥉 第三名：云界线 (优惠码 yjx888)</a></li>
+            <li><a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" class="hover:text-blue-600">⚡ 第四名：闪电鼠 (优惠码 sds88)</a></li>
+            <li><a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" class="hover:text-blue-600">🚀 第五名：神行加速 (优惠码 sx0077)</a></li>
+            <li><a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" class="hover:text-blue-600">🥭 第六名：榴莲云 (优惠码 ll88)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">快捷导航</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600">梯子推荐</a></li>
+            <li><a href="downloads.html" class="hover:text-blue-600">客户端下载</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600">博客</a></li>
+            <li><a href="monitoring.html" class="hover:text-blue-600">避坑与跑路监控</a></li>
+            <li><a href="tutorials.html" class="hover:text-blue-600">新手教程</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">官方联系与反馈</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">Telegram:</span>
+              <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-xs rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✈️ 点击自动跳转联系
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">商务/反馈邮箱:</span>
+              <a href="mailto:huanqiuti1@gmail.com" class="px-2.5 py-1 text-xs rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✉️ 点击自动发送邮件
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 text-xs leading-relaxed mb-8">
+        <strong class="text-slate-700 dark:text-slate-300">免责与合规声明：</strong>
+        本站所有文章、测评工具与技术文档仅供计算机网络学术研究、软件架构交流与合规网络测试用途。请严格遵守相关法律法规。
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs pt-4 border-t border-slate-100 dark:border-slate-800">
+        <p>&copy; 2026 梯子指南针 (tiziznz.com). All rights reserved.</p>
+        <p><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">✈️ 点击跳转 TG 客服</a> | <a href="mailto:huanqiuti1@gmail.com" class="hover:text-blue-600">✉️ 点击联系商务邮箱</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梯子指南针 - 优质机场推荐与代理软件客户端下载 | 2026专业科学上网博客</title>
+  <meta name="description" content="梯子指南针 v2.0：第一名环球梯推荐(优惠码HQ66)、第二名大佬云(优惠码DLY66)、全平台客户端下载（Clash Verge Rev, Sing-box, V2rayN, Shadowrocket）。联系TG官方客服">
+  <meta name="keywords" content="环球梯, 大佬云, 梯子推荐, 优质机场, 客户端下载, 博客, 机场测评, 避坑与跑路监控">
+  <link rel="canonical" href="https://tiziznz.com/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+<!-- 顶部全局导航栏 开始 -->
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- 1. 左侧 Logo 与品牌名 -->
+    <div class="flex items-center space-x-3">
+      <img src="favicon.svg" alt="梯子指南针" class="w-8 h-8 rounded-lg shadow-sm">
+      <a href="index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/20">BLOG</span>
+    </div>
+
+    <!-- 2. 中间 5 个核心菜单项 -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="relative py-5 text-sm font-medium text-blue-600 dark:text-blue-400">
+        梯子推荐
+        <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-500"></span>
+      </a>
+      <a href="downloads.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">客户端下载</a>
+      <a href="blog.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">博客</a>
+      <a href="monitoring.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">避坑与跑路监控</a>
+      <a href="tutorials.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">新手教程</a>
+    </nav>
+
+    <!-- 3. 右侧状态指示与 TG 直达 -->
+    <div class="flex items-center space-x-3">
+      <!-- TG 官方直达跳转按钮 -->
+      <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-sky-500 hover:bg-sky-600 text-white transition-all shadow-xs gap-1" title="点击直接打开 Telegram 跳转">
+        <span>✈️ TG 官方客服 (点击跳转)</span>
+      </a>
+
+      <!-- 监控胶囊 -->
+      <a href="monitoring.html" id="status-pill-container" class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50">
+        <span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        15/15 正常
+      </a>
+
+      <!-- 模式切换按钮 -->
+      <button id="theme-toggle-btn" type="button" class="p-2 text-gray-500 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white rounded-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition" title="切换模式">
+        ☀️
+      </button>
+    </div>
+  </div>
+</header>
+<!-- 顶部全局导航栏 结束 -->
+
+  <!-- Hero Banner -->
+  <section class="py-10 md:py-14 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-4">
+        <span>⚡ 2026精选梯子与优质机场榜单 • 第一名「环球梯」• 第二名「大佬云」</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4 leading-tight">
+        探索高效、稳定与安全的 <br>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600">梯子推荐与全平台代理工具下载</span>
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
+        为技术爱好者与极客打造的全维度测评框架。提供 Clash Verge Rev、Sing-box、V2rayN、Shadowrocket 等主流软件的最佳配置方案。
+      </p>
+      
+      <!-- Platform Quick Access Capsules -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl mx-auto">
+        <button data-quick-filter="windows" class="px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-2xs">
+          <span>Windows</span>
+        </button>
+        <button data-quick-filter="mac" class="px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-2xs">
+          <span>macOS</span>
+        </button>
+        <button data-quick-filter="android" class="px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-2xs">
+          <span>Android</span>
+        </button>
+        <button data-quick-filter="harmony" class="px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-2xs">
+          <span>HarmonyOS</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🥇 TOP 1 ~ TOP 15 梯子/机场推荐 Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full" id="top-featured-container">
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-2">
+      <div>
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 block mb-1">EDITOR'S CHOICE & COMPARISON</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">2026年度精选梯子与机场推荐榜</h2>
+      </div>
+      <span class="text-xs text-slate-500 dark:text-slate-400">实测稳定性、线路类型、资费明细与专属通道</span>
+    </div>
+
+    <!-- 🥇 TOP 1 ~ TOP 3 编辑精选推荐大卡片（现代极简科技风） -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      
+      <!-- TOP 1: 环球梯 -->
+      <div class="rounded-2xl border border-amber-300/80 dark:border-amber-600/40 ring-1 ring-amber-400/20 bg-white dark:bg-slate-900 p-6 shadow-xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between relative group">
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-slate-100 dark:border-slate-800 mb-4">
+            <div class="flex items-center space-x-2">
+              <span class="rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-300/50 px-2.5 py-0.5 text-xs font-bold">
+                TOP 1
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">环球梯</h3>
+            </div>
+            <div class="flex items-center text-sm font-bold text-amber-500">
+              ★ 9.9 <span class="ml-1 text-[11px] text-slate-400 font-normal hidden sm:inline">(极高评价)</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">IEPL全专线</span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">解锁全网AI</span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">多设备在线</span>
+          </div>
+
+          <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
+            全网口碑榜首 · 高速IEPL专线 · 解封ChatGPT/Netflix流媒体 · 多设备并发支持
+          </p>
+
+          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mb-5 py-2 px-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800/80">
+            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span> 延迟 ~23ms</span>
+            <span>•</span>
+            <span>全节点 1倍率</span>
+            <span>•</span>
+            <span>流媒体/AI 解锁</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 mt-auto">
+          <div class="flex items-center justify-between mb-3.5">
+            <div>
+              <span class="text-xs text-slate-400">起步价</span>
+              <span class="text-lg font-bold text-slate-900 dark:text-slate-100 ml-1">¥22.00</span>
+              <span class="text-xs text-slate-400">/月</span>
+            </div>
+            <button onclick="navigator.clipboard.writeText('HQ66'); alert('优惠码 HQ66 已复制！');" class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码">
+              🎁 HQ66
+            </button>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <a href="tutorials.html" class="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-center transition-colors">
+              查看测速
+            </a>
+            <a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-blue-600 hover:bg-blue-700 px-3 py-2 text-xs font-semibold text-white text-center shadow-xs transition-colors flex items-center justify-center gap-1">
+              <span>直达官网</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 2: 大佬云 -->
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between relative group">
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-slate-100 dark:border-slate-800 mb-4">
+            <div class="flex items-center space-x-2">
+              <span class="rounded-md bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 px-2.5 py-0.5 text-xs font-bold">
+                TOP 2
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">大佬云</h3>
+            </div>
+            <div class="flex items-center text-sm font-bold text-amber-500">
+              ★ 9.8 <span class="ml-1 text-[11px] text-slate-400 font-normal hidden sm:inline">(极高评价)</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">IPLC专线 2.5Gbps</span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">不限设备数</span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">全原生IP</span>
+          </div>
+
+          <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
+            顶级老牌大厂 · 全IPLC专线单节点最高2.5Gbps · 不限设备连接数 · 极速晚高峰
+          </p>
+
+          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mb-5 py-2 px-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800/80">
+            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span> 延迟 ~25ms</span>
+            <span>•</span>
+            <span>全节点 1倍率</span>
+            <span>•</span>
+            <span>流媒体/AI 解锁</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 mt-auto">
+          <div class="flex items-center justify-between mb-3.5">
+            <div>
+              <span class="text-xs text-slate-400">起步价</span>
+              <span class="text-lg font-bold text-slate-900 dark:text-slate-100 ml-1">¥23.00</span>
+              <span class="text-xs text-slate-400">/月</span>
+            </div>
+            <button onclick="navigator.clipboard.writeText('DLY66'); alert('优惠码 DLY66 已复制！');" class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码">
+              🎁 DLY66
+            </button>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <a href="tutorials.html" class="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-center transition-colors">
+              查看测速
+            </a>
+            <a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-blue-600 hover:bg-blue-700 px-3 py-2 text-xs font-semibold text-white text-center shadow-xs transition-colors flex items-center justify-center gap-1">
+              <span>直达官网</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 3: 云界线 -->
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between relative group">
+        <div>
+          <div class="flex items-center justify-between pb-3.5 border-b border-slate-100 dark:border-slate-800 mb-4">
+            <div class="flex items-center space-x-2">
+              <span class="rounded-md bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 px-2.5 py-0.5 text-xs font-bold">
+                TOP 3
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">云界线</h3>
+            </div>
+            <div class="flex items-center text-sm font-bold text-amber-500">
+              ★ 9.7 <span class="ml-1 text-[11px] text-slate-400 font-normal hidden sm:inline">(极高评价)</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">BGP/IEPL中转</span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">4K/8K秒开</span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300 font-medium">TikTok/AI解封</span>
+          </div>
+
+          <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
+            极速跨境网络 · 超高性价比专线 · 4K/8K秒开 · 稳定抗封锁
+          </p>
+
+          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mb-5 py-2 px-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800/80">
+            <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span> 延迟 ~26ms</span>
+            <span>•</span>
+            <span>全节点 1倍率</span>
+            <span>•</span>
+            <span>流媒体/AI 解锁</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 mt-auto">
+          <div class="flex items-center justify-between mb-3.5">
+            <div>
+              <span class="text-xs text-slate-400">起步价</span>
+              <span class="text-lg font-bold text-slate-900 dark:text-slate-100 ml-1">¥18.00</span>
+              <span class="text-xs text-slate-400">/月</span>
+            </div>
+            <button onclick="navigator.clipboard.writeText('yjx888'); alert('优惠码 yjx888 已复制！');" class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码">
+              🎁 yjx888
+            </button>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <a href="tutorials.html" class="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-center transition-colors">
+              查看测速
+            </a>
+            <a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-blue-600 hover:bg-blue-700 px-3 py-2 text-xs font-semibold text-white text-center shadow-xs transition-colors flex items-center justify-center gap-1">
+              <span>直达官网</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ⚡ TOP 4 ~ TOP 15 现代数据对比表格 (Comparison Table) -->
+    <div class="mb-4 flex items-center gap-3 pt-2">
+      <h3 class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-200 shrink-0 flex items-center gap-2">
+        <span>⚡ 更多优质梯子与机场评测对比</span>
+        <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">TOP 4 ~ TOP 15</span>
+      </h3>
+      <div class="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+    </div>
+
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 font-semibold">
+              <th class="py-3.5 px-4 w-16">排名</th>
+              <th class="py-3.5 px-4">机场品牌与核心特点</th>
+              <th class="py-3.5 px-4 hidden sm:table-cell">线路类型 / 标签</th>
+              <th class="py-3.5 px-4">起步资费</th>
+              <th class="py-3.5 px-4 hidden md:table-cell">专属优惠码</th>
+              <th class="py-3.5 px-4 text-right">快捷通道</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+            <!-- TOP 4: 闪电鼠 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#4</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">闪电鼠</span><span class="text-amber-500 font-semibold text-xs">★ 9.6</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">极速闪电专线 · 极客高频中转 · 4K/8K影音无损</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">闪电中转 28ms</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">全平台一键导入</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥19.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('sds88'); alert('优惠码 sds88 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 sds88</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 5: 神行加速 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#5</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">神行加速</span><span class="text-amber-500 font-semibold text-xs">★ 9.5</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">神速无界中转 · 全球高速节点 · 8K极致解封</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">神行专线 27ms</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">8K 超清秒开</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥16.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('sx0077'); alert('优惠码 sx0077 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 sx0077</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 6: 榴莲云 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#6</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">榴莲云</span><span class="text-amber-500 font-semibold text-xs">★ 9.4</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">高性价比榴莲专线 · 极速流媒体加速 · 稳定不掉线</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">榴莲IEPL专线 30ms</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">解封 4K / AI</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥15.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('ll88'); alert('优惠码 ll88 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 ll88</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 7: 快狸 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#7</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">快狸</span><span class="text-amber-500 font-semibold text-xs">★ 9.3</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">企业级IEPL专线 · VLESS协议架构 · 解锁ChatGPT/Gemini AI</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">企业级 IEPL 专线</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">VLESS 高速协议</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥15.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('KL88'); alert('优惠码 KL88 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 KL88</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 8: 光年梯 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#8</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">光年梯</span><span class="text-amber-500 font-semibold text-xs">★ 9.3</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">IEPL/Trojan专线 · 新加坡运营团队 · 1倍率无隐形坑</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">IEPL / Trojan 1倍率</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">新加坡专业团队</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥18.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('GNT70'); alert('优惠码 GNT70 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 GNT70</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 9: 边缘节点 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#9</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">边缘节点</span><span class="text-amber-500 font-semibold text-xs">★ 9.2</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">分布式边缘架构 · IPLC全专线 · 原生IP支持</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">Edge 边缘 IPLC</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">三网晚高峰优化</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥15.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('EDGE88'); alert('优惠码 EDGE88 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 EDGE88</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 10: 瞬云 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#10</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">瞬云</span><span class="text-amber-500 font-semibold text-xs">★ 9.2</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">IEPL专线/海外中转 · 8K影音秒开 · 灵活动态资费</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">IEPL 高频中转</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">8K 影音秒开</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥16.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('SY888'); alert('优惠码 SY888 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 SY888</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://ddd.jichang.best/#/register?code=nldUZaYc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 11: 可信云 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#11</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">可信云</span><span class="text-amber-500 font-semibold text-xs">★ 9.1</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">主打高性价比IEPL专线 · 拔线潮稳如磐石 · 不限设备</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">物理 IEPL 专线</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">不限联机数</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥9.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('KX666'); alert('优惠码 KX666 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 KX666</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 12: 云图机场 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#12</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">云图机场</span><span class="text-amber-500 font-semibold text-xs">★ 9.1</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">金融级跨境专线 · 三网入口优化 · 全节点1倍率</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">金融级跨境专线</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">全节点 1倍率</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥25.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('YTU888'); alert('优惠码 YTU888 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 YTU888</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://super.ytjcok.org/#/register?code=poKwFVtv" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 13: 极连云 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#13</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">极连云</span><span class="text-amber-500 font-semibold text-xs">★ 9.0</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">BGP极速专线中转 · 高性价比翻墙选择 · 多设备连接</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">BGP 极速中转</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">特惠年包¥96</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥12.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('JLY88'); alert('优惠码 JLY88 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 JLY88</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://poajufr.jilianat.homes/#/?code=jwCMOvQO" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 14: 速界 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#14</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">速界</span><span class="text-amber-500 font-semibold text-xs">★ 9.0</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">IPLC专线/全中转 · 晚高峰极速无卡顿 · 不限客户端设备</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">IPLC 专线</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">自研客户端</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥15.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('SJ888'); alert('优惠码 SJ888 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 SJ888</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://momlise.szjtfp.xyz/#/?code=kcoensXG" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+            <!-- TOP 15: 鲲鹏加速 -->
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
+              <td class="py-3.5 px-4 font-bold"><span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-bold">#15</span></td>
+              <td class="py-3.5 px-4">
+                <div class="flex items-center gap-2"><span class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">鲲鹏加速</span><span class="text-amber-500 font-semibold text-xs">★ 9.0</span></div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">IEPL/BGP高频中转 · 低延迟部署 · 解锁流媒体与AI</p>
+              </td>
+              <td class="py-3.5 px-4 hidden sm:table-cell"><div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">BGP / IEPL 专线</span><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] font-medium">8K 影音秒开</span></div></td>
+              <td class="py-3.5 px-4"><div class="font-bold text-slate-900 dark:text-slate-100 text-xs">¥16.00 <span class="text-[10px] font-normal text-slate-400">/起</span></div></td>
+              <td class="py-3.5 px-4 hidden md:table-cell"><button onclick="navigator.clipboard.writeText('KP888'); alert('优惠码 KP888 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码"><span>🎁 KP888</span></button></td>
+              <td class="py-3.5 px-4 text-right"><a href="https://kunpengjiasu.com/#/register?code=WPugVZUe" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0"><span>直达官网</span><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Featured Tools Grid -->
+  <section class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 block mb-1">FEATURED TOOLS</span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">核心测评代理客户端</h2>
+      </div>
+    </div>
+
+    <!-- Cards Container -->
+    <div id="tools-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Injected via JavaScript from data.js -->
+    </div>
+  </section>
+
+  <!-- 3. Multi-Taxonomy Filter Group -->
+  <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs flex flex-col gap-4">
+      
+      <!-- OS Filter Row -->
+      <div class="flex items-center gap-3 overflow-x-auto pb-1 no-scrollbar">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-400 w-24 shrink-0">操作系统:</span>
+        <div class="flex items-center gap-2 shrink-0" id="filter-group-os">
+          <button data-filter-type="os" data-filter-val="all" class="filter-pill-btn active px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white transition-all">全部平台</button>
+          <button data-filter-type="os" data-filter-val="windows" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Windows</button>
+          <button data-filter-type="os" data-filter-val="mac" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">macOS</button>
+          <button data-filter-type="os" data-filter-val="android" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Android</button>
+          <button data-filter-type="os" data-filter-val="ios" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">iOS / iPadOS</button>
+          <button data-filter-type="os" data-filter-val="harmony" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">HarmonyOS</button>
+        </div>
+      </div>
+
+      <!-- Protocol Filter Row -->
+      <div class="flex items-center gap-3 overflow-x-auto pb-1 no-scrollbar border-t border-slate-100 dark:border-slate-800 pt-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-400 w-24 shrink-0">核心协议:</span>
+        <div class="flex items-center gap-2 shrink-0" id="filter-group-protocol">
+          <button data-filter-type="protocol" data-filter-val="all" class="filter-pill-btn active px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white transition-all">全部协议</button>
+          <button data-filter-type="protocol" data-filter-val="vless" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">VLESS / Reality</button>
+          <button data-filter-type="protocol" data-filter-val="hysteria2" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Hysteria2</button>
+          <button data-filter-type="protocol" data-filter-val="trojan" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Trojan</button>
+          <button data-filter-type="protocol" data-filter-val="shadowsocks" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Shadowsocks</button>
+          <button data-filter-type="protocol" data-filter-val="tuic" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">TUIC v5</button>
+        </div>
+      </div>
+
+      <!-- Scene Filter Row -->
+      <div class="flex items-center gap-3 overflow-x-auto pb-1 no-scrollbar border-t border-slate-100 dark:border-slate-800 pt-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-400 w-24 shrink-0">应用场景:</span>
+        <div class="flex items-center gap-2 shrink-0" id="filter-group-scene">
+          <button data-filter-type="scene" data-filter-val="all" class="filter-pill-btn active px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-600 text-white transition-all">全部内容</button>
+          <button data-filter-type="scene" data-filter-val="clients" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">全平台客户端</button>
+          <button data-filter-type="scene" data-filter-val="reviews" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">节点与机场评测</button>
+          <button data-filter-type="scene" data-filter-val="rules" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">GeoIP路由规则</button>
+          <button data-filter-type="scene" data-filter-val="guides" class="filter-pill-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">新手基础入门</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Latest Articles Stream -->
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="mb-8">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 block mb-1">LATEST ARTICLES</span>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">最新网络技术与实践教程</h2>
+    </div>
+
+    <!-- 3-Col Articles Grid -->
+    <div id="articles-grid-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Article 1 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col group">
+        <div class="h-44 bg-slate-100 dark:bg-slate-800/80 relative flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
+          <span class="absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-semibold border bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border-indigo-200 dark:border-indigo-800/50">
+            节点与机场评测
+          </span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200 dark:border-slate-700 group-hover:scale-110 transition-transform text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+        </div>
+
+        <div class="p-5 flex flex-col flex-grow">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+            <a href="airport-guide.html">稳定机场推荐与节点选择指南：速度、线路与套餐怎么选</a>
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">
+            2026年最新稳定机场推荐与选购指南。涵盖机场节点速度测试、IPLC/IEPL专线对比、多设备支持机场选择、性价比套餐对比及新手避坑 FAQ。
+          </p>
+
+          <div class="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <span>2026-10-06</span>
+            <span>12 分钟阅读</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col group">
+        <div class="h-44 bg-slate-100 dark:bg-slate-800/80 relative flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
+          <span class="absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-semibold border bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/50">
+            软件工具导航
+          </span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200 dark:border-slate-700 group-hover:scale-110 transition-transform text-emerald-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+        </div>
+
+        <div class="p-5 flex flex-col flex-grow">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+            <a href="downloads.html">2026全平台代理软件下载：Clash Verge, Sing-box, Shadowrocket 正版通道</a>
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">
+            防伪防投毒下载专区！汇集 Windows, macOS, Android, iOS, HarmonyOS 原生客户端正版 GitHub 下载镜像与安装包。
+          </p>
+
+          <div class="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <span>2026-09-05</span>
+            <span>5 分钟阅读</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col group">
+        <div class="h-44 bg-slate-100 dark:bg-slate-800/80 relative flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
+          <span class="absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-semibold border bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-800/50">
+            避坑指南
+          </span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200 dark:border-slate-700 group-hover:scale-110 transition-transform text-rose-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          </div>
+        </div>
+
+        <div class="p-5 flex flex-col flex-grow">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+            <a href="airport-guide.html">机场倍率陷阱拆解：1x 倍率与 5x 扣费的隐形坑</a>
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">
+            流量怎么跑得这么快？警惕不正规机场设置 5x~10x 扣费倍率。教你识别真正 1x 透明扣费机场。
+          </p>
+
+          <div class="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <span>2026-07-25</span>
+            <span>7 分钟阅读</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col group">
+        <div class="h-44 bg-slate-100 dark:bg-slate-800/80 relative flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
+          <span class="absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-semibold border bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-800/50">
+            AI 专线
+          </span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200 dark:border-slate-700 group-hover:scale-110 transition-transform text-purple-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/></svg>
+          </div>
+        </div>
+
+        <div class="p-5 flex flex-col flex-grow">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+            <a href="airport-guide.html">ChatGPT 与 Claude 解锁专线：原生 IP 节点推荐与分流设置</a>
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">
+            解决 AI 工具提示“Access Denied”的终极方案。配置原生 IP 分流规则，稳定使用 ChatGPT / Claude 3.5。
+          </p>
+
+          <div class="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <span>2026-08-22</span>
+            <span>8 分钟阅读</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col group">
+        <div class="h-44 bg-slate-100 dark:bg-slate-800/80 relative flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
+          <span class="absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-semibold border bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border-sky-200 dark:border-sky-800/50">
+            DNS 优化
+          </span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200 dark:border-slate-700 group-hover:scale-110 transition-transform text-sky-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          </div>
+        </div>
+
+        <div class="p-5 flex flex-col flex-grow">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+            <a href="tutorials.html">Fake-IP 与 Redir-Host 模式对比：如何彻底解决 DNS 污染</a>
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">
+            深入分析 Clash 内置 DNS 机制。Fake-IP 为什么响应更快？如何配置 DNS Fallback 策略防泄漏。
+          </p>
+
+          <div class="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <span>2026-08-25</span>
+            <span>9 分钟阅读</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-2xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col group">
+        <div class="h-44 bg-slate-100 dark:bg-slate-800/80 relative flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
+          <span class="absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-semibold border bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-800/50">
+            监控使用
+          </span>
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 shadow-2xs border border-slate-200 dark:border-slate-700 group-hover:scale-110 transition-transform text-amber-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+        </div>
+
+        <div class="p-5 flex flex-col flex-grow">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+            <a href="monitoring.html">避坑与跑路监控看板：10 家已证实跑路机场黑名单解析</a>
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">
+            学会看跑路前 5 大红牌征兆。识别 9.9 元包年套现陷阱，避免购买失联机场。
+          </p>
+
+          <div class="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <span>2026-07-28</span>
+            <span>5 分钟阅读</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. FAQ Accordion Section -->
+  <section class="py-12 max-w-4xl mx-auto px-4 w-full">
+    <div class="text-center mb-8">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 block mb-1">FAQ</span>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">常见配置排查与基础网络问答</h2>
+    </div>
+
+    <div id="faq-accordion-container" class="flex flex-col gap-3">
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors active">
+        <button class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <span>1. 为什么推荐「环球梯」(第一名) 与「大佬云」(第二名)？</span>
+          <svg class="faq-icon w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 transform transition-transform rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-content transition-all duration-200 overflow-hidden text-xs text-slate-600 dark:text-slate-400 leading-relaxed px-5 py-4 border-t border-slate-100 dark:border-slate-800">
+          <p>「环球梯」(优惠码 HQ66) 拥有低至 23ms 的全 IEPL 国际专线；「大佬云」(优惠码 DLY66) 拥有全 IPLC 专线单节点高达 2.5Gbps 峰值速度且不限制联机设备数。两者均原生解封 ChatGPT, Claude, Netflix 4K，性价比与稳定性全网顶尖。</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors">
+        <button class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <span>2. 节点连通性测试通过，但网页提示“无法连接”或 DNS 报错如何解决？</span>
+          <svg class="faq-icon w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-content transition-all duration-200 overflow-hidden text-xs text-slate-600 dark:text-slate-400 leading-relaxed px-5 max-h-0 py-0">
+          <p>这通常是由于系统的 TUN 虚拟网卡模式或系统代理服务未接管成功。排查步骤：1. 检查客户端是否开启管理员权限；2. 检查系统设置代理开关是否打开；3. 在软件设置中将混合端口 (Mixed Port) 修改为 7897，并开启 TUN 网卡模式接管全流量。</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors">
+        <button class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <span>3. IEPL / IPLC 专线与普通 BGP 中转线路有什么区别？</span>
+          <svg class="faq-icon w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-content transition-all duration-200 overflow-hidden text-xs text-slate-600 dark:text-slate-400 leading-relaxed px-5 max-h-0 py-0">
+          <p>IPLC/IEPL 专线走内网点对点跨国专线光缆，完全不经过公网 GF-W 墙，延迟极低且在敏感时期 100% 0 掉线；BGP 中转则走公网中转节点，性价比极高，但可能偶受国际出口波动影响。追求极致稳定建议首选 IPLC/IEPL 专线。</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors">
+        <button class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <span>4. 什么是机场“扣费倍率”？如何识别倍率陷阱？</span>
+          <svg class="faq-icon w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-content transition-all duration-200 overflow-hidden text-xs text-slate-600 dark:text-slate-400 leading-relaxed px-5 max-h-0 py-0">
+          <p>倍率代表使用 1GB 实际流量时系统扣除的订阅额度。1.0x 代表透明扣除 1GB；不正规机场常将节点隐形设为 5x~10x 扣费，导致几 GB 流量数秒扣光。本站推荐榜单前列服务商均为 100% 1.0x 透明扣费。</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors">
+        <button class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <span>5. 没有外区 Apple ID，iPhone / iPad 如何下载 Shadowrocket (小火箭)？</span>
+          <svg class="faq-icon w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-content transition-all duration-200 overflow-hidden text-xs text-slate-600 dark:text-slate-400 leading-relaxed px-5 max-h-0 py-0">
+          <p>因政策原因，Shadowrocket 仅在非中国大陆区 App Store 上架。您可以在苹果官网免费注册一个美区或港区 Apple ID，在 App Store 登录后通过礼品卡兑换或国际卡购买小火箭。详细教程见客户端下载专区。</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors">
+        <button class="faq-trigger w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-semibold text-sm text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          <span>6. 购买机场订阅后，多设备可以同时在线使用吗？</span>
+          <svg class="faq-icon w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-content transition-all duration-200 overflow-hidden text-xs text-slate-600 dark:text-slate-400 leading-relaxed px-5 max-h-0 py-0">
+          <p>榜首「环球梯」支持多设备多 IP 并发；第二名「大佬云」明确承诺“不限在线联机设备数”；且均支持通过 OpenWrt / PassWall 软路由配置全局共享，保障手机、电脑、平板与电视盒子全家同时畅享。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+        <div>
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-base mb-2">
+            <img src="favicon.svg" alt="梯子指南针" class="w-6 h-6 rounded-md shadow-xs">
+            <span>梯子指南针</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed mb-3">全平台代理技术评估、极客客户端配置指南与网络安全最佳实践知识库。</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">热门梯子推荐</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" class="hover:text-blue-600">🥇 第一名：环球梯 (优惠码 HQ66)</a></li>
+            <li><a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" class="hover:text-blue-600">🥈 第二名：大佬云 (优惠码 DLY66)</a></li>
+            <li><a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" class="hover:text-blue-600">🥉 第三名：云界线 (优惠码 yjx888)</a></li>
+            <li><a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" class="hover:text-blue-600">⚡ 第四名：闪电鼠 (优惠码 sds88)</a></li>
+            <li><a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" class="hover:text-blue-600">🚀 第五名：神行加速 (优惠码 sx0077)</a></li>
+            <li><a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" class="hover:text-blue-600">🥭 第六名：榴莲云 (优惠码 ll88)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">快捷导航</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600">梯子推荐</a></li>
+            <li><a href="downloads.html" class="hover:text-blue-600">客户端下载</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600">博客</a></li>
+            <li><a href="monitoring.html" class="hover:text-blue-600">避坑与跑路监控</a></li>
+            <li><a href="tutorials.html" class="hover:text-blue-600">新手教程</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">官方联系与反馈</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">Telegram:</span>
+              <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-xs rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✈️ 点击自动跳转联系
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">商务/反馈邮箱:</span>
+              <a href="mailto:huanqiuti1@gmail.com" class="px-2.5 py-1 text-xs rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✉️ 点击自动发送邮件
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 text-xs leading-relaxed mb-8">
+        <strong class="text-slate-700 dark:text-slate-300">免责与合规声明：</strong>
+        本站所有文章、测评工具与技术文档仅供计算机网络学术研究、软件架构交流与合规网络测试用途。请严格遵守相关法律法规。
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs pt-4 border-t border-slate-100 dark:border-slate-800">
+        <p>&copy; 2026 梯子指南针 (tiziznz.com). All rights reserved.</p>
+        <p><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">✈️ 点击跳转 TG 客服</a> | <a href="mailto:huanqiuti1@gmail.com" class="hover:text-blue-600">✉️ 点击联系商务邮箱</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-start justify-center pt-20 px-4 transition-opacity">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden">
+      <div class="flex items-center px-4 py-3 border-b border-slate-200 dark:border-slate-800 gap-3">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="modal-search-input" class="w-full bg-transparent border-none outline-none text-slate-900 dark:text-white placeholder-slate-400 text-sm" placeholder="输入软件、协议或排查关键词...">
+        <button id="search-close-btn" class="px-2 py-1 text-xs rounded bg-slate-100 dark:bg-slate-800 text-slate-500">Esc</button>
+      </div>
+      <div id="search-results-list" class="max-h-80 overflow-y-auto p-2 text-sm"></div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

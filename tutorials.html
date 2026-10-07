@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新手教程与全平台代理指南 | 梯子指南针</title>
+  <meta name="description" content="零基础入门科学上网教程：包含 Windows / macOS / Android / iOS / HarmonyOS 平台客户端安装、节点订阅导入、DNS 伪装排查与 GeoIP 路由规则配置。">
+  <meta name="keywords" content="新手代理教程, 科学上网指南, 机场节点配置, Clash教程, 小火箭订阅, 路由分流规则">
+  <link rel="canonical" href="https://tiziznz.com/tutorials.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"PingFang SC"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+<!-- 顶部全局导航栏 开始 -->
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- 1. 左侧 Logo 与品牌名 -->
+    <div class="flex items-center space-x-3">
+      <img src="favicon.svg" alt="梯子指南针" class="w-8 h-8 rounded-lg shadow-sm">
+      <a href="index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/20">BLOG</span>
+    </div>
+
+    <!-- 2. 中间 5 个核心菜单项 -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">梯子推荐</a>
+      <a href="downloads.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">客户端下载</a>
+      <a href="blog.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">博客</a>
+      <a href="monitoring.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">避坑与跑路监控</a>
+      <a href="tutorials.html" class="relative py-5 text-sm font-medium text-blue-600 dark:text-blue-400">
+        新手教程
+        <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-500"></span>
+      </a>
+    </nav>
+
+    <!-- 3. 右侧状态指示与 TG 直达 -->
+    <div class="flex items-center space-x-3">
+      <!-- TG 官方直达跳转按钮 -->
+      <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-sky-500 hover:bg-sky-600 text-white transition-all shadow-xs gap-1" title="点击打开 Telegram 客服">
+        <span>✈️ TG 官方客服 (点击跳转)</span>
+      </a>
+
+      <!-- 监控胶囊 -->
+      <a href="monitoring.html" class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50">
+        <span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        15/15 正常
+      </a>
+
+      <!-- 模式切换按钮 -->
+      <button id="theme-toggle-btn" type="button" class="p-2 text-gray-500 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white rounded-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition" title="切换模式">
+        ☀️
+      </button>
+    </div>
+  </div>
+</header>
+<!-- 顶部全局导航栏 结束 -->
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <!-- Header Hero Banner -->
+    <div class="text-center max-w-4xl mx-auto mb-12">
+      <span class="text-xs px-3.5 py-1.5 rounded-full font-bold bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20 inline-flex items-center gap-1.5 mb-4">
+        <span>📖 Beginner Quickstart Masterclass</span>
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+        零基础科学上网新手教程与全平台配置指南
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+        从网络代理基础概念，到 Windows、macOS、Android、iOS、HarmonyOS 及软路由下的客户端导入、TUN 模式开启与故障自排查。
+      </p>
+
+      <!-- Fast Navigation Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-semibold">
+        <a href="#concept" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 transition shadow-2xs">
+          💡 1. 核心概念与订阅基础
+        </a>
+        <a href="#setup-guide" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 transition shadow-2xs">
+          🚀 2. 五大系统客户端配置
+        </a>
+        <a href="#troubleshoot" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 transition shadow-2xs">
+          🛠️ 3. 常见报错自检与排查
+        </a>
+        <a href="#rules-dns" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-500 hover:text-blue-600 transition shadow-2xs">
+          ⚡ 4. 规则分流与 DNS 伪装
+        </a>
+      </div>
+    </div>
+
+    <!-- Chapter 1: 核心概念解析 (代理、订阅与协议) -->
+    <section id="concept" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-2.5 h-6 bg-blue-600 rounded-full"></span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">第一章：网络代理核心概念与名词释义</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Concept 1 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xs">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl font-bold mb-4">
+            🔗
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">什么是“订阅链接 (Subscription URL)”？</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+            订阅链接是机场服务商提供给您的一串包含密钥的专属网址（支持 Clash / Sing-box / Shadowrocket 格式）。
+          </p>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            <strong>核心优势：</strong> 客户端填入链接后，每次点击“更新”，即可自动拉取最新的几十个底层节点。无需手动逐个复制节点配置。
+          </p>
+        </div>
+
+        <!-- Concept 2 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xs">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold mb-4">
+            🛡️
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">主流传输协议解析</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+            节点协议决定了数据的加密与伪装手段：
+          </p>
+          <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside">
+            <li><strong class="text-slate-700 dark:text-slate-300">VLESS / Reality：</strong> 极低延迟伪装 HTTPS 流量，抗封锁强。</li>
+            <li><strong class="text-slate-700 dark:text-slate-300">Hysteria2 (歇斯底里):</strong> 基于 UDP/QUIC 协议，专治劣质宽带与高丢包。</li>
+            <li><strong class="text-slate-700 dark:text-slate-300">Shadowsocks / Trojan：</strong> 经典稳定老牌协议。</li>
+          </ul>
+        </div>
+
+        <!-- Concept 3 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xs">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl font-bold mb-4">
+            ⚡
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">专线 (IPLC/IEPL) vs 公网中转</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+            线路架构直接决定网络连通品质：
+          </p>
+          <ul class="text-xs text-slate-500 space-y-1.5 list-disc list-inside">
+            <li><strong class="text-slate-700 dark:text-slate-300">IPLC/IEPL 内网专线：</strong> 走局域网点对点光缆，不经过公网墙，0 丢包。</li>
+            <li><strong class="text-slate-700 dark:text-slate-300">BGP 入口中转：</strong> 优质公网入口，性价比高。</li>
+            <li><strong class="text-slate-700 dark:text-slate-300">公网直连：</strong> 无入口备份，极易因 IP 封锁失联。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 2: 五大系统零基础客户端配置步骤 -->
+    <section id="setup-guide" class="mb-16 scroll-mt-24">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-emerald-500 rounded-full"></span>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">第二章：五大操作系统零基础客户端配置图解</h2>
+        </div>
+        <a href="downloads.html" class="text-xs font-bold text-blue-600 hover:underline">去客户端下载专区 &rarr;</a>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Windows Setup Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-extrabold flex items-center justify-center text-lg shadow-sm">
+              🪟
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Windows 平台配置教程（推荐 Clash Verge Rev）</h3>
+              <p class="text-xs text-slate-500">适用系统：Windows 10 / Windows 11 (64位)</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-blue-600 block mb-1">STEP 01</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">下载与安装</h4>
+              <p class="text-slate-500 leading-relaxed">在 <a href="downloads.html" class="text-blue-600 hover:underline">下载中心</a> 获取 Clash Verge Rev 最新 <code class="px-1 bg-slate-100 dark:bg-slate-800">.exe</code>，双击运行完成安装。</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-blue-600 block mb-1">STEP 02</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">复制机场订阅</h4>
+              <p class="text-slate-500 leading-relaxed">登录在 <a href="index.html" class="text-blue-600 hover:underline">环球梯</a> 或 <a href="index.html" class="text-blue-600 hover:underline">大佬云</a> 购买的控制台，点击“一键复制 Clash 订阅”。</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-blue-600 block mb-1">STEP 03</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">导入与更新</h4>
+              <p class="text-slate-500 leading-relaxed">打开 Clash Verge 侧边栏“订阅 (Profiles)”，粘贴 URL 并点击“导入”，右键设为当前活动配置。</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-blue-600 block mb-1">STEP 04</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">启动系统代理/TUN</h4>
+              <p class="text-slate-500 leading-relaxed">在主页开启“系统代理 (System Proxy)”开关，或开启“TUN 模式”全流量接管，即可畅游全网。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- macOS Setup Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-extrabold flex items-center justify-center text-lg shadow-sm">
+              🍎
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">macOS 苹果电脑配置教程（推荐 Clash Verge / Stash）</h3>
+              <p class="text-xs text-slate-500">适用系统：macOS Ventura / Sonoma / Sequoia (M系列及Intel芯片)</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-slate-900 dark:text-white block mb-1">STEP 01</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">拖拽安装应用</h4>
+              <p class="text-slate-500 leading-relaxed">下载 `.dmg` 文件，将 Clash Verge 图标拖入 `Applications` 应用目录。</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-slate-900 dark:text-white block mb-1">STEP 02</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">安全权限授权</h4>
+              <p class="text-slate-500 leading-relaxed">若提示“无法验证开发者”，在“系统设置” &rarr; “隐私与安全性”中点击“仍要打开”。</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-slate-900 dark:text-white block mb-1">STEP 03</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">导入机场订阅</h4>
+              <p class="text-slate-500 leading-relaxed">复制机场面板订阅，粘贴导入并在“节点选择 (Proxies)”中选择节点。</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+              <span class="font-extrabold text-slate-900 dark:text-white block mb-1">STEP 04</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-1">开启网卡接管</h4>
+              <p class="text-slate-500 leading-relaxed">点击顶部状态栏猫咪/网卡图标，勾选“设置系统代理”即可。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android & iOS Mobile Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Android Setup Card -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500 text-white font-bold flex items-center justify-center text-base">
+                🤖
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Android & 鸿蒙系统配置</h3>
+            </div>
+            <ol class="space-y-2.5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed list-decimal list-inside">
+              <li>下载 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-emerald-600">NekoBox</code> 或 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-emerald-600">Sing-box</code> 正版 APK 并安装。</li>
+              <li>在手机浏览器登录机场控制台，点击“复制订阅地址”。</li>
+              <li>打开 NekoBox 右上角加号，选择“从剪贴板导入”。</li>
+              <li>点击侧边栏“分组测速”，选择毫秒延迟 lowest 的节点，滑动启动开关并允许系统 VPN 连接。</li>
+            </ol>
+          </div>
+
+          <!-- iOS Setup Card -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-purple-600 text-white font-bold flex items-center justify-center text-base">
+                📱
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">iOS / iPadOS (小火箭) 配置</h3>
+            </div>
+            <ol class="space-y-2.5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed list-decimal list-inside">
+              <li>在 App Store 登录非中国大陆地区 Apple ID，下载 <code class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-purple-600">Shadowrocket</code>。</li>
+              <li>使用手机 Safari 打开机场控制台，点击“一键导入 Shadowrocket”。</li>
+              <li>小火箭自动弹窗解析节点列表，在“全局路由”处选择“配置 (Config)”防国内流量走代理。</li>
+              <li>滑动顶部“未连接”开关，输入 iPhone 锁屏密码允许添加 VPN 配置。</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 3: 常见报错自检与排查流程图 (5 步自排查表) -->
+    <section id="troubleshoot" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-2.5 h-6 bg-amber-500 rounded-full"></span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">第三章：5 步故障快速诊断与排查流程图</h2>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xs">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <span class="font-extrabold text-amber-600 text-xs block mb-1">STEP 1</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-2">排查订阅账户额度</h4>
+              <p class="text-slate-500 leading-relaxed">登录机场控制台，核实账户是否到期、已用流量是否已跑满 100%。</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 text-[11px] text-amber-600 font-semibold">排查率 40%</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <span class="font-extrabold text-amber-600 text-xs block mb-1">STEP 2</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-2">更新订阅与测试连通</h4>
+              <p class="text-slate-500 leading-relaxed">右键点击“一键更新订阅”，剔除已被 GF-W 墙掉的死节点，选择绿色低延迟节点。</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 text-[11px] text-amber-600 font-semibold">排查率 30%</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <span class="font-extrabold text-amber-600 text-xs block mb-1">STEP 3</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-2">开启 TUN 虚拟网卡模式</h4>
+              <p class="text-slate-500 leading-relaxed">解决“延迟正常但打不开网页”或 UWP/命令行走代理失败，强行接管网卡级流量。</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 text-[11px] text-amber-600 font-semibold">排查率 15%</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <span class="font-extrabold text-amber-600 text-xs block mb-1">STEP 4</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-2">排查混合端口冲突</h4>
+              <p class="text-slate-500 leading-relaxed">若提示“Port 7890/9090 occupied”，在系统设置中将 Mixed Port 改为 7897 或 8889。</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 text-[11px] text-amber-600 font-semibold">排查率 10%</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <span class="font-extrabold text-amber-600 text-xs block mb-1">STEP 5</span>
+              <h4 class="font-bold text-slate-900 dark:text-white mb-2">重置系统代理与重启</h4>
+              <p class="text-slate-500 leading-relaxed">关闭并重新开启客户端，或重启浏览器清除 DNS 缓存（chrome://net-internals/#dns）。</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 text-[11px] text-amber-600 font-semibold">排查率 5%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 4: 规则分流与 DNS 优化 -->
+    <section id="rules-dns" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-2.5 h-6 bg-purple-600 rounded-full"></span>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">第四章：规则分流 (Rule Set) 与 DNS 伪装进阶</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-3 flex items-center gap-2">
+            <span class="text-purple-600">🎯</span> 智能分流规则 (GeoIP / Sub-Rule)
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            分流规则可以保障国内网站（如百度、淘宝、微信）直接直连走本地宽带，而国外网站（Google、YouTube、ChatGPT）自动绕过 GF-W 走代理节点。
+          </p>
+          <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl space-y-1 text-slate-500">
+            <p><strong>Rule Direct:</strong> CN 域名 / 224.0.0.0/8 &rarr; 直连 (不消耗代理流量)</p>
+            <p><strong>Rule Proxy:</strong> GFWList / Google / Netflix &rarr; 代理节点 (高速加密)</p>
+            <p><strong>Rule Reject:</strong> 常见广告 / 追踪脚本 &rarr; 拦截拒绝</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <h3 class="font-bold text-slate-900 dark:text-white text-base mb-3 flex items-center gap-2">
+            <span class="text-purple-600">🌐</span> Fake-IP 模式与 DNS 防泄漏
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            传统 DNS 查询会将域名直接暴露给运营商从而遭到劫持污染。开启 Fake-IP 模式后，代理客户端先返回假 IP 给系统，再在远程节点完成真正 DNS 查询。
+          </p>
+          <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl space-y-1 text-slate-500">
+            <p><strong>DoH (DNS over HTTPS):</strong> 加密 DNS 请求，防止 ISP 监控</p>
+            <p><strong>Fake-IP 响应速度:</strong> 秒级建连，减少 200ms+ DNS 握手等待</p>
+            <p><strong>DNS Leak Test:</strong> 可通过 dnsleaktest.com 验证隐私安全</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rational CTA Banner -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 text-white text-center shadow-lg">
+      <h3 class="text-2xl font-extrabold mb-3">准备好开启高速稳定体验了吗？</h3>
+      <p class="text-sm text-blue-100 max-w-2xl mx-auto mb-6 leading-relaxed">
+        推荐挑选支持 IPLC/IEPL 国际专线、1.0x 透明扣费的头部稳定机场，配合本教程完成全平台轻松配置。
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold">
+        <a href="index.html" class="px-6 py-3 rounded-xl bg-white text-blue-600 hover:bg-blue-50 transition shadow-md">
+          查看 2026 优质梯子推荐榜单 &rarr;
+        </a>
+        <a href="downloads.html" class="px-6 py-3 rounded-xl bg-blue-700/80 hover:bg-blue-800 text-white border border-blue-400/30 transition">
+          获取全平台正版客户端下载 &rarr;
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+        <div>
+          <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-base mb-2">
+            <img src="favicon.svg" alt="梯子指南针" class="w-6 h-6 rounded-md shadow-xs">
+            <span>梯子指南针</span>
+          </div>
+          <p class="text-slate-500 leading-relaxed mb-3">全平台代理技术评估、极客客户端配置指南与网络安全最佳实践知识库。</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">热门梯子推荐</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" class="hover:text-blue-600">🥇 第一名：环球梯 (优惠码 HQ66)</a></li>
+            <li><a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" class="hover:text-blue-600">🥈 第二名：大佬云 (优惠码 DLY66)</a></li>
+            <li><a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" class="hover:text-blue-600">🥉 第三名：云界线 (优惠码 yjx888)</a></li>
+            <li><a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" class="hover:text-blue-600">⚡ 第四名：闪电鼠 (优惠码 sds88)</a></li>
+            <li><a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" class="hover:text-blue-600">🚀 第五名：神行加速 (优惠码 sx0077)</a></li>
+            <li><a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" class="hover:text-blue-600">🥭 第六名：榴莲云 (优惠码 ll88)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">快捷导航</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600">梯子推荐</a></li>
+            <li><a href="downloads.html" class="hover:text-blue-600">客户端下载</a></li>
+            <li><a href="blog.html" class="hover:text-blue-600">博客</a></li>
+            <li><a href="monitoring.html" class="hover:text-blue-600">避坑与跑路监控</a></li>
+            <li><a href="tutorials.html" class="hover:text-blue-600">新手教程</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">官方联系与反馈</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">Telegram:</span>
+              <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 text-xs rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✈️ 点击自动跳转联系
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-slate-600 dark:text-slate-400">商务/反馈邮箱:</span>
+              <a href="mailto:huanqiuti1@gmail.com" class="px-2.5 py-1 text-xs rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-xs inline-flex items-center gap-1">
+                ✉️ 点击自动发送邮件
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 text-xs leading-relaxed mb-8">
+        <strong class="text-slate-700 dark:text-slate-300">免责与合规声明：</strong>
+        本站所有文章、测评工具与技术文档仅供计算机网络学术研究、软件架构交流与合规网络测试用途。请严格遵守相关法律法规。
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs pt-4 border-t border-slate-100 dark:border-slate-800">
+        <p>&copy; 2026 梯子指南针 (tiziznz.com). All rights reserved.</p>
+        <p><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">✈️ 点击跳转 TG 客服</a> | <a href="mailto:huanqiuti1@gmail.com" class="hover:text-blue-600">✉️ 点击联系商务邮箱</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
