@@ -604,6 +604,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "novice-subscription-guide-2026",
+    title: "新手订阅服务使用指南：从购买前检查到日常维护的完整流程",
+    excerpt: "首次使用网络订阅服务必备教程！涵盖购买前规则与流量核对、订单凭证保管、服务日常维护、连接故障四步自助排查、客服高效沟通及账户隐私安全合规建议。",
+    category: "订阅维护与科普",
+    categoryKey: "tutorials",
+    badgeType: "indigo",
+    platformKeys: ["windows", "mac", "android", "ios"],
+    protocolKeys: ["vless", "hysteria2"],
+    date: "2026-10-10",
+    readTime: "15 分钟阅读",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-indigo-600"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    url: "subscription-guide.html"
+  },
+  {
     id: "airport-guide-master",
     title: "稳定机场推荐与节点选择指南：速度、线路与套餐怎么选",
     excerpt: "2026年最新稳定机场推荐与选购指南。涵盖机场节点速度测试、IPLC/IEPL专线对比、多设备支持机场选择、性价比套餐对比及新手避坑 FAQ。",
