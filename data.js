@@ -22,9 +22,11 @@ export const topFeaturedServices = [
     ],
     plans: [
       { name: "环球学生套餐", price: "¥96.00 / 年", traffic: "60GB/月", devices: "3台设备" },
-      { name: "环球轻享", price: "¥22.00 / 月", traffic: "120GB/月", devices: "3台设备" },
-      { name: "环球畅游", price: "¥39.00 / 月", traffic: "240GB/月", devices: "5台设备" },
-      { name: "环球尊享", price: "¥69.00 / 月", traffic: "600GB/月", devices: "10台设备" }
+      { name: "环球轻享", price: "¥21.00 / 月", traffic: "140GB/月", devices: "3台设备" },
+      { name: "环球畅游", price: "¥39.00 / 月", traffic: "280GB/月", devices: "5台设备" },
+      { name: "环球尊享", price: "¥69.00 / 月", traffic: "600GB/月", devices: "10台设备" },
+      { name: "环球随行包", price: "¥99.00 / 一次性", traffic: "80GB不限时", devices: "5台设备" },
+      { name: "环球灵活包", price: "¥299.00 / 一次性", traffic: "400GB不限时", devices: "8台设备" }
     ]
   },
   {
