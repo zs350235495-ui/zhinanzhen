@@ -46,7 +46,9 @@ function renderTopFeaturedCard() {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       ${top3.map((service, index) => {
         const isTop1 = index === 0;
-        const startPrice = service.plans && service.plans[1] ? service.plans[1].price.split(' ')[0] : (service.plans && service.plans[0] ? service.plans[0].price.split(' ')[0] : '¥18.00');
+        const chosenPlan = service.plans && service.plans[1] ? service.plans[1] : (service.plans && service.plans[0] ? service.plans[0] : null);
+        const startPrice = chosenPlan ? chosenPlan.price.split(' ')[0] : '¥14.70';
+        const originalStartPrice = chosenPlan && chosenPlan.originalPrice ? chosenPlan.originalPrice.split(' ')[0] : '';
         return `
           <div class="rounded-2xl border ${isTop1 ? 'border-amber-300/80 dark:border-amber-600/40 ring-1 ring-amber-400/20' : 'border-slate-200 dark:border-slate-800'} bg-white dark:bg-slate-900 p-6 shadow-xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between relative group">
             
@@ -92,12 +94,17 @@ function renderTopFeaturedCard() {
             <div class="pt-3 border-t border-slate-100 dark:border-slate-800 mt-auto">
               <div class="flex items-center justify-between mb-3.5">
                 <div>
-                  <span class="text-xs text-slate-400">起步价</span>
-                  <span class="text-lg font-bold text-slate-900 dark:text-slate-100 ml-1">${startPrice}</span>
-                  <span class="text-xs text-slate-400">/月</span>
+                  <div class="text-[11px] text-slate-400 flex items-center gap-1.5">
+                    <span>折后起</span>
+                    ${originalStartPrice ? `<span class="line-through font-mono">${originalStartPrice}</span>` : ''}
+                  </div>
+                  <div class="flex items-baseline">
+                    <span class="text-xl font-extrabold text-rose-600 dark:text-rose-400 font-mono">${startPrice}</span>
+                    <span class="text-xs text-slate-400 ml-1">/月</span>
+                  </div>
                 </div>
                 <button onclick="navigator.clipboard.writeText('${service.couponCode}'); alert('优惠码 ${service.couponCode} 已复制！');" class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码">
-                  🎁 ${service.couponCode}
+                  🎁 ${service.couponCode} ${service.discountRate ? `(${service.discountRate})` : ''}
                 </button>
               </div>
 
@@ -134,14 +141,16 @@ function renderTopFeaturedCard() {
               <th class="py-3.5 px-4 w-16">排名</th>
               <th class="py-3.5 px-4">机场品牌与核心特点</th>
               <th class="py-3.5 px-4 hidden sm:table-cell">线路类型 / 标签</th>
-              <th class="py-3.5 px-4">起步资费</th>
+              <th class="py-3.5 px-4">起步资费 (折后)</th>
               <th class="py-3.5 px-4 hidden md:table-cell">专属优惠码</th>
               <th class="py-3.5 px-4 text-right">快捷通道</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
             ${rest.map((service, idx) => {
-              const startP = service.plans && service.plans[0] ? service.plans[0].price.split(' ')[0] : '¥15.00';
+              const chosenPlan = service.plans && service.plans[0] ? service.plans[0] : null;
+              const startP = chosenPlan ? chosenPlan.price.split(' ')[0] : '¥10.50';
+              const originalStartP = chosenPlan && chosenPlan.originalPrice ? chosenPlan.originalPrice.split(' ')[0] : '';
               return `
                 <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group">
                   <td class="py-3.5 px-4 font-bold">
@@ -164,14 +173,15 @@ function renderTopFeaturedCard() {
                     </div>
                   </td>
                   <td class="py-3.5 px-4">
-                    <div class="font-bold text-slate-900 dark:text-slate-100 text-xs">
-                      ${startP}
+                    <div class="font-bold text-xs">
+                      ${originalStartP ? `<span class="text-[10px] text-slate-400 line-through font-normal block font-mono">${originalStartP}</span>` : ''}
+                      <span class="text-rose-600 dark:text-rose-400 font-bold font-mono text-sm">${startP}</span>
                       <span class="text-[10px] font-normal text-slate-400">/起</span>
                     </div>
                   </td>
                   <td class="py-3.5 px-4 hidden md:table-cell">
                     <button onclick="navigator.clipboard.writeText('${service.couponCode}'); alert('优惠码 ${service.couponCode} 已复制！');" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 hover:bg-amber-100 transition-colors" title="点击复制优惠码">
-                      <span>🎁 ${service.couponCode}</span>
+                      <span>🎁 ${service.couponCode} ${service.discountRate ? `(${service.discountRate})` : ''}</span>
                     </button>
                   </td>
                   <td class="py-3.5 px-4 text-right">

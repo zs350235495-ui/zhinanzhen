@@ -11,6 +11,7 @@ export const topFeaturedServices = [
     url: "https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0",
     couponCode: "HQ66",
     couponDesc: "7折专属优惠码",
+    discountRate: "7折",
     rating: 9.9,
     badge: "🥇 年度榜首首选",
     gradientClass: "from-blue-600 via-indigo-600 to-blue-800",
@@ -18,15 +19,15 @@ export const topFeaturedServices = [
       "IEPL全国际专线，超低23ms延迟",
       "解锁全网AI (ChatGPT / Claude) 与 4K 影音",
       "支持 3~10 台设备同时在线使用",
-      "提供学生包 (¥96/年) 与高性价比月付"
+      "提供学生包 (¥67.2/年) 与高性价比月付"
     ],
     plans: [
-      { name: "环球学生套餐", price: "¥96.00 / 年", traffic: "60GB/月", devices: "3台设备" },
-      { name: "环球轻享", price: "¥21.00 / 月", traffic: "140GB/月", devices: "3台设备" },
-      { name: "环球畅游", price: "¥39.00 / 月", traffic: "280GB/月", devices: "5台设备" },
-      { name: "环球尊享", price: "¥69.00 / 月", traffic: "600GB/月", devices: "10台设备" },
-      { name: "环球随行包", price: "¥99.00 / 一次性", traffic: "80GB不限时", devices: "5台设备" },
-      { name: "环球灵活包", price: "¥299.00 / 一次性", traffic: "400GB不限时", devices: "8台设备" }
+      { name: "环球学生套餐", price: "¥67.20 / 年", originalPrice: "¥96.00 / 年", traffic: "60GB/月", devices: "3台设备" },
+      { name: "环球轻享", price: "¥14.70 / 月", originalPrice: "¥21.00 / 月", traffic: "140GB/月", devices: "3台设备" },
+      { name: "环球畅游", price: "¥27.30 / 月", originalPrice: "¥39.00 / 月", traffic: "280GB/月", devices: "5台设备" },
+      { name: "环球尊享", price: "¥48.30 / 月", originalPrice: "¥69.00 / 月", traffic: "600GB/月", devices: "10台设备" },
+      { name: "环球随行包", price: "¥69.30 / 一次性", originalPrice: "¥99.00 / 一次性", traffic: "80GB不限时", devices: "5台设备" },
+      { name: "环球灵活包", price: "¥209.30 / 一次性", originalPrice: "¥299.00 / 一次性", traffic: "400GB不限时", devices: "8台设备" }
     ]
   },
   {
@@ -36,6 +37,7 @@ export const topFeaturedServices = [
     url: "https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa",
     couponCode: "DLY66",
     couponDesc: "7折专属优惠码",
+    discountRate: "7折",
     rating: 9.8,
     badge: "🥈 尊享老牌推荐",
     gradientClass: "from-amber-600 via-yellow-700 to-amber-900",
@@ -46,10 +48,10 @@ export const topFeaturedServices = [
       "覆盖香港x20、台湾x10、日本x10、新加坡x10、美国x10"
     ],
     plans: [
-      { name: "年付活动包", price: "¥96.00 / 年", traffic: "60GB/月", devices: "不限设备" },
-      { name: "初云·入门版", price: "¥23.00 / 月", traffic: "130GB/月", devices: "不限设备" },
-      { name: "凌云·基础版", price: "¥43.00 / 月", traffic: "300GB/月", devices: "不限设备" },
-      { name: "御云·高级版", price: "¥73.00 / 月", traffic: "600GB/月", devices: "不限设备" }
+      { name: "年付活动包", price: "¥67.20 / 年", originalPrice: "¥96.00 / 年", traffic: "60GB/月", devices: "不限设备" },
+      { name: "初云·入门版", price: "¥16.10 / 月", originalPrice: "¥23.00 / 月", traffic: "130GB/月", devices: "不限设备" },
+      { name: "凌云·基础版", price: "¥30.10 / 月", originalPrice: "¥43.00 / 月", traffic: "300GB/月", devices: "不限设备" },
+      { name: "御云·高级版", price: "¥51.10 / 月", originalPrice: "¥73.00 / 月", traffic: "600GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -59,6 +61,7 @@ export const topFeaturedServices = [
     url: "https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV",
     couponCode: "yjx888",
     couponDesc: "7折专属优惠码",
+    discountRate: "7折",
     rating: 9.7,
     badge: "🥉 精选新星推荐",
     gradientClass: "from-emerald-600 via-teal-700 to-emerald-900",
@@ -69,10 +72,10 @@ export const topFeaturedServices = [
       "专属7折优惠码 yjx888"
     ],
     plans: [
-      { name: "云界线·体验包", price: "¥18.00 / 月", traffic: "100GB/月", devices: "不限设备" },
-      { name: "云界线·标准版", price: "¥32.00 / 月", traffic: "260GB/月", devices: "不限设备" },
-      { name: "云界线·旗舰版", price: "¥58.00 / 月", traffic: "500GB/月", devices: "不限设备" },
-      { name: "云界线·年付省心包", price: "¥88.00 / 年", traffic: "80GB/月", devices: "不限设备" }
+      { name: "云界线·体验包", price: "¥12.60 / 月", originalPrice: "¥18.00 / 月", traffic: "100GB/月", devices: "不限设备" },
+      { name: "云界线·标准版", price: "¥22.40 / 月", originalPrice: "¥32.00 / 月", traffic: "260GB/月", devices: "不限设备" },
+      { name: "云界线·旗舰版", price: "¥40.60 / 月", originalPrice: "¥58.00 / 月", traffic: "500GB/月", devices: "不限设备" },
+      { name: "云界线·年付省心包", price: "¥61.60 / 年", originalPrice: "¥88.00 / 年", traffic: "80GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -82,6 +85,7 @@ export const topFeaturedServices = [
     url: "https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB",
     couponCode: "sds88",
     couponDesc: "7折专属优惠码",
+    discountRate: "7折",
     rating: 9.6,
     badge: "⚡ 闪电极速推荐",
     gradientClass: "from-purple-600 via-violet-700 to-purple-900",
@@ -92,10 +96,10 @@ export const topFeaturedServices = [
       "专属 7 折优惠码 sds88"
     ],
     plans: [
-      { name: "闪电鼠·入门包", price: "¥19.00 / 月", traffic: "120GB/月", devices: "不限设备" },
-      { name: "闪电鼠·进阶包", price: "¥35.00 / 月", traffic: "280GB/月", devices: "不限设备" },
-      { name: "闪电鼠·尊享包", price: "¥59.00 / 月", traffic: "600GB/月", devices: "不限设备" },
-      { name: "闪电鼠·特惠年包", price: "¥89.00 / 年", traffic: "90GB/月", devices: "不限设备" }
+      { name: "闪电鼠·入门包", price: "¥13.30 / 月", originalPrice: "¥19.00 / 月", traffic: "120GB/月", devices: "不限设备" },
+      { name: "闪电鼠·进阶包", price: "¥24.50 / 月", originalPrice: "¥35.00 / 月", traffic: "280GB/月", devices: "不限设备" },
+      { name: "闪电鼠·尊享包", price: "¥41.30 / 月", originalPrice: "¥59.00 / 月", traffic: "600GB/月", devices: "不限设备" },
+      { name: "闪电鼠·特惠年包", price: "¥62.30 / 年", originalPrice: "¥89.00 / 年", traffic: "90GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -105,6 +109,7 @@ export const topFeaturedServices = [
     url: "https://pps123.shenxingaff.com/#/?code=6tQ7zHUc",
     couponCode: "sx0077",
     couponDesc: "7折专属优惠码",
+    discountRate: "7折",
     rating: 9.5,
     badge: "🚀 神速无界推荐",
     gradientClass: "from-rose-600 via-pink-700 to-rose-900",
@@ -115,10 +120,10 @@ export const topFeaturedServices = [
       "专属 7 折优惠码 sx0077"
     ],
     plans: [
-      { name: "神行·体验包", price: "¥16.00 / 月", traffic: "100GB/月", devices: "不限设备" },
-      { name: "神行·标准包", price: "¥29.00 / 月", traffic: "240GB/月", devices: "不限设备" },
-      { name: "神行·旗舰包", price: "¥49.00 / 月", traffic: "500GB/月", devices: "不限设备" },
-      { name: "神行·省心年包", price: "¥79.00 / 年", traffic: "80GB/月", devices: "不限设备" }
+      { name: "神行·体验包", price: "¥11.20 / 月", originalPrice: "¥16.00 / 月", traffic: "100GB/月", devices: "不限设备" },
+      { name: "神行·标准包", price: "¥20.30 / 月", originalPrice: "¥29.00 / 月", traffic: "240GB/月", devices: "不限设备" },
+      { name: "神行·旗舰包", price: "¥34.30 / 月", originalPrice: "¥49.00 / 月", traffic: "500GB/月", devices: "不限设备" },
+      { name: "神行·省心年包", price: "¥55.30 / 年", originalPrice: "¥79.00 / 年", traffic: "80GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -128,6 +133,7 @@ export const topFeaturedServices = [
     url: "https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G",
     couponCode: "ll88",
     couponDesc: "7折专属优惠码",
+    discountRate: "7折",
     rating: 9.4,
     badge: "🥭 甜品高性价比",
     gradientClass: "from-yellow-500 via-amber-600 to-yellow-800",
@@ -138,10 +144,10 @@ export const topFeaturedServices = [
       "专属 7 折优惠码 ll88"
     ],
     plans: [
-      { name: "榴莲·体验套餐", price: "¥15.00 / 月", traffic: "100GB/月", devices: "不限设备" },
-      { name: "榴莲·畅享套餐", price: "¥28.00 / 月", traffic: "250GB/月", devices: "不限设备" },
-      { name: "榴莲·尊享套餐", price: "¥48.00 / 月", traffic: "550GB/月", devices: "不限设备" },
-      { name: "榴莲·年付优惠包", price: "¥78.00 / 年", traffic: "80GB/月", devices: "不限设备" }
+      { name: "榴莲·体验套餐", price: "¥10.50 / 月", originalPrice: "¥15.00 / 月", traffic: "100GB/月", devices: "不限设备" },
+      { name: "榴莲·畅享套餐", price: "¥19.60 / 月", originalPrice: "¥28.00 / 月", traffic: "250GB/月", devices: "不限设备" },
+      { name: "榴莲·尊享套餐", price: "¥33.60 / 月", originalPrice: "¥48.00 / 月", traffic: "550GB/月", devices: "不限设备" },
+      { name: "榴莲·年付优惠包", price: "¥54.60 / 年", originalPrice: "¥78.00 / 年", traffic: "80GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -150,7 +156,8 @@ export const topFeaturedServices = [
     tagline: "企业级IEPL专线 · VLESS协议架构 · 解锁ChatGPT/Gemini AI · 全平台客户端",
     url: "https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F",
     couponCode: "KL88",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.3,
     badge: "🦊 极速专线推荐",
     gradientClass: "from-cyan-600 via-teal-700 to-cyan-900",
@@ -158,13 +165,13 @@ export const topFeaturedServices = [
       "企业级 IEPL 专线，VLESS 高速协议",
       "全平台客户端无缝接入，解锁 4K 影音",
       "完美解封 ChatGPT / Claude / Gemini AI",
-      "提供月付 (¥15/月) 与高性价比年付包"
+      "提供月付 (¥13.2/月) 与高性价比年付包"
     ],
     plans: [
-      { name: "月狸小包", price: "¥15.00 / 月", traffic: "50GB/月", devices: "不限设备" },
-      { name: "小狸基础版", price: "¥22.00 / 月", traffic: "100GB/月", devices: "不限设备" },
-      { name: "灵狸标准版", price: "¥35.00 / 月", traffic: "250GB/月", devices: "不限设备" },
-      { name: "森狸年付包", price: "¥120.00 / 年", traffic: "30GB/月", devices: "不限设备" }
+      { name: "月狸小包", price: "¥13.20 / 月", originalPrice: "¥15.00 / 月", traffic: "50GB/月", devices: "不限设备" },
+      { name: "小狸基础版", price: "¥19.36 / 月", originalPrice: "¥22.00 / 月", traffic: "100GB/月", devices: "不限设备" },
+      { name: "灵狸标准版", price: "¥30.80 / 月", originalPrice: "¥35.00 / 月", traffic: "250GB/月", devices: "不限设备" },
+      { name: "森狸年付包", price: "¥105.60 / 年", originalPrice: "¥120.00 / 年", traffic: "30GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -174,6 +181,7 @@ export const topFeaturedServices = [
     url: "https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO",
     couponCode: "GNT70",
     couponDesc: "7折专属优惠码",
+    discountRate: "7折",
     rating: 9.3,
     badge: "✨ 光速专线推荐",
     gradientClass: "from-sky-600 via-blue-700 to-sky-900",
@@ -181,13 +189,13 @@ export const topFeaturedServices = [
       "IEPL / Trojan 双专线，全节点 1 倍率",
       "新加坡专业团队运维，晚高峰稳定无损",
       "支持 4K/8K 流媒体与 AI 全平台解封",
-      "提供体验包 (¥18/月) 与破风者高级套餐"
+      "提供体验包 (¥12.6/月) 与破风者高级套餐"
     ],
     plans: [
-      { name: "尝鲜体验版", price: "¥18.00 / 月", traffic: "110GB/月", devices: "不限设备" },
-      { name: "破风进阶版", price: "¥34.00 / 月", traffic: "220GB/月", devices: "不限设备" },
-      { name: "流媒体专业版", price: "¥68.00 / 月", traffic: "450GB/月", devices: "不限设备" },
-      { name: "至尊享大容量", price: "¥130.00 / 月", traffic: "900GB/月", devices: "不限设备" }
+      { name: "尝鲜体验版", price: "¥12.60 / 月", originalPrice: "¥18.00 / 月", traffic: "110GB/月", devices: "不限设备" },
+      { name: "破风进阶版", price: "¥23.80 / 月", originalPrice: "¥34.00 / 月", traffic: "220GB/月", devices: "不限设备" },
+      { name: "流媒体专业版", price: "¥47.60 / 月", originalPrice: "¥68.00 / 月", traffic: "450GB/月", devices: "不限设备" },
+      { name: "至尊享大容量", price: "¥91.00 / 月", originalPrice: "¥130.00 / 月", traffic: "900GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -196,7 +204,8 @@ export const topFeaturedServices = [
     tagline: "分布式边缘架构 · IPLC全专线 · 原生IP支持 · 三网优化不限制设备",
     url: "https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F",
     couponCode: "EDGE88",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.2,
     badge: "🌐 边缘架构推荐",
     gradientClass: "from-violet-600 via-purple-700 to-violet-900",
@@ -204,13 +213,13 @@ export const topFeaturedServices = [
       "分布式 Edge 边缘接入，全 IPLC 专线",
       "三网优化，移动/联通晚高峰超低延迟",
       "全原生 IP 覆盖，解锁 Netflix/TikTok",
-      "限时特惠年包 (¥108/年) 极高性价比"
+      "限时特惠年包 (¥95/年) 极高性价比"
     ],
     plans: [
-      { name: "限时体验包", price: "¥15.00 / 月", traffic: "50GB/月", devices: "不限设备" },
-      { name: "标准进阶包", price: "¥25.00 / 月", traffic: "120GB/月", devices: "不限设备" },
-      { name: "尊享大流量", price: "¥50.00 / 月", traffic: "250GB/月", devices: "不限设备" },
-      { name: "限时特惠年包", price: "¥108.00 / 年", traffic: "45GB/月", devices: "不限设备" }
+      { name: "限时体验包", price: "¥13.20 / 月", originalPrice: "¥15.00 / 月", traffic: "50GB/月", devices: "不限设备" },
+      { name: "标准进阶包", price: "¥22.00 / 月", originalPrice: "¥25.00 / 月", traffic: "120GB/月", devices: "不限设备" },
+      { name: "尊享大流量", price: "¥44.00 / 月", originalPrice: "¥50.00 / 月", traffic: "250GB/月", devices: "不限设备" },
+      { name: "限时特惠年包", price: "¥95.04 / 年", originalPrice: "¥108.00 / 年", traffic: "45GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -219,7 +228,8 @@ export const topFeaturedServices = [
     tagline: "IEPL专线/海外中转 · 8K影音秒开 · 高并发稳定抗封 · 灵活动态资费",
     url: "https://ddd.jichang.best/#/register?code=nldUZaYc",
     couponCode: "SY888",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.2,
     badge: "⚡ 瞬发极速推荐",
     gradientClass: "from-amber-500 via-orange-600 to-amber-800",
@@ -227,13 +237,13 @@ export const topFeaturedServices = [
       "IEPL 专线/海外高频中转，8K 影音秒开",
       "支持全平台客户端一键一键导入",
       "原生解封 YouTube / Netflix / ChatGPT",
-      "提供行者套餐 (¥16/月) 与限量年付包"
+      "提供行者套餐 (¥14/月) 与限量年付包"
     ],
     plans: [
-      { name: "行者体验包", price: "¥16.00 / 月", traffic: "100GB/月", devices: "不限设备" },
-      { name: "尊享标准包", price: "¥32.00 / 月", traffic: "260GB/月", devices: "不限设备" },
-      { name: "旗舰大容量", price: "¥58.00 / 月", traffic: "500GB/月", devices: "不限设备" },
-      { name: "限量省心年包", price: "¥99.00 / 年", traffic: "80GB/月", devices: "不限设备" }
+      { name: "行者体验包", price: "¥14.08 / 月", originalPrice: "¥16.00 / 月", traffic: "100GB/月", devices: "不限设备" },
+      { name: "尊享标准包", price: "¥28.16 / 月", originalPrice: "¥32.00 / 月", traffic: "260GB/月", devices: "不限设备" },
+      { name: "旗舰大容量", price: "¥51.04 / 月", originalPrice: "¥58.00 / 月", traffic: "500GB/月", devices: "不限设备" },
+      { name: "限量省心年包", price: "¥87.12 / 年", originalPrice: "¥99.00 / 年", traffic: "80GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -242,7 +252,8 @@ export const topFeaturedServices = [
     tagline: "主打高性价比IEPL专线 · 拔线潮稳如磐石 · 物理专线负载均衡 · 无限速不限设备",
     url: "https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs",
     couponCode: "KX666",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.1,
     badge: "🛡️ 可信稳定推荐",
     gradientClass: "from-blue-600 via-indigo-700 to-blue-900",
@@ -250,13 +261,13 @@ export const topFeaturedServices = [
       "物理 IEPL 专线，敏感时期稳如磐石",
       "不限制联机设备数，全速带宽无封顶",
       "优质解封 ChatGPT / Claude / Netflix 4K",
-      "低门槛体验套餐 (¥9/月起) 灵活续费"
+      "低门槛体验套餐 (¥7.9/月起) 灵活续费"
     ],
     plans: [
-      { name: "基础尝鲜包", price: "¥9.00 / 月", traffic: "50GB/月", devices: "不限设备" },
-      { name: "畅享进阶包", price: "¥18.00 / 月", traffic: "120GB/月", devices: "不限设备" },
-      { name: "尊享大容量", price: "¥35.00 / 月", traffic: "260GB/月", devices: "不限设备" },
-      { name: "省心年付包", price: "¥88.00 / 年", traffic: "60GB/月", devices: "不限设备" }
+      { name: "基础尝鲜包", price: "¥7.92 / 月", originalPrice: "¥9.00 / 月", traffic: "50GB/月", devices: "不限设备" },
+      { name: "畅享进阶包", price: "¥15.84 / 月", originalPrice: "¥18.00 / 月", traffic: "120GB/月", devices: "不限设备" },
+      { name: "尊享大容量", price: "¥30.80 / 月", originalPrice: "¥35.00 / 月", traffic: "260GB/月", devices: "不限设备" },
+      { name: "省心年付包", price: "¥77.44 / 年", originalPrice: "¥88.00 / 年", traffic: "60GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -265,7 +276,8 @@ export const topFeaturedServices = [
     tagline: "金融级跨境专线 · 三网入口优化 · 全节点1倍率 · 4K/8K影音无损",
     url: "https://super.ytjcok.org/#/register?code=poKwFVtv",
     couponCode: "YTU888",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.1,
     badge: "☁️ 云图金融专线",
     gradientClass: "from-teal-600 via-emerald-700 to-teal-900",
@@ -273,13 +285,13 @@ export const topFeaturedServices = [
       "金融级跨境专线，超高稳定性保证",
       "三网智能入口优化，1倍率无坑隐形消耗",
       "支持 5 台设备并发，解封 TikTok/AI",
-      "提供岚图包 (¥25/月) 与不限时流量包"
+      "提供岚图包 (¥22/月) 与不限时流量包"
     ],
     plans: [
-      { name: "岚图体验包", price: "¥25.00 / 月", traffic: "150GB/月", devices: "5台设备" },
-      { name: "梦图进阶包", price: "¥49.00 / 月", traffic: "300GB/月", devices: "5台设备" },
-      { name: "星图尊享包", price: "¥99.00 / 月", traffic: "600GB/月", devices: "5台设备" },
-      { name: "不限时流量包", price: "¥78.00 / 一次性", traffic: "50GB", devices: "不限设备" }
+      { name: "岚图体验包", price: "¥22.00 / 月", originalPrice: "¥25.00 / 月", traffic: "150GB/月", devices: "5台设备" },
+      { name: "梦图进阶包", price: "¥43.12 / 月", originalPrice: "¥49.00 / 月", traffic: "300GB/月", devices: "5台设备" },
+      { name: "星图尊享包", price: "¥87.12 / 月", originalPrice: "¥99.00 / 月", traffic: "600GB/月", devices: "5台设备" },
+      { name: "不限时流量包", price: "¥68.64 / 一次性", originalPrice: "¥78.00 / 一次性", traffic: "50GB", devices: "不限设备" }
     ]
   },
   {
@@ -288,7 +300,8 @@ export const topFeaturedServices = [
     tagline: "BGP极速专线中转 · 高性价比翻墙选择 · 多设备无缝连接 · 流媒体全解封",
     url: "https://poajufr.jilianat.homes/#/?code=jwCMOvQO",
     couponCode: "JLY88",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.0,
     badge: "⚡ 极速连通推荐",
     gradientClass: "from-indigo-600 via-purple-700 to-indigo-900",
@@ -296,13 +309,13 @@ export const topFeaturedServices = [
       "BGP 极速专线中转，超快节点响应",
       "多设备自由在线，稳定流畅不掉线",
       "解封 YouTube 4K / Netflix / ChatGPT",
-      "提供月付 (¥12/月) 与超值年包 (¥96/年)"
+      "提供月付 (¥10.5/月) 与超值年包 (¥84/年)"
     ],
     plans: [
-      { name: "入门基础包", price: "¥12.00 / 月", traffic: "80GB/月", devices: "不限设备" },
-      { name: "进阶畅享包", price: "¥22.00 / 月", traffic: "180GB/月", devices: "不限设备" },
-      { name: "豪华旗舰包", price: "¥38.00 / 月", traffic: "400GB/月", devices: "不限设备" },
-      { name: "特惠年付包", price: "¥96.00 / 年", traffic: "60GB/月", devices: "不限设备" }
+      { name: "入门基础包", price: "¥10.56 / 月", originalPrice: "¥12.00 / 月", traffic: "80GB/月", devices: "不限设备" },
+      { name: "进阶畅享包", price: "¥19.36 / 月", originalPrice: "¥22.00 / 月", traffic: "180GB/月", devices: "不限设备" },
+      { name: "豪华旗舰包", price: "¥33.44 / 月", originalPrice: "¥38.00 / 月", traffic: "400GB/月", devices: "不限设备" },
+      { name: "特惠年付包", price: "¥84.48 / 年", originalPrice: "¥96.00 / 年", traffic: "60GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -311,7 +324,8 @@ export const topFeaturedServices = [
     tagline: "IPLC专线/全中转 · 晚高峰极速无卡顿 · 不限客户端设备 · 自研客户端与通用订阅",
     url: "https://momlise.szjtfp.xyz/#/?code=kcoensXG",
     couponCode: "SJ888",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.0,
     badge: "🚀 速界极速推荐",
     gradientClass: "from-rose-600 via-red-700 to-rose-900",
@@ -319,13 +333,13 @@ export const topFeaturedServices = [
       "标称 IPLC 专线，晚高峰单节点高速吞吐",
       "不限制客户端在线数量，多设备分享",
       "支持自研客户端与通用客户端适配",
-      "提供体验包 (¥15/月) 与年付常规套餐"
+      "提供体验包 (¥13.2/月) 与年付常规套餐"
     ],
     plans: [
-      { name: "体验尝鲜包", price: "¥15.00 / 月", traffic: "50GB/月", devices: "不限设备" },
-      { name: "标准版", price: "¥25.00 / 月", traffic: "120GB/月", devices: "不限设备" },
-      { name: "旗舰版", price: "¥48.00 / 月", traffic: "280GB/月", devices: "不限设备" },
-      { name: "年付优惠包", price: "¥90.00 / 年", traffic: "50GB/月", devices: "不限设备" }
+      { name: "体验尝鲜包", price: "¥13.20 / 月", originalPrice: "¥15.00 / 月", traffic: "50GB/月", devices: "不限设备" },
+      { name: "标准版", price: "¥22.00 / 月", originalPrice: "¥25.00 / 月", traffic: "120GB/月", devices: "不限设备" },
+      { name: "旗舰版", price: "¥42.24 / 月", originalPrice: "¥48.00 / 月", traffic: "280GB/月", devices: "不限设备" },
+      { name: "年付优惠包", price: "¥79.20 / 年", originalPrice: "¥90.00 / 年", traffic: "50GB/月", devices: "不限设备" }
     ]
   },
   {
@@ -334,7 +348,8 @@ export const topFeaturedServices = [
     tagline: "IEPL/BGP高频中转 · 低延迟全节点部署 · 解锁主流流媒体与AI · 极速流畅",
     url: "https://kunpengjiasu.com/#/register?code=WPugVZUe",
     couponCode: "KP888",
-    couponDesc: "专属优惠通道",
+    couponDesc: "8.8折专属优惠通道",
+    discountRate: "8.8折",
     rating: 9.0,
     badge: "🦅 鲲鹏神速推荐",
     gradientClass: "from-amber-600 via-yellow-600 to-amber-800",
@@ -342,33 +357,33 @@ export const topFeaturedServices = [
       "BGP / IEPL 专线中转，节点超低延迟",
       "8K 影音流畅无损，秒开 YouTube / Netflix",
       "完美支持 AI 工具 (ChatGPT / Claude)",
-      "提供体验包 (¥16/月) 与省心年包 (¥88/年)"
+      "提供体验包 (¥14/月) 与省心年包 (¥77/年)"
     ],
     plans: [
-      { name: "体验包", price: "¥16.00 / 月", traffic: "80GB/月", devices: "不限设备" },
-      { name: "标准包", price: "¥28.00 / 月", traffic: "200GB/月", devices: "不限设备" },
-      { name: "旗舰包", price: "¥48.00 / 月", traffic: "450GB/月", devices: "不限设备" },
-      { name: "省心年包", price: "¥88.00 / 年", traffic: "60GB/月", devices: "不限设备" }
+      { name: "体验包", price: "¥14.08 / 月", originalPrice: "¥16.00 / 月", traffic: "80GB/月", devices: "不限设备" },
+      { name: "标准包", price: "¥24.64 / 月", originalPrice: "¥28.00 / 月", traffic: "200GB/月", devices: "不限设备" },
+      { name: "旗舰包", price: "¥42.24 / 月", originalPrice: "¥48.00 / 月", traffic: "450GB/月", devices: "不限设备" },
+      { name: "省心年包", price: "¥77.44 / 年", originalPrice: "¥88.00 / 年", traffic: "60GB/月", devices: "不限设备" }
     ]
   }
 ];
 
 export const airportsData = [
-  { id: 'ap-1', name: '环球梯 (TOP 1 榜首)', status: 'normal', type: 'IEPL专线', ping: '23ms', rank: 1, coupon: 'HQ66 (7折)', url: 'https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0', reviewUrl: 'review-huanqiuti.html' },
-  { id: 'ap-2', name: '大佬云 (TOP 2 老牌)', status: 'normal', type: 'IPLC专线', ping: '25ms', rank: 2, coupon: 'DLY66 (7折)', url: 'https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa', reviewUrl: 'review-dalaoyun.html' },
-  { id: 'ap-3', name: '云界线 (TOP 3 精选)', status: 'normal', type: 'IEPL/BGP专线', ping: '26ms', rank: 3, coupon: 'yjx888 (7折)', url: 'https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV', reviewUrl: 'review-yunjiexian.html' },
-  { id: 'ap-4', name: '闪电鼠 (TOP 4 极速)', status: 'normal', type: '闪电中转专线', ping: '28ms', rank: 4, coupon: 'sds88 (7折)', url: 'https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB', reviewUrl: 'review-shandianshu.html' },
-  { id: 'ap-5', name: '神行加速 (TOP 5 神速)', status: 'normal', type: '神行专线中转', ping: '27ms', rank: 5, coupon: 'sx0077 (7折)', url: 'https://pps123.shenxingaff.com/#/?code=6tQ7zHUc', reviewUrl: 'review-shenxing.html' },
-  { id: 'ap-6', name: '榴莲云 (TOP 6 甜品推荐)', status: 'normal', type: '榴莲IEPL专线', ping: '30ms', rank: 6, coupon: 'll88 (7折)', url: 'https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G', reviewUrl: 'review-liulianyun.html' },
-  { id: 'ap-7', name: '快狸 (TOP 7 极速)', status: 'normal', type: 'IEPL专线', ping: '26ms', rank: 7, coupon: 'KL88', url: 'https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F', reviewUrl: 'review-kuaili.html' },
-  { id: 'ap-8', name: '光年梯 (TOP 8 光速)', status: 'normal', type: 'IEPL/Trojan专线', ping: '25ms', rank: 8, coupon: 'GNT70 (7折)', url: 'https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO', reviewUrl: 'review-guangnianti.html' },
-  { id: 'ap-9', name: '边缘节点 (TOP 9 边缘专线)', status: 'normal', type: 'IPLC边缘专线', ping: '27ms', rank: 9, coupon: 'EDGE88', url: 'https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F', reviewUrl: 'review-edgenode.html' },
-  { id: 'ap-10', name: '瞬云 (TOP 10 瞬发)', status: 'normal', type: 'IEPL专线中转', ping: '28ms', rank: 10, coupon: 'SY888', url: 'https://ddd.jichang.best/#/register?code=nldUZaYc', reviewUrl: 'review-shunyun.html' },
-  { id: 'ap-11', name: '可信云 (TOP 11 稳定)', status: 'normal', type: 'IEPL专线', ping: '24ms', rank: 11, coupon: 'KX666', url: 'https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs', reviewUrl: 'review-kexinyun.html' },
-  { id: 'ap-12', name: '云图机场 (TOP 12 金融级)', status: 'normal', type: '金融级跨境专线', ping: '26ms', rank: 12, coupon: 'YTU888', url: 'https://super.ytjcok.org/#/register?code=poKwFVtv', reviewUrl: 'review-yuntu.html' },
-  { id: 'ap-13', name: '极连云 (TOP 13 极速)', status: 'normal', type: 'BGP专线中转', ping: '29ms', rank: 13, coupon: 'JLY88', url: 'https://poajufr.jilianat.homes/#/?code=jwCMOvQO', reviewUrl: 'review-jilianyun.html' },
-  { id: 'ap-14', name: '速界 (TOP 14 速界专线)', status: 'normal', type: 'IPLC专线', ping: '28ms', rank: 14, coupon: 'SJ888', url: 'https://momlise.szjtfp.xyz/#/?code=kcoensXG', reviewUrl: 'review-sujie.html' },
-  { id: 'ap-15', name: '鲲鹏加速 (TOP 15 鲲鹏)', status: 'normal', type: 'BGP/IEPL专线', ping: '27ms', rank: 15, coupon: 'KP888', url: 'https://kunpengjiasu.com/#/register?code=WPugVZUe', reviewUrl: 'review-kunpeng.html' }
+  { id: 'ap-1', name: '环球梯 (TOP 1 榜首)', status: 'normal', type: 'IEPL专线', ping: '23ms', rank: 1, coupon: 'HQ66 (7折)', price: '¥14.70/月', originalPrice: '¥21.00/月', url: 'https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0', reviewUrl: 'review-huanqiuti.html' },
+  { id: 'ap-2', name: '大佬云 (TOP 2 老牌)', status: 'normal', type: 'IPLC专线', ping: '25ms', rank: 2, coupon: 'DLY66 (7折)', price: '¥16.10/月', originalPrice: '¥23.00/月', url: 'https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa', reviewUrl: 'review-dalaoyun.html' },
+  { id: 'ap-3', name: '云界线 (TOP 3 精选)', status: 'normal', type: 'IEPL/BGP专线', ping: '26ms', rank: 3, coupon: 'yjx888 (7折)', price: '¥12.60/月', originalPrice: '¥18.00/月', url: 'https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV', reviewUrl: 'review-yunjiexian.html' },
+  { id: 'ap-4', name: '闪电鼠 (TOP 4 极速)', status: 'normal', type: '闪电中转专线', ping: '28ms', rank: 4, coupon: 'sds88 (7折)', price: '¥13.30/月', originalPrice: '¥19.00/月', url: 'https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB', reviewUrl: 'review-shandianshu.html' },
+  { id: 'ap-5', name: '神行加速 (TOP 5 神速)', status: 'normal', type: '神行专线中转', ping: '27ms', rank: 5, coupon: 'sx0077 (7折)', price: '¥11.20/月', originalPrice: '¥16.00/月', url: 'https://pps123.shenxingaff.com/#/?code=6tQ7zHUc', reviewUrl: 'review-shenxing.html' },
+  { id: 'ap-6', name: '榴莲云 (TOP 6 甜品推荐)', status: 'normal', type: '榴莲IEPL专线', ping: '30ms', rank: 6, coupon: 'll88 (7折)', price: '¥10.50/月', originalPrice: '¥15.00/月', url: 'https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G', reviewUrl: 'review-liulianyun.html' },
+  { id: 'ap-7', name: '快狸 (TOP 7 极速)', status: 'normal', type: 'IEPL专线', ping: '26ms', rank: 7, coupon: 'KL88 (8.8折)', price: '¥13.20/月', originalPrice: '¥15.00/月', url: 'https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F', reviewUrl: 'review-kuaili.html' },
+  { id: 'ap-8', name: '光年梯 (TOP 8 光速)', status: 'normal', type: 'IEPL/Trojan专线', ping: '25ms', rank: 8, coupon: 'GNT70 (7折)', price: '¥12.60/月', originalPrice: '¥18.00/月', url: 'https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO', reviewUrl: 'review-guangnianti.html' },
+  { id: 'ap-9', name: '边缘节点 (TOP 9 边缘专线)', status: 'normal', type: 'IPLC边缘专线', ping: '27ms', rank: 9, coupon: 'EDGE88 (8.8折)', price: '¥13.20/月', originalPrice: '¥15.00/月', url: 'https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F', reviewUrl: 'review-edgenode.html' },
+  { id: 'ap-10', name: '瞬云 (TOP 10 瞬发)', status: 'normal', type: 'IEPL专线中转', ping: '28ms', rank: 10, coupon: 'SY888 (8.8折)', price: '¥14.08/月', originalPrice: '¥16.00/月', url: 'https://ddd.jichang.best/#/register?code=nldUZaYc', reviewUrl: 'review-shunyun.html' },
+  { id: 'ap-11', name: '可信云 (TOP 11 稳定)', status: 'normal', type: 'IEPL专线', ping: '24ms', rank: 11, coupon: 'KX666 (8.8折)', price: '¥7.92/月', originalPrice: '¥9.00/月', url: 'https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs', reviewUrl: 'review-kexinyun.html' },
+  { id: 'ap-12', name: '云图机场 (TOP 12 金融级)', status: 'normal', type: '金融级跨境专线', ping: '26ms', rank: 12, coupon: 'YTU888 (8.8折)', price: '¥22.00/月', originalPrice: '¥25.00/月', url: 'https://super.ytjcok.org/#/register?code=poKwFVtv', reviewUrl: 'review-yuntu.html' },
+  { id: 'ap-13', name: '极连云 (TOP 13 极速)', status: 'normal', type: 'BGP专线中转', ping: '29ms', rank: 13, coupon: 'JLY88 (8.8折)', price: '¥10.56/月', originalPrice: '¥12.00/月', url: 'https://poajufr.jilianat.homes/#/?code=jwCMOvQO', reviewUrl: 'review-jilianyun.html' },
+  { id: 'ap-14', name: '速界 (TOP 14 速界专线)', status: 'normal', type: 'IPLC专线', ping: '28ms', rank: 14, coupon: 'SJ888 (8.8折)', price: '¥13.20/月', originalPrice: '¥15.00/月', url: 'https://momlise.szjtfp.xyz/#/?code=kcoensXG', reviewUrl: 'review-sujie.html' },
+  { id: 'ap-15', name: '鲲鹏加速 (TOP 15 鲲鹏)', status: 'normal', type: 'BGP/IEPL专线', ping: '27ms', rank: 15, coupon: 'KP888 (8.8折)', price: '¥14.08/月', originalPrice: '¥16.00/月', url: 'https://kunpengjiasu.com/#/register?code=WPugVZUe', reviewUrl: 'review-kunpeng.html' }
 ];
 
 export const featuredToolsData = [
