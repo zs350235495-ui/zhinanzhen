@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - 页面未找到或已迁移 | 梯子指南针</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    (function() {
+      var articleMap = {
+        'network-routing-guide': 'network-routing-guide.html',
+        'whitepaper': 'network-routing-guide.html',
+        'subscription-guide': 'subscription-guide.html',
+        'novice-subscription-guide': 'subscription-guide.html',
+        'airport-selection-guide': 'airport-selection-guide.html',
+        'airport-guide': 'airport-guide.html',
+        'huanqiuti': 'review-huanqiuti.html',
+        'dalaoyun': 'review-dalaoyun.html',
+        'yunjiexian': 'review-yunjiexian.html',
+        'shandianshu': 'review-shandianshu.html',
+        'shenxing': 'review-shenxing.html',
+        'liulianyun': 'review-liulianyun.html',
+        'kuaili': 'review-kuaili.html',
+        'guangnianti': 'review-guangnianti.html',
+        'edgenode': 'review-edgenode.html',
+        'shunyun': 'review-shunyun.html',
+        'kexinyun': 'review-kexinyun.html',
+        'yuntu': 'review-yuntu.html',
+        'jilianyun': 'review-jilianyun.html',
+        'sujie': 'review-sujie.html',
+        'kunpeng': 'review-kunpeng.html',
+        'clash-verge': 'review-detail.html',
+        'clash': 'review-detail.html'
+      };
+
+      var pathName = window.location.pathname.toLowerCase();
+      var params = new URLSearchParams(window.location.search);
+      var queryKey = (params.get('post') || params.get('id') || params.get('name') || '').trim().toLowerCase();
+
+      // Check if visiting /article or /article/
+      if (pathName.indexOf('/article') !== -1 || queryKey) {
+        var key = queryKey;
+        if (!key) {
+          // extract trailing segment
+          var segments = pathName.split('/').filter(Boolean);
+          if (segments.length > 1) {
+            key = segments[segments.length - 1].replace('.html', '');
+          }
+        }
+
+        var target = null;
+        if (key && articleMap[key]) {
+          target = articleMap[key];
+        } else if (key) {
+          for (var k in articleMap) {
+            if (key.indexOf(k) !== -1 || k.indexOf(key) !== -1) {
+              target = articleMap[k];
+              break;
+            }
+          }
+        }
+
+        if (target) {
+          window.location.replace(target);
+          return;
+        } else if (pathName.indexOf('/article') !== -1) {
+          window.location.replace('blog.html');
+          return;
+        }
+      }
+    })();
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col items-center justify-center p-4 text-center">
+  <div class="max-w-md w-full bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
+    <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-3xl font-bold">
+      🧭
+    </div>
+    <h1 class="text-2xl font-extrabold text-slate-900 mb-2">404 - 页面已迁移或不存在</h1>
+    <p class="text-xs text-slate-500 mb-6 leading-relaxed">
+      您访问的页面链接可能已调整或被更名为全新的静态专栏。我们已为您整理了全站导航入口。
+    </p>
+    <div class="grid grid-cols-2 gap-3 text-xs font-semibold">
+      <a href="index.html" class="py-2.5 px-4 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition">
+        返回首页
+      </a>
+      <a href="blog.html" class="py-2.5 px-4 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+        浏览博客专区
+      </a>
+    </div>
+  </div>
+</body>
+</html>

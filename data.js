@@ -621,6 +621,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "network-routing-whitepaper-2026",
+    title: "梯子指南针 2026 全球跨境网络链路选型全景导航：多场景需求坐标系、协议演进与避坑决策白皮书",
+    excerpt: "梯子指南针·链路决策与网络导航工程实验室权威发布！四维量化坐标系拆解时延、抖动、超售比与IP纯净度，纵向深度对比 163/169、CN2 GIA/9929/CMIN2 与 IPLC/IEPL 专线边际效用，附带多场景选型矩阵与避坑自查清单。",
+    category: "技术白皮书",
+    categoryKey: "tutorials",
+    badgeType: "indigo",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic"],
+    date: "2026-10-12",
+    readTime: "18 分钟精读",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-blue-600"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>`,
+    url: "network-routing-guide.html"
+  },
+  {
     id: "novice-subscription-guide-2026",
     title: "新手订阅服务使用指南：从购买前检查到日常维护的完整流程",
     excerpt: "首次使用网络订阅服务必备教程！涵盖购买前规则与流量核对、订单凭证保管、服务日常维护、连接故障四步自助排查、客服高效沟通及账户隐私安全合规建议。",
@@ -633,6 +647,20 @@ export const articlesData = [
     readTime: "15 分钟阅读",
     iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-indigo-600"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
     url: "subscription-guide.html"
+  },
+  {
+    id: "airport-selection-guide-detail",
+    title: "新手如何选择稳定机场：服务对比、节点推荐与使用指南",
+    excerpt: "围绕机场线路质量、机场服务对比、机场套餐对比、机场节点测速、稳定机场推荐及多设备订阅服务深度解析，助您轻松选择长期稳定机场。",
+    category: "新手选购指南",
+    categoryKey: "guides",
+    badgeType: "indigo",
+    platformKeys: ["windows", "mac", "android", "ios"],
+    protocolKeys: ["vless", "hysteria2"],
+    date: "2026-10-08",
+    readTime: "15 分钟阅读",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-indigo-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    url: "airport-selection-guide.html"
   },
   {
     id: "airport-guide-master",
@@ -660,7 +688,7 @@ export const articlesData = [
     date: "2026-10-06",
     readTime: "10 分钟阅读",
     iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-blue-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-    url: "https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0"
+    url: "review-huanqiuti.html"
   },
   {
     id: "cheap-high-speed-airport",

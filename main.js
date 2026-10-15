@@ -234,7 +234,7 @@ function initStatusPill() {
 
   container.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = 'tutorials.html#warning';
+    window.location.href = 'monitoring.html';
   });
 }
 
