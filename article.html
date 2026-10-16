@@ -8,29 +8,82 @@
   <script>
     (function() {
       var articleMap = {
-        'network-routing-guide': 'network-routing-guide.html',
-        'whitepaper': 'network-routing-guide.html',
-        'subscription-guide': 'subscription-guide.html',
-        'novice-subscription-guide': 'subscription-guide.html',
-        'airport-selection-guide': 'airport-selection-guide.html',
-        'airport-guide': 'airport-guide.html',
-        'huanqiuti': 'review-huanqiuti.html',
-        'dalaoyun': 'review-dalaoyun.html',
-        'yunjiexian': 'review-yunjiexian.html',
-        'shandianshu': 'review-shandianshu.html',
-        'shenxing': 'review-shenxing.html',
-        'liulianyun': 'review-liulianyun.html',
-        'kuaili': 'review-kuaili.html',
-        'guangnianti': 'review-guangnianti.html',
-        'edgenode': 'review-edgenode.html',
-        'shunyun': 'review-shunyun.html',
-        'kexinyun': 'review-kexinyun.html',
-        'yuntu': 'review-yuntu.html',
-        'jilianyun': 'review-jilianyun.html',
-        'sujie': 'review-sujie.html',
-        'kunpeng': 'review-kunpeng.html',
-        'clash-verge': 'review-detail.html',
-        'clash': 'review-detail.html'
+        // 1. 核心指南与深度专题
+        'network-routing-whitepaper-2026': '/network-routing-guide.html',
+        'network-routing-guide': '/network-routing-guide.html',
+        'whitepaper': '/network-routing-guide.html',
+        'novice-subscription-guide-2026': '/subscription-guide.html',
+        'subscription-guide': '/subscription-guide.html',
+        'novice-subscription-guide': '/subscription-guide.html',
+        'airport-selection-guide-detail': '/airport-selection-guide.html',
+        'airport-selection-guide': '/airport-selection-guide.html',
+        'airport-guide-master': '/airport-guide.html',
+        'airport-guide': '/airport-guide.html',
+
+        // 2. 15 家收录机场独立测评页
+        'huanqiuti': '/review-huanqiuti.html',
+        'dalaoyun': '/review-dalaoyun.html',
+        'yunjiexian': '/review-yunjiexian.html',
+        'shandianshu': '/review-shandianshu.html',
+        'shenxing': '/review-shenxing.html',
+        'liulianyun': '/review-liulianyun.html',
+        'kuaili': '/review-kuaili.html',
+        'guangnianti': '/review-guangnianti.html',
+        'edgenode': '/review-edgenode.html',
+        'shunyun': '/review-shunyun.html',
+        'kexinyun': '/review-kexinyun.html',
+        'yuntu': '/review-yuntu.html',
+        'jilianyun': '/review-jilianyun.html',
+        'sujie': '/review-sujie.html',
+        'kunpeng': '/review-kunpeng.html',
+
+        // 3. 客户端与工具评测
+        'clash-verge-rev': '/review-detail.html',
+        'clash-verge': '/review-detail.html',
+        'clash': '/review-detail.html',
+        'sing-box': '/downloads.html',
+        'singbox': '/downloads.html',
+        'v2rayn': '/downloads.html',
+        'shadowrocket': '/downloads.html',
+
+        // 4. data.js 中 33 篇文章 ID 精确映射
+        'airport-selection-guide-2026': '/review-huanqiuti.html',
+        'cheap-high-speed-airport': '/index.html#top-featured-container',
+        'airport-speed-test-guide': '/tutorials.html',
+        'multi-device-airport-list': '/index.html#top-featured-container',
+        'beginner-airport-guide': '/tutorials.html',
+        'geoip-routing-rules': '/tutorials.html',
+        'harmonyos-next-guide': '/tutorials.html',
+        'iepl-iplc-tech-analysis': '/review-detail.html',
+        'clash-verge-script-guide': '/downloads.html',
+        'sing-box-vless-reality': '/downloads.html',
+        'dns-troubleshooting-guide': '/faq.html',
+        'airport-run-away-warning': '/monitoring.html',
+        'client-download-suite-2026': '/downloads.html',
+        'v2rayn-7-batch-speed-test': '/downloads.html',
+        'shadowrocket-ios-rewrite': '/downloads.html',
+        'sub-store-subscription-merge': '/tutorials.html',
+        'fakeip-vs-redir-host': '/tutorials.html',
+        'chatgpt-claude-native-ip': '/airport-guide.html',
+        'airport-coupon-code-summary': '/index.html#top-featured-container',
+        'streaming-4k-unlock-guide': '/airport-guide.html',
+        'tiktok-node-setup': '/tutorials.html',
+        'mac-proxy-client-comparison': '/downloads.html',
+        'github-remote-work-proxy': '/tutorials.html',
+        'tls-fingerprint-security': '/tutorials.html',
+        'cross-border-ecommerce-ip': '/airport-guide.html',
+        'bgp-vs-public-relay': '/review-detail.html',
+        'tun-mode-setup-guide': '/tutorials.html',
+        'monitoring-status-board-usage': '/monitoring.html',
+        'multiplier-hidden-traps': '/airport-guide.html',
+
+        // 5. 频道与导航直达
+        'tutorials': '/tutorials.html',
+        'downloads': '/downloads.html',
+        'monitoring': '/monitoring.html',
+        'faq': '/faq.html',
+        'blog': '/blog.html',
+        'reviews': '/airport-reviews.html'
       };
 
       var params = new URLSearchParams(window.location.search);
@@ -51,7 +104,9 @@
       }
 
       if (!target) {
-        target = 'blog.html';
+        target = '/blog.html';
+      } else if (!target.startsWith('/')) {
+        target = '/' + target;
       }
 
       window.location.replace(target);
