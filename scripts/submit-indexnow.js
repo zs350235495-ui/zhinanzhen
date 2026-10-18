@@ -3,11 +3,24 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const HOST = 'tiziznz.com';
-const INDEXNOW_KEY = 'b637a59ab1004b6abcad0bd7a25a3005';
+const ROOT_DIR = path.resolve(__dirname, '..');
+
+// 自动检测根目录下的 32 位 hex 格式 key 文件（如 c53c8e3660c64e5b80cd900a5f64bf44.txt）
+function detectIndexNowKey() {
+  try {
+    const files = fs.readdirSync(ROOT_DIR);
+    const keyFile = files.find(f => /^[0-9a-fA-F]{32}\.txt$/.test(f));
+    if (keyFile) {
+      const keyContent = fs.readFileSync(path.join(ROOT_DIR, keyFile), 'utf-8').trim();
+      return keyContent || keyFile.replace(/\.txt$/, '');
+    }
+  } catch (e) {}
+  return 'c53c8e3660c64e5b80cd900a5f64bf44';
+}
+
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || detectIndexNowKey();
 const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`;
 const INDEXNOW_API = 'https://api.indexnow.org/IndexNow';
-
-const ROOT_DIR = path.resolve(__dirname, '..');
 const SITEMAP_PATH = path.join(ROOT_DIR, 'sitemap.xml');
 
 // 支持环境变量或命令行参数控制模式: 'auto' | 'commit' | 'sitemap'
