@@ -1,0 +1,45 @@
+name: IndexNow Auto Submit
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'URL 提取来源 (auto: 自动检测 commit 改动，无改动则读取 sitemap; sitemap: 强制全量提交 sitemap; commit: 仅提取最新 commit 改动)'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - sitemap
+          - commit
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  indexnow-submit:
+    name: Submit Changed URLs to IndexNow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整提交历史，支持跨 commit 准确 diff
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Extract URLs and Submit to IndexNow
+        env:
+          INDEXNOW_SOURCE: ${{ github.event.inputs.source || 'auto' }}
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/submit-indexnow.js
