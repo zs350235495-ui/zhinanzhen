@@ -15,7 +15,7 @@ function detectIndexNowKey() {
       return keyContent || keyFile.replace(/\.txt$/, '');
     }
   } catch (e) {}
-  return 'c53c8e3660c64e5b80cd900a5f64bf44';
+  return '897b66d11fe2405e809d7dc51a97780c';
 }
 
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || detectIndexNowKey();
