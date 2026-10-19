@@ -621,6 +621,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "node-quality-guide-2026",
+    title: "2026 新手科学上网避坑指南：梯子指南针教你如何从带宽、延迟与协议看懂真实节点质量",
+    excerpt: "拒绝虚假测速与超售噱头！梯子指南针深度拆解标称带宽、单线程可用速率与端到端延迟本质，横向对比 VLESS-Reality、Hysteria 2、Trojan 协议性能，并提供流媒体解锁检测、DNS 污染排错流程与全平台规则分流最佳实践。",
+    category: "深度科普与避坑",
+    categoryKey: "guides",
+    badgeType: "blue",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-10-19",
+    readTime: "16 分钟深度精读",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-blue-600"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg>`,
+    url: "node-quality-guide.html"
+  },
+  {
     id: "network-routing-whitepaper-2026",
     title: "梯子指南针 2026 全球跨境网络链路选型全景导航：多场景需求坐标系、协议演进与避坑决策白皮书",
     excerpt: "梯子指南针·链路决策与网络导航工程实验室权威发布！四维量化坐标系拆解时延、抖动、超售比与IP纯净度，纵向深度对比 163/169、CN2 GIA/9929/CMIN2 与 IPLC/IEPL 专线边际效用，附带多场景选型矩阵与避坑自查清单。",
