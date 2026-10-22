@@ -621,6 +621,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "network-troubleshooting-guide-2026",
+    title: "2026 全球网络阻断与连接异常排错终极手册：TLS 握手超时、403 Forbidden 与 DNS 泄漏全链路排查指南",
+    excerpt: "针对 TLS 握手超时、403 Forbidden 拦截及 DNS 泄漏，本文从计算机网络底层协议栈展开深度排错。深入拆解明文 SNI 阻断、伪造 TCP RST 抓包特征、骨干网 QoS 限速成因；对比数据中心与原生住宅 IP 的信誉风控模型；详述 Fake-IP 模式内核原理、防泄漏规则编排及 TUN 虚拟网卡防死锁实践，提供工程级排错决策树与抓包命令指南。",
+    category: "网络安全与底层排错",
+    categoryKey: "tutorials",
+    badgeType: "red",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-10-22",
+    readTime: "20 分钟专业精读",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-rose-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+    url: "network-troubleshooting-guide.html"
+  },
+  {
     id: "node-quality-guide-2026",
     title: "2026 新手科学上网避坑指南：梯子指南针教你如何从带宽、延迟与协议看懂真实节点质量",
     excerpt: "拒绝虚假测速与超售噱头！梯子指南针深度拆解标称带宽、单线程可用速率与端到端延迟本质，横向对比 VLESS-Reality、Hysteria 2、Trojan 协议性能，并提供流媒体解锁检测、DNS 污染排错流程与全平台规则分流最佳实践。",
