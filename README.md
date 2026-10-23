@@ -18,8 +18,8 @@
 ---
 
 > 🌐 **官方在线控制台**：[https://tiziznz.com](https://tiziznz.com)  
-> ✈️ **Telegram 官方客服直达**：[@huanqiuti8899](https://t.me/huanqiuti8899)  
-> 📅 **最新更新时间**：2026-10-22
+> 💬 **技术咨询与支持**：**@huanqiuti8899**（客服联络详见官网在线控制台）  
+> 📅 **最新更新时间**：2026-10-23
 
 ---
 
@@ -43,14 +43,15 @@
 *   **🎬 4K/8K 极致追剧党 (Netflix / Disney+ / HBO)**
     *   **推荐路线**：纯内网 IPLC 专线（解锁原生 IP 池）
     *   **选型核心**：看重原生住宅 IP 判定与晚高峰持续吞吐，拒绝频繁跳人机验证。
-    *   **实测推荐**：[环球梯 (优惠码 HQ66)](https://tiziznz.com/review-huanqiuti.html)
+    *   **架构评测标杆**：[环球梯 - IPLC 专线全链路测算档案](https://tiziznz.com/review-huanqiuti.html)
 *   **💼 跨境电商 / 外贸 / 远程办公 (TikTok / PayPal / AWS)**
     *   **推荐路线**：固定入口 BGP Anycast + 静态住宅代理
     *   **选型核心**：要求零丢包、低抖动与 IP 段纯净度，严禁频繁漂移导致风控封号。
-    *   **实测推荐**：[大佬云 (优惠码 DLY66)](https://tiziznz.com/review-dalaoyun.html)
+    *   **架构评测标杆**：[大佬云 - 多线中继与高可用选型档案](https://tiziznz.com/review-dalaoyun.html)
 *   **🤖 AI 研发与极客玩家 (ChatGPT / Claude / GitHub)**
     *   **推荐路线**：新一代 Hysteria 2 / TUIC / VLESS-Reality
     *   **选型核心**：对抗恶劣公网丢包，TCP 握手毫秒级响应，短连接极速起步。
+    *   **架构评测标杆**：[神行 / 极光 Cloud - 现代协议抗丢包测评档案](https://tiziznz.com/review-shenxing.html)
 
 ---
 
