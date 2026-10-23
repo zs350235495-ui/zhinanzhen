@@ -7,8 +7,9 @@
   <meta name="description" content="针对 TLS 握手超时、403 Forbidden 拦截及 DNS 泄漏，本文从计算机网络底层协议栈展开深度排错。深入拆解明文 SNI 阻断、伪造 TCP RST 抓包特征、骨干网 QoS 限速成因；对比数据中心与原生住宅 IP 的信誉风控模型；详述 Fake-IP 模式内核原理、防泄漏规则编排及 TUN 虚拟网卡防死锁实践，提供工程级排错决策树与抓包命令指南。">
   <meta name="keywords" content="梯子指南针, TLS握手超时, 403 Forbidden排查, DNS泄漏检测, Fake-IP原理, 晚高峰QoS限制, 原生IP验证, 规则分流优化, SNI阻断, TCP RST注入, JA3指纹, 代理排错">
   <link rel="canonical" href="https://tiziznz.com/network-troubleshooting-guide.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="canonical" href="https://tiziznz.com/network-troubleshooting-guide.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="article">
@@ -63,7 +64,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
 
@@ -71,21 +73,21 @@
 <header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
     <div class="flex items-center space-x-3">
-      <img src="favicon.svg" alt="梯子指南针" width="32" height="32" class="w-8 h-8 rounded-lg shadow-sm">
-      <a href="index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
+      <img src="/favicon.svg" alt="梯子指南针" width="32" height="32" class="w-8 h-8 rounded-lg shadow-sm">
+      <a href="/index.html" class="text-lg font-bold text-gray-900 dark:text-white tracking-tight">梯子指南针</a>
       <span class="text-xs px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-500/20">BLOG</span>
     </div>
 
     <nav class="hidden md:flex items-center space-x-8">
-      <a href="index.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">梯子推荐</a>
-      <a href="airport-reviews.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">机场测评</a>
-      <a href="downloads.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">客户端下载</a>
-      <a href="blog.html" class="relative py-5 text-sm font-medium text-blue-600 dark:text-blue-400">
+      <a href="/index.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">梯子推荐</a>
+      <a href="/airport-reviews.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">机场测评</a>
+      <a href="/downloads.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">客户端下载</a>
+      <a href="/blog.html" class="relative py-5 text-sm font-medium text-blue-600 dark:text-blue-400">
         博客
         <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-500"></span>
       </a>
-      <a href="monitoring.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">避坑与跑路监控</a>
-      <a href="tutorials.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">新手教程</a>
+      <a href="/monitoring.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">避坑与跑路监控</a>
+      <a href="/tutorials.html" class="py-5 text-sm font-medium text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">新手教程</a>
     </nav>
 
     <div class="flex items-center space-x-3">
@@ -100,13 +102,13 @@
 </header>
 <!-- 顶部全局导航栏 结束 -->
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+  <main class="container post-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
 
     <!-- 面包屑导航 -->
     <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
-      <a href="index.html" class="hover:text-blue-600">首页</a>
+      <a href="/index.html" class="hover:text-blue-600">首页</a>
       <span>&gt;</span>
-      <a href="blog.html" class="hover:text-blue-600">博客</a>
+      <a href="/blog.html" class="hover:text-blue-600">博客</a>
       <span>&gt;</span>
       <span class="text-slate-600 dark:text-slate-300">全球网络阻断与异常排错手册</span>
     </nav>
@@ -148,8 +150,8 @@
         </div>
 
         <!-- 文章头部插画 (Hero Cover) -->
-        <div class="hero-image post-cover my-6">
-          <img src="favicon.svg" alt="2026 全球网络阻断与连接异常排错全链路图解" width="680" height="425" class="w-full h-auto rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div class="post-cover-wrap my-6">
+          <img src="/favicon.svg" alt="2026 全球网络阻断与连接异常排错全链路图解" width="220" height="220" class="rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
         </div>
 
         <!-- 目录导览导航 (TOC) -->
@@ -569,10 +571,10 @@ curl -s -G https://api.abuseipdb.com/api/v2/check \
         <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">查阅 2026 全球跨境网络链路选型白皮书与新手避坑指南</p>
       </div>
       <div class="flex items-center gap-3">
-        <a href="blog.html" class="px-4 py-2 text-xs font-semibold rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+        <a href="/blog.html" class="px-4 py-2 text-xs font-semibold rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
           返回博客列表
         </a>
-        <a href="node-quality-guide.html" class="px-4 py-2 text-xs font-semibold rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition">
+        <a href="/node-quality-guide.html" class="px-4 py-2 text-xs font-semibold rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition">
           新手避坑指南 &rarr;
         </a>
       </div>
@@ -587,6 +589,6 @@ curl -s -G https://api.abuseipdb.com/api/v2/check \
     </div>
   </footer>
 
-  <script src="main.js" type="module"></script>
+  <script src="/main.js" type="module"></script>
 </body>
 </html>

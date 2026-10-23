@@ -1,1 +1,38 @@
-@import url('../style.css');
+@import url('/style.css');
+
+/* ==========================================================================
+   文章详情页媒体与版心约束（CSS绝对路径兜底）
+   ========================================================================== */
+article img,
+article svg,
+.post-content img,
+.post-content svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 顶部封面/仪表盘插图规范居中与尺寸限制 */
+.post-cover-wrap {
+  text-align: center;
+  margin: 1.5rem auto;
+}
+.post-cover-wrap svg,
+.post-cover-wrap img {
+  max-width: 220px !important;
+  height: auto !important;
+  display: inline-block !important;
+  margin: 0 auto;
+}
+
+/* 文章主体版心与居中排版兜底 */
+.post-content,
+main.container,
+.post-content-container {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 2rem 1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
