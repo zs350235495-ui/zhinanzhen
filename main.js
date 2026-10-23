@@ -221,11 +221,11 @@ function initStatusPill() {
   const dotColorClass = isAllNormal ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500';
 
   const textContent = isAllNormal
-    ? `15/15 机场正常 · ${lastUpdated}`
-    : `${active}/${total} 正常 (${abnormal}家异常) · ${lastUpdated}`;
+    ? '15/15 正常'
+    : `${active}/${total} 正常 (${abnormal}家异常)`;
 
-  container.className = `inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border shadow-2xs transition-all cursor-pointer ${bgClass}`;
-  container.title = `点击查看 ${total} 家收录机场的实时连通率与避坑跑路监控看板`;
+  container.className = `hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border shadow-2xs transition-all cursor-pointer ${bgClass}`;
+  container.title = `点击查看 ${total} 家收录机场的实时连通率与避坑跑路监控看板 (全部正常运行)`;
   
   container.innerHTML = `
     <span class="w-2 h-2 mr-1.5 rounded-full ${dotColorClass}"></span>
@@ -234,7 +234,7 @@ function initStatusPill() {
 
   container.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = 'monitoring.html';
+    window.location.href = '/monitoring.html';
   });
 }
 
