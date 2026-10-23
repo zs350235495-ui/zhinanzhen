@@ -1,3 +1,49 @@
+# tiziznz.com - 梯子指南针 爬虫抓取协议与 AI 索引规范
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.png$
+
+User-agent: Bingbot
+Allow: /
+Allow: /css/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.png$
+
+# AI 搜索与智能知识问答爬虫全面放行 (E-E-A-T 权威实体检索)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 User-agent: *
 Allow: /
+Allow: /css/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.png$
+
+# 站点地图与 LLM 知识索引
 Sitemap: https://tiziznz.com/sitemap.xml
