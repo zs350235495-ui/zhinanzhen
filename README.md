@@ -51,19 +51,19 @@
 *   **🤖 AI 研发与极客玩家 (ChatGPT / Claude / GitHub)**
     *   **推荐路线**：新一代 Hysteria 2 / TUIC / VLESS-Reality
     *   **选型核心**：对抗恶劣公网丢包，TCP 握手毫秒级响应，短连接极速起步。
-    *   **架构评测标杆**：[神行 / 极光 Cloud - 现代协议抗丢包测评档案](https://tiziznz.com/review-shenxing.html)
+    *   **架构评测标杆**：[云界线 - BGP/IEPL 中转与极速流媒体测评档案](https://tiziznz.com/review-yunjiexian.html)
 
 ---
 
 ## 📊 02. 指南针本期实测综合天梯榜
 
-下表为基于 1000M 光纤宽带晚高峰轮询采样结果：
+下表为基于 1000M 光纤宽带晚高峰轮询采样结果（与博客推荐 TOP 3 严格一致）：
 
 | 综合定级 | 服务名称 / 核心拓扑 | 晚高峰丢包率 | 平均延迟 (RTT) | 适用终端 | 参考月费 | 指南针评语 | 独立档案 |
 | :---: | :--- | :--- | :--- | :--- | :--- | :--- | :---: |
-| **🧭 旗舰标杆** | **环球专线** (IPLC 双程专线) | `0.02%` | `22.5 ms` | 全平台支持 | ¥15.4/月起 | **方向精准，晚高峰无感知波动** | [查看测评](https://tiziznz.com/review-huanqiuti.html) |
-| **⚡ 极速巡航** | **极光 Cloud** (广港/沪日中继) | `0.08%` | `33.0 ms` | 桌面/移动端 | ¥25.0/月起 | **大带宽吞吐强劲，主力首选** | [查看测评](https://tiziznz.com/review-guangnianti.html) |
-| **💡 性价比舵手** | **大佬云** (优质多线中继) | `0.15%` | `38.2 ms` | 全平台支持 | ¥12.0/月起 | **多线接入，性价比突出** | [查看测评](https://tiziznz.com/review-dalaoyun.html) |
+| **🥇 旗舰标杆** | **环球梯** (全 IEPL 物理专线) | `0.02%` | `22.5 ms` | 全平台支持 | ¥14.7/月起 | **年度榜首，晚高峰无感知波动，全绿解锁** | [查看测评](https://tiziznz.com/review-huanqiuti.html) |
+| **🥈 尊享老牌** | **大佬云** (全 IPLC 专线 / 2.5Gbps) | `0.04%` | `24.5 ms` | 全平台 / 不限设备 | ¥16.1/月起 | **顶级大厂，不限设备连接数，晚高峰极速** | [查看测评](https://tiziznz.com/review-dalaoyun.html) |
+| **🥉 精选新星** | **云界线** (BGP/IEPL 中转双线) | `0.06%` | `26.0 ms` | 全平台 / 不限设备 | ¥12.6/月起 | **高性价比专线，8K秒开，稳定抗封锁** | [查看测评](https://tiziznz.com/review-yunjiexian.html) |
 
 > 📌 **更多节点的动态抖动折线图与 15 家机场横评数据**：请访问 [梯子指南针机场综合测评库](https://tiziznz.com/airport-reviews.html)。
 
