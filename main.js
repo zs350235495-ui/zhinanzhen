@@ -3,6 +3,7 @@
    ========================================================================== */
 
 import { topFeaturedServices, airportsData, featuredToolsData, articlesData, faqData } from './data.js';
+import './instantpage.js';
 
 // Global state for filtering
 const state = {
