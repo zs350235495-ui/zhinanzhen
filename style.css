@@ -144,6 +144,48 @@ img, svg {
   max-width: 100%;
 }
 
+/* 顶部导航与 Logo 图标尺寸兜底保护（防止 Tailwind CDN 阻塞导致 Logo 撑破屏幕） */
+header img,
+header .site-logo,
+.nav-logo,
+.navbar-brand img {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* 全局文章媒体与插图响应式自适应约束 */
+article img,
+article svg,
+.post-content img,
+.post-content svg,
+.hero-image img,
+.hero-image svg,
+.post-cover img,
+.post-cover svg,
+.prose img,
+.prose svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 插画容器尺寸限制与居中约束 */
+.hero-image,
+.post-cover,
+.article-cover {
+  max-width: 680px;
+  width: 100%;
+  margin: 1.5rem auto;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
 .container {
   width: 100%;
   max-width: var(--container-max);
