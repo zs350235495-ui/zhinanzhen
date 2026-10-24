@@ -621,6 +621,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "network-routing-decision-compass-2026",
+    title: "2026 全球跨境网络链路选型决策罗盘：SLA 可用性实测、晚高峰抗拥塞评测与防坑指南白皮书",
+    excerpt: "梯子指南针 2026 全球跨境网络链路选型决策罗盘白皮书 (COMPASS-2026)。基于真机海缆拓扑、公网 BGP 拥塞机制与物理专线隔离原理，实测晚高峰 SLA 可用性、TCP 快速重传与抖动控制矩阵，深度评测环球梯、大佬云、云界线、闪电鼠等核心服务商，输出多场景选型决策树与防坑指南。",
+    category: "核心决策研报",
+    categoryKey: "tutorials",
+    badgeType: "blue",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-10-24",
+    readTime: "25 分钟深度推演",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-blue-600"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>`,
+    url: "network-routing-decision-compass-2026.html"
+  },
+  {
     id: "network-troubleshooting-guide-2026",
     title: "2026 全球网络阻断与连接异常排错终极手册：TLS 握手超时、403 Forbidden 与 DNS 泄漏全链路排查指南",
     excerpt: "针对 TLS 握手超时、403 Forbidden 拦截及 DNS 泄漏，本文从计算机网络底层协议栈展开深度排错。深入拆解明文 SNI 阻断、伪造 TCP RST 抓包特征、骨干网 QoS 限速成因；对比数据中心与原生住宅 IP 的信誉风控模型；详述 Fake-IP 模式内核原理、防泄漏规则编排及 TUN 虚拟网卡防死锁实践，提供工程级排错决策树与抓包命令指南。",

@@ -10,10 +10,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1. 静态物理资源存在时直接响应，绝不重定向或重写回 index.html
+    # 1. 静态物理资源存在时直接响应，绝不重定向或重写回 index.html
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
+
+  # 1.1 Clean URL 支持 (如 /network-routing-decision-compass-2026 -> /network-routing-decision-compass-2026.html)
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^.]+)$ $1.html [L]
 
   # 2. 静态扩展名保护：禁止任何静态文件命中回退
   RewriteCond %{REQUEST_URI} \.(css|js|svg|png|jpg|jpeg|gif|webp|ico|json|txt|xml|woff|woff2)$ [NC]
