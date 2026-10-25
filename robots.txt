@@ -7,6 +7,7 @@ Allow: /*.js$
 Allow: /*.svg$
 Allow: /*.webp$
 Allow: /*.png$
+Disallow: /cdn-cgi/
 
 User-agent: Bingbot
 Allow: /
@@ -16,25 +17,32 @@ Allow: /*.js$
 Allow: /*.svg$
 Allow: /*.webp$
 Allow: /*.png$
+Disallow: /cdn-cgi/
 
 # AI 搜索与智能知识问答爬虫全面放行 (E-E-A-T 权威实体检索)
 User-agent: GPTBot
 Allow: /
+Disallow: /cdn-cgi/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /cdn-cgi/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /cdn-cgi/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /cdn-cgi/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /cdn-cgi/
 
 User-agent: Applebot
 Allow: /
+Disallow: /cdn-cgi/
 
 User-agent: *
 Allow: /
@@ -44,6 +52,7 @@ Allow: /*.js$
 Allow: /*.svg$
 Allow: /*.webp$
 Allow: /*.png$
+Disallow: /cdn-cgi/
 
 # 站点地图与 LLM 知识索引
 Sitemap: https://tiziznz.com/sitemap.xml
