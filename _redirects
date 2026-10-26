@@ -1,0 +1,46 @@
+# ==============================================================================
+# tiziznz.com - 梯子指南针 AFF 推广链接 301 状态码永久重定向表
+# 支持平台: Cloudflare Pages / Netlify Web Server
+# 策略规范: 外部机场返佣链接 100% 隔离，保护核心页面 SEO 权重
+# ==============================================================================
+
+# 1. 路径格式重定向 (/go/xxx -> 目标机场官方直达)
+/go/huanqiuti    https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0    301
+/go/dalaoyun     https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa     301
+/go/yunjiexian   https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV      301
+/go/shandianshu  https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB 301
+/go/shenxing     https://pps123.shenxingaff.com/#/?code=6tQ7zHUc      301
+/go/liulianyun   https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G   301
+/go/kuaili       https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F       301
+/go/guangnianti  https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO 301
+/go/edgenode     https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F    301
+/go/shunyun      https://ddd.jichang.best/#/register?code=nldUZaYc    301
+/go/kexinyun     https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs      301
+/go/yuntu        https://super.ytjcok.org/#/register?code=poKwFVtv    301
+/go/jilianyun    https://poajufr.jilianat.homes/#/?code=jwCMOvQO      301
+/go/sujie        https://momlise.szjtfp.xyz/#/?code=kcoensXG          301
+/go/kunpeng      https://kunpengjiasu.com/#/register?code=WPugVZUe    301
+/go/telegram     https://t.me/huanqiuti8899                           301
+/go/tg-kefu      https://t.me/huanqiuti8899                           301
+
+# 2. 查询参数格式重定向 (/go.html?id=xxx -> 目标机场官方直达，Netlify/CF Pages 规则)
+/go.html id=huanqiuti    https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0    301!
+/go.html id=dalaoyun     https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa     301!
+/go.html id=yunjiexian   https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV      301!
+/go.html id=shandianshu  https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB 301!
+/go.html id=shenxing     https://pps123.shenxingaff.com/#/?code=6tQ7zHUc      301!
+/go.html id=liulianyun   https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G   301!
+/go.html id=kuaili       https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F       301!
+/go.html id=guangnianti  https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO 301!
+/go.html id=edgenode     https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F    301!
+/go.html id=shunyun      https://ddd.jichang.best/#/register?code=nldUZaYc    301!
+/go.html id=kexinyun     https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs      301!
+/go.html id=yuntu        https://super.ytjcok.org/#/register?code=poKwFVtv    301!
+/go.html id=jilianyun    https://poajufr.jilianat.homes/#/?code=jwCMOvQO      301!
+/go.html id=sujie        https://momlise.szjtfp.xyz/#/?code=kcoensXG          301!
+/go.html id=kunpeng      https://kunpengjiasu.com/#/register?code=WPugVZUe    301!
+/go.html id=telegram     https://t.me/huanqiuti8899                           301!
+/go.html id=tg-kefu      https://t.me/huanqiuti8899                           301!
+
+# 3. 动态 fallback 兜底：未匹配到的 /go/* 转发至 /go.html
+/go/*    /go.html?id=:splat    302

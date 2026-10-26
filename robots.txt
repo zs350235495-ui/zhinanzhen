@@ -1,4 +1,6 @@
 # tiziznz.com - 梯子指南针 爬虫抓取协议与 AI 索引规范
+# 注意：严禁在此 Disallow /go/ 或 /go.html，避免 Bing/Google Webmaster 报 Blocked by robots.txt 严重错误
+# 全站推广跳转依靠 /go.html 内的 meta noindex/nofollow 标签及链接上 rel="nofollow sponsored" 实现搜索引擎合规静默不收录
 User-agent: Googlebot
 Allow: /
 Allow: /css/

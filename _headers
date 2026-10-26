@@ -3,6 +3,15 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
 
+/go.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/go/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-cache, no-store, must-revalidate
+
+
 /*.css
   Content-Type: text/css; charset=utf-8
   Cache-Control: public, max-age=31536000, immutable

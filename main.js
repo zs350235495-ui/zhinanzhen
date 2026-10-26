@@ -114,7 +114,7 @@ function renderTopFeaturedCard() {
                 <a href="tutorials.html" class="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-center transition-colors">
                   查看测速
                 </a>
-                <a href="${service.url}" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-blue-600 hover:bg-blue-700 px-3 py-2 text-xs font-semibold text-white text-center shadow-xs transition-colors flex items-center justify-center gap-1">
+                <a href="${service.url}" target="_blank" rel="nofollow sponsored noopener noreferrer" class="rounded-lg bg-blue-600 hover:bg-blue-700 px-3 py-2 text-xs font-semibold text-white text-center shadow-xs transition-colors flex items-center justify-center gap-1">
                   <span>直达官网</span>
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
@@ -187,7 +187,7 @@ function renderTopFeaturedCard() {
                     </button>
                   </td>
                   <td class="py-3.5 px-4 text-right">
-                    <a href="${service.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0">
+                    <a href="${service.url}" target="_blank" rel="nofollow sponsored noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-2xs transition-colors shrink-0">
                       <span>直达官网</span>
                       <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>

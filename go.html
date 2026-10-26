@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 严格遵循搜索引擎合规策略：禁止爬虫建索与抓取跳转页 -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>安全跳转中... | 梯子指南针</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <style>
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 2s linear infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    .animate-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+  </style>
+  <script>
+    // 严格隔离的 15 家收录机场官方直达/返佣重定向字典
+    var AFF_DESTINATIONS = {
+      'huanqiuti': {
+        name: '环球梯 (全球 IEPL 高速专线)',
+        url: 'https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0',
+        coupon: 'HQ66 (专属7折)'
+      },
+      'dalaoyun': {
+        name: '大佬云 (老牌大厂 IPLC 专线)',
+        url: 'https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa',
+        coupon: 'DLY66 (专属7折)'
+      },
+      'yunjiexian': {
+        name: '云界线 (BGP/IEPL 性价比专线)',
+        url: 'https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV',
+        coupon: 'yjx888 (专属7折)'
+      },
+      'shandianshu': {
+        name: '闪电鼠 (极客高速中转专线)',
+        url: 'https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB',
+        coupon: 'sds88 (专属7折)'
+      },
+      'shenxing': {
+        name: '神行加速 (多路高频智能分流)',
+        url: 'https://pps123.shenxingaff.com/#/?code=6tQ7zHUc',
+        coupon: 'sxjs (专属7折)'
+      },
+      'liulianyun': {
+        name: '榴莲云 (甜品级大带宽专线)',
+        url: 'https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G',
+        coupon: 'lly66 (专属7折)'
+      },
+      'kuaili': {
+        name: '快狸 (全节点高速专线)',
+        url: 'https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F',
+        coupon: 'kl66 (专属7折)'
+      },
+      'guangnianti': {
+        name: '光年梯 (晚高峰 4K/8K 极速秒开)',
+        url: 'https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO',
+        coupon: 'gnt88 (专属7折)'
+      },
+      'edgenode': {
+        name: '边缘节点 (全能跨境中转专线)',
+        url: 'https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F',
+        coupon: 'byjd (专属7折)'
+      },
+      'shunyun': {
+        name: '瞬云 (低延迟游戏与流媒体加速)',
+        url: 'https://ddd.jichang.best/#/register?code=nldUZaYc',
+        coupon: 'sy88 (专属7折)'
+      },
+      'kexinyun': {
+        name: '可信云 (稳定企业级专线中继)',
+        url: 'https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs',
+        coupon: 'kxy66 (专属7折)'
+      },
+      'yuntu': {
+        name: '云图机场 (金融级专线网络)',
+        url: 'https://super.ytjcok.org/#/register?code=poKwFVtv',
+        coupon: 'ytjc (专属7折)'
+      },
+      'jilianyun': {
+        name: '极连云 (高速专线大带宽中继)',
+        url: 'https://poajufr.jilianat.homes/#/?code=jwCMOvQO',
+        coupon: 'jly66 (专属7折)'
+      },
+      'sujie': {
+        name: '速界 (全场景跨境加速专线)',
+        url: 'https://momlise.szjtfp.xyz/#/?code=kcoensXG',
+        coupon: 'sj88 (专属7折)'
+      },
+      'kunpeng': {
+        name: '鲲鹏加速 (高性价比专线服务)',
+        url: 'https://kunpengjiasu.com/#/register?code=WPugVZUe',
+        coupon: 'kpjs (专属7折)'
+      },
+      'telegram': {
+        name: '官方 Telegram 客服',
+        url: 'https://t.me/huanqiuti8899',
+        coupon: ''
+      },
+      'tg-kefu': {
+        name: '官方 Telegram 客服',
+        url: 'https://t.me/huanqiuti8899',
+        coupon: ''
+      }
+    };
+
+    // 获取请求参数 (支持 ?id=xxx, ?to=xxx, #xxx 或 pathname 路由)
+    function getTargetId() {
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get('id') || params.get('to') || params.get('aff');
+      if (id) return id.trim().toLowerCase();
+
+      var hash = window.location.hash.replace(/^#\/?/, '').trim().toLowerCase();
+      if (hash) return hash;
+
+      var pathParts = window.location.pathname.split('/').filter(Boolean);
+      var lastPart = pathParts[pathParts.length - 1] || '';
+      if (lastPart && lastPart !== 'go' && lastPart !== 'go.html') {
+        return lastPart.toLowerCase();
+      }
+      return null;
+    }
+
+    var targetId = getTargetId();
+    var destination = targetId ? AFF_DESTINATIONS[targetId] : null;
+
+    // 如果匹配成功，毫秒级快速发起安全跳转（window.location.replace 绝不污染后退历史）
+    if (destination && destination.url) {
+      try {
+        window.location.replace(destination.url);
+      } catch (e) {
+        window.location.href = destination.url;
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex items-center justify-center p-4 antialiased selection:bg-blue-500 selection:text-white font-sans">
+  <div class="max-w-md w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-8 text-center relative overflow-hidden">
+    <!-- 装饰性渐变光晕 -->
+    <div class="absolute -top-16 -right-16 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="absolute -bottom-16 -left-16 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div id="redirect-content">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200/60 dark:border-blue-800/60 text-blue-600 dark:text-blue-400 mb-5 relative">
+        <svg class="w-8 h-8 animate-spin-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+      </div>
+
+      <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2" id="title-text">
+        正在安全重定向中...
+      </h1>
+
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed" id="desc-text">
+        您即将离开 <strong>梯子指南针 (tiziznz.com)</strong> 并前往官方合规服务通道。
+      </p>
+
+      <div id="target-card" class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 rounded-xl p-4 mb-6 text-left hidden">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">目标机场官网</span>
+          <span id="coupon-badge" class="text-2xs font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"></span>
+        </div>
+        <div id="target-name" class="text-sm font-bold text-slate-900 dark:text-white truncate"></div>
+      </div>
+
+      <div class="space-y-3">
+        <a id="action-btn" href="/" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-bold text-sm shadow-md hover:shadow-blue-500/20 transition-all">
+          <span id="action-btn-text">点击立即直达官网</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <a href="/" class="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800/60 text-slate-600 dark:text-slate-400 font-semibold text-xs transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          返回梯子指南针首页
+        </a>
+      </div>
+    </div>
+
+    <!-- 底部合规声明提示 -->
+    <div class="mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 text-2xs text-slate-400 dark:text-slate-500 leading-relaxed">
+      梯子指南针独立客观测评系统 · 全站实施 301 隔离与 rel="nofollow sponsored" 合规规范
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var targetCard = document.getElementById('target-card');
+      var targetName = document.getElementById('target-name');
+      var couponBadge = document.getElementById('coupon-badge');
+      var actionBtn = document.getElementById('action-btn');
+      var actionBtnText = document.getElementById('action-btn-text');
+      var titleText = document.getElementById('title-text');
+      var descText = document.getElementById('desc-text');
+
+      if (destination && destination.url) {
+        targetCard.classList.remove('hidden');
+        targetName.textContent = destination.name;
+        if (destination.coupon) {
+          couponBadge.textContent = '优惠码: ' + destination.coupon;
+        } else {
+          couponBadge.style.display = 'none';
+        }
+        actionBtn.href = destination.url;
+        actionBtn.setAttribute('rel', 'nofollow sponsored noopener noreferrer');
+        actionBtn.setAttribute('target', '_blank');
+
+        var countdown = 2;
+        var timer = setInterval(function() {
+          countdown--;
+          if (countdown <= 0) {
+            clearInterval(timer);
+            try {
+              window.location.replace(destination.url);
+            } catch (e) {
+              window.location.href = destination.url;
+            }
+          }
+        }, 1000);
+      } else {
+        // 未匹配到 ID
+        titleText.textContent = '未找到指定的服务通道';
+        descText.textContent = '该推广链接可能已下线或迁移，请返回首页查看 2026 最新精选高速机场推荐。';
+        actionBtn.href = '/index.html#top-featured-container';
+        actionBtnText.textContent = '查看精选机场排行榜';
+      }
+    })();
+  </script>
+</body>
+</html>

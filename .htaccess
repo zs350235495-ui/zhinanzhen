@@ -10,6 +10,25 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # 0. AFF 推广外链 301 状态码永久重定向
+  RewriteRule ^go/huanqiuti$ https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0 [R=301,L]
+  RewriteRule ^go/dalaoyun$ https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa [R=301,L]
+  RewriteRule ^go/yunjiexian$ https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV [R=301,L]
+  RewriteRule ^go/shandianshu$ https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB [R=301,L]
+  RewriteRule ^go/shenxing$ https://pps123.shenxingaff.com/#/?code=6tQ7zHUc [R=301,L]
+  RewriteRule ^go/liulianyun$ https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G [R=301,L]
+  RewriteRule ^go/kuaili$ https://iasfa.kuailitztz2.sbs/#/?code=e0cAmK7F [R=301,L]
+  RewriteRule ^go/guangnianti$ https://bk1dvc.guangnianertt1.homes/#/?code=PQhPFDhO [R=301,L]
+  RewriteRule ^go/edgenode$ https://zvbghs02.ztymforedge.lol/#/?code=mLLL6h6F [R=301,L]
+  RewriteRule ^go/shunyun$ https://ddd.jichang.best/#/register?code=nldUZaYc [R=301,L]
+  RewriteRule ^go/kexinyun$ https://asfasf.kexintztz2.sbs/#/?code=sFKkfEYs [R=301,L]
+  RewriteRule ^go/yuntu$ https://super.ytjcok.org/#/register?code=poKwFVtv [R=301,L]
+  RewriteRule ^go/jilianyun$ https://poajufr.jilianat.homes/#/?code=jwCMOvQO [R=301,L]
+  RewriteRule ^go/sujie$ https://momlise.szjtfp.xyz/#/?code=kcoensXG [R=301,L]
+  RewriteRule ^go/kunpeng$ https://kunpengjiasu.com/#/register?code=WPugVZUe [R=301,L]
+  RewriteRule ^go/telegram$ https://t.me/huanqiuti8899 [R=301,L]
+  RewriteRule ^go/tg-kefu$ https://t.me/huanqiuti8899 [R=301,L]
+
     # 1. 静态物理资源存在时直接响应，绝不重定向或重写回 index.html
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
