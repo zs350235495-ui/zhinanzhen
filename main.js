@@ -47,8 +47,9 @@ function renderTopFeaturedCard() {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       ${top3.map((service, index) => {
         const isTop1 = index === 0;
-        const chosenPlan = service.plans && service.plans[1] ? service.plans[1] : (service.plans && service.plans[0] ? service.plans[0] : null);
-        const startPrice = chosenPlan ? chosenPlan.price.split(' ')[0] : '¥14.70';
+        const monthlyPlans = (service.plans || []).filter(p => p.price && (p.price.includes('/ 月') || p.price.includes('/月')));
+        const chosenPlan = monthlyPlans.length > 0 ? monthlyPlans[0] : (service.plans && service.plans[0] ? service.plans[0] : null);
+        const startPrice = chosenPlan ? chosenPlan.price.split(' ')[0] : (isTop1 ? '¥8.40' : '¥14.70');
         const originalStartPrice = chosenPlan && chosenPlan.originalPrice ? chosenPlan.originalPrice.split(' ')[0] : '';
         return `
           <div class="rounded-2xl border ${isTop1 ? 'border-amber-300/80 dark:border-amber-600/40 ring-1 ring-amber-400/20' : 'border-slate-200 dark:border-slate-800'} bg-white dark:bg-slate-900 p-6 shadow-xs hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between relative group">

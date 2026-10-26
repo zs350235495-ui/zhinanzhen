@@ -18,16 +18,21 @@ export const topFeaturedServices = [
     features: [
       "IEPL全国际专线，超低23ms延迟",
       "解锁全网AI (ChatGPT / Claude) 与 4K 影音",
-      "支持 3~10 台设备同时在线使用",
-      "提供学生包 (¥67.2/年) 与高性价比月付"
+      "全套餐不限制客户端设备数、不限速",
+      "起步低至 ¥8.40/月，学生包 ¥67.20/年"
     ],
     plans: [
-      { name: "环球学生套餐", price: "¥67.20 / 年", originalPrice: "¥96.00 / 年", traffic: "60GB/月", devices: "3台设备" },
-      { name: "环球轻享", price: "¥14.70 / 月", originalPrice: "¥21.00 / 月", traffic: "140GB/月", devices: "3台设备" },
-      { name: "环球畅游", price: "¥27.30 / 月", originalPrice: "¥39.00 / 月", traffic: "280GB/月", devices: "5台设备" },
-      { name: "环球尊享", price: "¥48.30 / 月", originalPrice: "¥69.00 / 月", traffic: "600GB/月", devices: "10台设备" },
-      { name: "环球随行包", price: "¥69.30 / 一次性", originalPrice: "¥99.00 / 一次性", traffic: "80GB不限时", devices: "5台设备" },
-      { name: "环球灵活包", price: "¥209.30 / 一次性", originalPrice: "¥299.00 / 一次性", traffic: "400GB不限时", devices: "8台设备" }
+      { name: "环球微享", price: "¥8.40 / 月", originalPrice: "¥12.00 / 月", traffic: "70GB/月", devices: "不限设备" },
+      { name: "环球轻享", price: "¥14.70 / 月", originalPrice: "¥21.00 / 月", traffic: "140GB/月", devices: "不限设备" },
+      { name: "环球畅游", price: "¥27.30 / 月", originalPrice: "¥39.00 / 月", traffic: "280GB/月", devices: "不限设备" },
+      { name: "环球进阶", price: "¥36.40 / 月", originalPrice: "¥52.00 / 月", traffic: "420GB/月", devices: "不限设备" },
+      { name: "环球尊享", price: "¥48.30 / 月", originalPrice: "¥69.00 / 月", traffic: "600GB/月", devices: "不限设备" },
+      { name: "环球极客", price: "¥89.60 / 月", originalPrice: "¥128.00 / 月", traffic: "1.2TB/月", devices: "不限设备" },
+      { name: "环球学生套餐", price: "¥67.20 / 年", originalPrice: "¥96.00 / 年", traffic: "80GB/月", devices: "不限设备" },
+      { name: "环球备用包", price: "¥27.30 / 一次性", originalPrice: "¥39.00 / 一次性", traffic: "60GB永久", devices: "不限设备" },
+      { name: "环球随行包", price: "¥69.30 / 一次性", originalPrice: "¥99.00 / 一次性", traffic: "180GB不限时", devices: "不限设备" },
+      { name: "环球灵活包", price: "¥209.30 / 一次性", originalPrice: "¥299.00 / 一次性", traffic: "600GB不限时", devices: "不限设备" },
+      { name: "环球海量包", price: "¥481.60 / 一次性", originalPrice: "¥688.00 / 一次性", traffic: "1.5TB不限时", devices: "不限设备" }
     ]
   },
   {
@@ -369,7 +374,7 @@ export const topFeaturedServices = [
 ];
 
 export const airportsData = [
-  { id: 'ap-1', name: '环球梯 (TOP 1 榜首)', status: 'normal', type: 'IEPL专线', ping: '23ms', rank: 1, coupon: 'HQ66 (7折)', price: '¥14.70/月', originalPrice: '¥21.00/月', url: 'https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0', reviewUrl: 'review-huanqiuti.html' },
+  { id: 'ap-1', name: '环球梯 (TOP 1 榜首)', status: 'normal', type: 'IEPL专线', ping: '23ms', rank: 1, coupon: 'HQ66 (7折)', price: '¥8.40/月', originalPrice: '¥12.00/月', url: 'https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0', reviewUrl: 'review-huanqiuti.html' },
   { id: 'ap-2', name: '大佬云 (TOP 2 老牌)', status: 'normal', type: 'IPLC专线', ping: '25ms', rank: 2, coupon: 'DLY66 (7折)', price: '¥16.10/月', originalPrice: '¥23.00/月', url: 'https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa', reviewUrl: 'review-dalaoyun.html' },
   { id: 'ap-3', name: '云界线 (TOP 3 精选)', status: 'normal', type: 'IEPL/BGP专线', ping: '26ms', rank: 3, coupon: 'yjx888 (7折)', price: '¥12.60/月', originalPrice: '¥18.00/月', url: 'https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV', reviewUrl: 'review-yunjiexian.html' },
   { id: 'ap-4', name: '闪电鼠 (TOP 4 极速)', status: 'normal', type: '闪电中转专线', ping: '28ms', rank: 4, coupon: 'sds88 (7折)', price: '¥13.30/月', originalPrice: '¥19.00/月', url: 'https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB', reviewUrl: 'review-shandianshu.html' },
