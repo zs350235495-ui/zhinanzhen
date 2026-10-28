@@ -48,6 +48,13 @@
 
   <!-- 深度技术研报与选型白皮书 -->
   <url>
+    <loc>https://tiziznz.com/client-rules-performance-guide.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.96</priority>
+  </url>
+
+  <url>
     <loc>https://tiziznz.com/network-routing-decision-compass-2026.html</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>daily</changefreq>

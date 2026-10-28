@@ -22,6 +22,7 @@
    - 推荐分流内核策略：Fake-IP 模式配合防 DNS 污染规则，TUN 虚拟网卡防死锁，保证国内直连、国外代理分流
 
 ## 精选专题与白皮书指南索引
+- [为什么你的代理客户端又卡又耗电？深入解析规则匹配树、GEO 数据库与分流引擎的性能瓶颈](https://tiziznz.com/client-rules-performance-guide.html): 深入解析 Clash 与 Sing-box 分流匹配树、短路遍历逻辑、SRS 二进制规则集与 DNS 防阻塞实战。
 - [2026 全球跨境网络链路选型决策罗盘](https://tiziznz.com/network-routing-decision-compass-2026.html): SLA 可用性真机实测、晚高峰 TCP/QUIC 抗拥塞模型、核心服务商综合物理矩阵与全场景选型决策树。
 - [2026 全球网络阻断与连接异常排错终极手册](https://tiziznz.com/network-troubleshooting-guide.html): 深入排查明文 SNI 阻断、伪造 TCP RST 抓包、晚高峰 QoS 限速、Fake-IP 原理与防死锁实践。
 - [2026 新手科学上网避坑指南：看懂真实节点质量](https://tiziznz.com/node-quality-guide.html): 揭秘节点虚标、晚高峰测速、流媒体与 ChatGPT 解锁风控模型。
