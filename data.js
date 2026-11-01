@@ -626,6 +626,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "tun-mode-stack-gvisor-performance-2026",
+    title: "2026跨境TUN模式网络栈调优与gVisor内核损耗实测",
+    excerpt: "网络评测实验室发布2026客户端TUN虚拟网卡模式深度调优指南。对比实测System原生栈、gVisor用户态栈与Mixed模式在千兆吞吐下的CPU开销、内存泄漏与转发延迟，提供零丢包配置方案。",
+    category: "网络栈与虚拟网卡调优",
+    categoryKey: "tutorials",
+    badgeType: "red",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-11-01",
+    readTime: "22 分钟深度推演",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-rose-600"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
+    url: "articles/tun-mode-stack-gvisor-performance-2026.html"
+  },
+  {
     id: "network-routing-decision-compass-2026",
     title: "2026 全球跨境网络链路选型决策罗盘：SLA 可用性实测、晚高峰抗拥塞评测与防坑指南白皮书",
     excerpt: "梯子指南针 2026 全球跨境网络链路选型决策罗盘白皮书 (COMPASS-2026)。基于真机海缆拓扑、公网 BGP 拥塞机制与物理专线隔离原理，实测晚高峰 SLA 可用性、TCP 快速重传与抖动控制矩阵，深度评测环球梯、大佬云、云界线、闪电鼠等核心服务商，输出多场景选型决策树与防坑指南。",
