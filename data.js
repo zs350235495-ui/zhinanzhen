@@ -626,6 +626,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "network-protocol-selection-benchmark-guide-2026",
+    title: "2026主流网络传输协议性能横评与选型路线指南",
+    excerpt: "梯子指南针发布2026跨境传输协议权威横评。实测VLESS-Reality、Hysteria 2、TUIC v5与Trojan在弱网丢包、吞吐速度、抗封锁特征与设备功耗差异，为您指明不同网络场景下的最佳协议选型路线。",
+    category: "传输协议与性能选型",
+    categoryKey: "tutorials",
+    badgeType: "cyan",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-11-04",
+    readTime: "8 分钟深度横评",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-cyan-600"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>`,
+    url: "articles/network-protocol-selection-benchmark-guide-2026.html"
+  },
+  {
     id: "tun-mode-stack-gvisor-performance-2026",
     title: "2026跨境TUN模式网络栈调优与gVisor内核损耗实测",
     excerpt: "网络评测实验室发布2026客户端TUN虚拟网卡模式深度调优指南。对比实测System原生栈、gVisor用户态栈与Mixed模式在千兆吞吐下的CPU开销、内存泄漏与转发延迟，提供零丢包配置方案。",
