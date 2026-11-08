@@ -140,7 +140,7 @@ if (goHtmlContent.includes('<meta name="robots" content="noindex, nofollow')) {
 
 console.log('\n=== [审计结果汇总] ===');
 if (issues.length === 0) {
-  console.log('🎉 恭喜！全站「AFF 推广链接 301 隔离与合规改造」全部门禁自检项 100% 完美通过！');
+  console.log('🎉 恭喜！全站「AFF 推广链接 302 隔离与合规改造」全部门禁自检项 100% 完美通过！');
 } else {
   console.log(`⚠️ 发现 ${issues.length} 个问题:`);
   issues.forEach(i => console.log(' - ' + i));
