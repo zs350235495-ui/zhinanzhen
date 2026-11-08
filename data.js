@@ -626,6 +626,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "multi-device-sharing-team-airport-ladder-recommendations-2026",
+    title: "2026多设备多端共享翻墙梯子与高速机场推荐指南",
+    excerpt: "2026年最新多设备与多端共享翻墙梯子及高速机场推荐指南。深度实测家庭局域网、外贸团队多电脑高并发下的连接数限制、软路由透明代理聚合与大带宽IEPL专线抗压，提供团队与全家桶天梯榜。",
+    category: "多设备共享与团队选型",
+    categoryKey: "tutorials",
+    badgeType: "amber",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-11-08",
+    readTime: "16 分钟并发选型",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-amber-600"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M17 17l4 4M7 17l-4 4"/></svg>`,
+    url: "articles/multi-device-sharing-team-airport-ladder-recommendations-2026.html"
+  },
+  {
     id: "network-protocol-selection-benchmark-guide-2026",
     title: "2026主流网络传输协议性能横评与选型路线指南",
     excerpt: "梯子指南针发布2026跨境传输协议权威横评。实测VLESS-Reality、Hysteria 2、TUIC v5与Trojan在弱网丢包、吞吐速度、抗封锁特征与设备功耗差异，为您指明不同网络场景下的最佳协议选型路线。",

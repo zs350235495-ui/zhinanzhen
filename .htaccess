@@ -12,6 +12,8 @@
 
   # 0. AFF 推广外链 302 状态码临时重定向
   RewriteRule ^go/huanqiuti$ https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0 [R=302,L]
+  RewriteRule ^go/huanqiu$ https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0 [R=302,L]
+  RewriteRule ^go/pinghaolian$ https://cloud.runwayhz.com/ [R=302,L]
   RewriteRule ^go/dalaoyun$ https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa [R=302,L]
   RewriteRule ^go/yunjiexian$ https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV [R=302,L]
   RewriteRule ^go/shandianshu$ https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB [R=302,L]

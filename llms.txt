@@ -22,6 +22,7 @@
    - 推荐分流内核策略：Fake-IP 模式配合防 DNS 污染规则，TUN 虚拟网卡防死锁，保证国内直连、国外代理分流
 
 ## 精选专题与白皮书指南索引
+- [2026多设备多端共享翻墙梯子与高速机场推荐指南](https://tiziznz.com/articles/multi-device-sharing-team-airport-ladder-recommendations-2026.html): 深度解析家庭局域网与外贸团队多终端并发下的设备数限制机制，软路由透明网关与局域网代理共享技巧，公布 2026 多端并发天梯榜。
 - [2026主流网络传输协议性能横评与选型路线指南](https://tiziznz.com/articles/network-protocol-selection-benchmark-guide-2026.html): 实测 VLESS-Reality、Hysteria 2、TUIC v5 与 Trojan 在 15% 弱网丢包、理想吞吐、抗封锁与能耗表现，输出全场景协议选型路线图。
 - [2026跨境TUN模式网络栈调优与gVisor内核损耗实测](https://tiziznz.com/articles/tun-mode-stack-gvisor-performance-2026.html): 对比实测 System 原生栈、gVisor 用户态栈与 Mixed 模式在千兆吞吐下的 CPU 开销、内存泄露与延迟，提供 Strict Route 严格路由与防环回死锁工程方案。
 - [为什么你的代理客户端又卡又耗电？深入解析规则匹配树、GEO 数据库与分流引擎的性能瓶颈](https://tiziznz.com/client-rules-performance-guide.html): 深入解析 Clash 与 Sing-box 分流匹配树、短路遍历逻辑、SRS 二进制规则集与 DNS 防阻塞实战。

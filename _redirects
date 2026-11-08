@@ -6,6 +6,8 @@
 
 # 1. 路径格式重定向 (/go/xxx -> 目标机场官方直达)
 /go/huanqiuti    https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0    302
+/go/huanqiu      https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0    302
+/go/pinghaolian  https://cloud.runwayhz.com/                           302
 /go/dalaoyun     https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa     302
 /go/yunjiexian   https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV      302
 /go/shandianshu  https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB 302
@@ -25,6 +27,8 @@
 
 # 2. 查询参数格式重定向 (/go.html?id=xxx -> 目标机场官方直达，Netlify/CF Pages 规则)
 /go.html id=huanqiuti    https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0    302!
+/go.html id=huanqiu      https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0    302!
+/go.html id=pinghaolian  https://cloud.runwayhz.com/                           302!
 /go.html id=dalaoyun     https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa     302!
 /go.html id=yunjiexian   https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV      302!
 /go.html id=shandianshu  https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB 302!
