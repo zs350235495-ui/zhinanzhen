@@ -15,7 +15,7 @@
   RewriteRule ^go/huanqiu$ https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0 [R=302,L]
   RewriteRule ^go/pinghaolian$ https://cloud.runwayhz.com/ [R=302,L]
   RewriteRule ^go/dalaoyun$ https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa [R=302,L]
-  RewriteRule ^go/yunjiexian$ https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV [R=302,L]
+  RewriteRule ^go/yunjiexian$ https://pp01.yunjiexianaff.com/#/?code=6Y9vSMcc [R=302,L]
   RewriteRule ^go/shandianshu$ https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB [R=302,L]
   RewriteRule ^go/shenxing$ https://pps123.shenxingaff.com/#/?code=6tQ7zHUc [R=302,L]
   RewriteRule ^go/liulianyun$ https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G [R=302,L]
