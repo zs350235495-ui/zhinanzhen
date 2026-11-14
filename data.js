@@ -626,6 +626,20 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "multi-hop-proxy-chain-relay-airport-ladder-2026",
+    title: "2026链式多跳代理与中转落地分离翻墙梯子机场推荐",
+    excerpt: "2026年最新链式多跳代理与中转落地分离翻墙梯子及高速机场推荐指南。深度拆解Proxy Chain前置专线加速、自建家宽住宅IP落地、端到端双重加密隔离与防关联架构，提供高阶链路编排技术天梯榜。",
+    category: "链式多跳与中转落地分离",
+    categoryKey: "tutorials",
+    badgeType: "purple",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-11-14",
+    readTime: "17 分钟深度解析",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-fuchsia-600"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.59 8.59l6.82 6.82"/><circle cx="18" cy="6" r="3"/><path d="M15.41 8.59l-6.82 6.82"/></svg>`,
+    url: "articles/multi-hop-proxy-chain-relay-airport-ladder-2026.html"
+  },
+  {
     id: "multi-device-sharing-team-airport-ladder-recommendations-2026",
     title: "2026多设备多端共享翻墙梯子与高速机场推荐指南",
     excerpt: "2026年最新多设备与多端共享翻墙梯子及高速机场推荐指南。深度实测家庭局域网、外贸团队多电脑高并发下的连接数限制、软路由透明代理聚合与大带宽IEPL专线抗压，提供团队与全家桶天梯榜。",
