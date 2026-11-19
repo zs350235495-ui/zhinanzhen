@@ -626,6 +626,21 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "2026-airport-ladder-crossborder-work-guide",
+    title: "2026机场推荐与梯子推荐指南：跨境工作流、高并发稳定性与长期选型逻辑",
+    excerpt: "在2026年，越来越多人的网络需求已升级为高频生产力与跨区域协作。本文深度剖析高并发长连接稳定性、晚高峰真实可用率、出口IP风控及分层配置建议，提供长期避坑与实操选型清单。",
+    category: "跨境工作流与选型指南",
+    categoryKey: "tutorials",
+    badgeType: "blue",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-11-19",
+    readTime: "12 分钟实战选型",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-blue-600"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/><path d="M2 12h20"/></svg>`,
+    url: "articles/2026-airport-ladder-crossborder-work-guide.html"
+  },
+
+  {
     id: "multi-hop-proxy-chain-relay-airport-ladder-2026",
     title: "2026链式多跳代理与中转落地分离翻墙梯子机场推荐",
     excerpt: "2026年最新链式多跳代理与中转落地分离翻墙梯子及高速机场推荐指南。深度拆解Proxy Chain前置专线加速、自建家宽住宅IP落地、端到端双重加密隔离与防关联架构，提供高阶链路编排技术天梯榜。",
