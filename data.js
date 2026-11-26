@@ -1022,8 +1022,8 @@ export const articlesData = [
   },
   {
     id: "shadowrocket-ios-rewrite",
-    title: "Shadowrocket iOS 规则重写：小火箭机场推荐与节点一键配置",
-    excerpt: "覆盖 Shadowrocket 机场推荐、Shadowrocket 节点推荐与小火箭订阅推荐配置！支持小火箭机场推荐用户扫码导入订阅、自定义策略组及去广告覆写。",
+    title: "Shadowrocket iOS 规则重写：小火箭机场与节点订阅配置",
+    excerpt: "面向 Shadowrocket 机场推荐、Shadowrocket 节点推荐与小火箭订阅推荐配置需求，指导小火箭机场推荐用户扫码导入策略组与去广告规则覆写。",
     category: "iOS 教程",
     categoryKey: "guides",
     badgeType: "indigo",
@@ -1121,7 +1121,7 @@ export const articlesData = [
   {
     id: "mac-proxy-client-comparison",
     title: "苹果生态客户端选型：Clash Verge、Surge、Stash 与 Quantumult X 对比",
-    excerpt: "面向 Surge 机场推荐、Stash 机场推荐以及 Quantumult X 机场推荐（圈 X 机场推荐）用户！对比 macOS/iOS 主流客户端与规则策略组适配特性。",
+    excerpt: "对比 macOS 与 iOS 代理工具在 Surge 机场推荐、Stash 机场推荐及 Quantumult X 机场推荐（圈 X 机场推荐）下的策略组适配与抓包性能差异。",
     category: "macOS 选型",
     categoryKey: "guides",
     badgeType: "sky",
