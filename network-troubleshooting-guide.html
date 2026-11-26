@@ -46,7 +46,7 @@
           }
         },
         "datePublished": "2026-10-22",
-        "dateModified": "2026-10-23",
+        "dateModified": "2026-11-26",
         "mainEntityOfPage": "https://tiziznz.com/network-troubleshooting-guide.html",
         "image": "https://tiziznz.com/favicon.svg"
       },
@@ -530,7 +530,7 @@ curl -s -G https://api.abuseipdb.com/api/v2/check \
 
             <div class="border-l-2 border-rose-500 pl-3">
               <span class="text-rose-400 font-bold">[4. 应用层与风控响应]</span> 返回 HTTP 状态码为多少？
-              <div class="text-slate-400 mt-1">&rarr; 403 Forbidden (带 Cloudflare 验证码)：客户端 JA3/JA4 协议指纹被标记。</div>
+              <div class="text-slate-400 mt-1">&rarr; 403 Forbidden (带 Cloudflare 验证码 / 频繁风控)：多因节点共享 IP 滥用、客户端指纹被标记或频繁切区，建议固定常用地区节点并做好国内外规则分流。</div>
               <div class="text-slate-400 mt-0.5">&rarr; 403 / 区域不可用：节点 IP 属于数据中心机房 ASN（需切换原生住宅 ISP 节点）。</div>
               <div class="text-emerald-400 mt-0.5">&rarr; 200 OK：全链路握手成功，通信正常。</div>
             </div>

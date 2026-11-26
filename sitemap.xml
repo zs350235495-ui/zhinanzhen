@@ -3,7 +3,7 @@
   <!-- 首页 -->
   <url>
     <loc>https://tiziznz.com/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,37 +11,37 @@
   <!-- 核心聚合与测评专区 -->
   <url>
     <loc>https://tiziznz.com/airport-reviews.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.98</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/blog.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/downloads.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/monitoring.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/tutorials.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/faq.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -49,95 +49,95 @@
   <!-- 深度技术研报与选型白皮书 -->
   <url>
     <loc>https://tiziznz.com/articles/2026-airport-ladder-dev-workflow-guide.html</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
 
   <url>
     <loc>https://tiziznz.com/articles/2026-airport-ladder-crossborder-work-guide.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
 
   <url>
     <loc>https://tiziznz.com/articles/multi-hop-proxy-chain-relay-airport-ladder-2026.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/articles/multi-device-sharing-team-airport-ladder-recommendations-2026.html</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/articles/network-protocol-selection-benchmark-guide-2026.html</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/articles/tun-mode-stack-gvisor-performance-2026.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
 
   <url>
     <loc>https://tiziznz.com/client-rules-performance-guide.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
 
   <url>
     <loc>https://tiziznz.com/network-routing-decision-compass-2026.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.98</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/network-troubleshooting-guide.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/node-quality-guide.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.96</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/network-routing-guide.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/airport-selection-guide.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/airport-guide.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/subscription-guide.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-detail.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -145,91 +145,91 @@
   <!-- 15 家收录机场独立深度评测落地页 -->
   <url>
     <loc>https://tiziznz.com/review-huanqiuti.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-dalaoyun.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-yunjiexian.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-shandianshu.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-shenxing.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-liulianyun.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-kuaili.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-guangnianti.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-edgenode.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-shunyun.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-kexinyun.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-yuntu.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-jilianyun.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-sujie.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://tiziznz.com/review-kunpeng.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
