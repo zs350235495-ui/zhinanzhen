@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2026跨境TUN模式网络栈调优与gVisor内核损耗实测</title>
   <meta name="description" content="网络评测实验室发布2026客户端TUN虚拟网卡模式深度调优指南。对比实测System原生栈、gVisor用户态栈与Mixed模式在千兆吞吐下的CPU开销、内存泄漏与转发延迟，提供零丢包配置方案。">
-  <meta name="keywords" content="TUN模式调优, gVisor内核损耗, 用户态网络栈, System原生栈, Mixed混合栈, Wintun驱动, Strict Route, 网络回环死锁, 局域网共享失效, Clash TUN配置, Sing-box TUN实测, 梯子指南针">
+  <meta name="keywords" content="TUN模式调优, gVisor内核损耗, Clash Verge 机场推荐, Clash Meta 机场推荐, sing-box 机场推荐, 电脑梯子推荐, 梯子软件推荐, 科学上网软件推荐, Clash TUN配置, Sing-box TUN实测, 梯子指南针">
   <link rel="canonical" href="https://tiziznz.com/articles/tun-mode-stack-gvisor-performance-2026.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
@@ -266,7 +266,7 @@
             由于现代跨境代理协议（如 VLESS、Shadowsocks、Trojan、Hysteria 2）在传输层都是基于流（TCP Stream）或数据报（UDP Datagram）进行应用层转发的，代理客户端<strong>不能把原始的 Layer 3 IP 报文直接发往远端服务器</strong>。客户端必须在本地充当一台“路由器与终端结合体”——解析 IP 头、处理 TCP 三次握手、重传乱序重组、滑动窗口维护以及连接断开。
           </p>
           <p>
-            这就要求代理客户端内部必须内嵌一个完整的 <strong>TCP/IP 协议栈（Network Stack）</strong>。目前主流客户端（Clash Verge Rev、Sing-box、Meta）普遍支持以下三种网络栈架构：
+            这就要求代理客户端内部必须内嵌一个完整的 <strong>TCP/IP 协议栈（Network Stack）</strong>。目前电脑梯子推荐与梯子软件推荐中的主流科学上网软件推荐（如 Clash Verge 机场推荐常用的 Clash Verge Rev、支持 Clash Meta 机场推荐内核的客户端以及 sing-box 机场推荐核心）普遍支持以下三种网络栈架构：
           </p>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
