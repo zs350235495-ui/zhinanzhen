@@ -626,6 +626,21 @@ export const featuredToolsData = [
 
 export const articlesData = [
   {
+    id: "2026-tizi-feng-kong-wending-tuijian",
+    title: "2026 梯子推荐与稳定梯子指南：梯子质量差、经常风控怎么破？",
+    excerpt: "围绕“梯子推荐”“2026 梯子推荐”“稳定梯子推荐”“好用的梯子推荐”与“稳定机场推荐”“靠谱机场推荐”展开，解析梯子质量差、经常风控的原因、节点与分流配置方法及防跑路自检清单。",
+    category: "防风控排障与稳连选型",
+    categoryKey: "tutorials",
+    badgeType: "blue",
+    platformKeys: ["windows", "mac", "android", "ios", "linux"],
+    protocolKeys: ["vless", "hysteria2", "tuic", "trojan"],
+    date: "2026-11-26",
+    readTime: "10 分钟防风控实战",
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="text-blue-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    url: "articles/2026-tizi-feng-kong-wending-tuijian.html"
+  },
+
+  {
     id: "2026-airport-ladder-dev-workflow-guide",
     title: "2026机场推荐与梯子推荐开发指南：代码仓库、云端终端与协作环境稳连实战",
     excerpt: "在2026年，无论是拉取与推送代码仓库、同步容器镜像与依赖包、连接海外云端测试服务器，还是使用远程终端与文档协作，网络稳定性都直接影响开发节奏。本文深度剖析晚高峰长连接、本地工具链分流隔离、账号与订阅防泄露及主备容灾自检清单。",
